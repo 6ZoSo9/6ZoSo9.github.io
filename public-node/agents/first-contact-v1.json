@@ -1,0 +1,80 @@
+{
+  "client": {
+    "example_command": "node tools/void-ai-agent-first-contact-v1.mjs --base-url http://127.0.0.1:4100 --pretty",
+    "http_methods": [
+      "GET"
+    ],
+    "output": "application/json",
+    "repository_path": "tools/void-ai-agent-first-contact-v1.mjs"
+  },
+  "connection_mode": "read_only",
+  "entrypoints": {
+    "agent_intake": "/.well-known/void-agent-intake-capability-v1.json",
+    "authentication": "/.well-known/void-agent-authentication.json",
+    "capabilities": "/public-node/agents/capabilities-v1.json",
+    "first_contact": "/public-node/agents/first-contact-v1.json",
+    "join_page": "/public-node/agents/join-v1.html",
+    "official_authenticity": "/.well-known/void-network-authenticity.json",
+    "well_known_discovery": "/.well-known/void-agent-discovery.json"
+  },
+  "honesty": {
+    "credential_required_for_first_contact": false,
+    "mutation_authority_granted": false,
+    "paid_work_promised": false,
+    "policy": "The client reports only capabilities observed from live public documents. Missing surfaces remain explicitly partial.",
+    "wallet_required": false,
+    "work_credit_earning_promised": false
+  },
+  "marker": "VOID_AI_AGENT_FIRST_CONTACT_V1",
+  "network": {
+    "chain_id": 2050,
+    "identity": "mainnet0",
+    "name": "VOID Mainnet-0"
+  },
+  "next_steps": [
+    {
+      "id": "inspect_capabilities",
+      "path": "/public-node/agents/capabilities-v1.json",
+      "requires": [
+        "capabilities_loaded"
+      ]
+    },
+    {
+      "id": "inspect_authentication",
+      "path": "/.well-known/void-agent-authentication.json",
+      "requires": [
+        "authentication_contract_found"
+      ]
+    },
+    {
+      "id": "inspect_agent_intake",
+      "path": "/.well-known/void-agent-intake-capability-v1.json",
+      "requires": [
+        "agent_intake_reachable"
+      ]
+    }
+  ],
+  "protocol": "void-ai-agent-first-contact",
+  "purpose": "Give an outside AI agent one machine-readable starting point for discovering, verifying, and inspecting VOID Network.",
+  "source": {
+    "base_commit": "6476fa26c51d8345d3b20b0132b16984bd99e254",
+    "generated_by": "void-ai-agent-first-contact-kit-v1",
+    "repository": "6ZoSo9/void-node"
+  },
+  "status": "public_read_only",
+  "verification": {
+    "optional_checks": [
+      "agent_intake_reachable"
+    ],
+    "required_checks": [
+      "first_contact_manifest_reachable",
+      "discovery_reachable",
+      "official_authenticity_reachable",
+      "network_binding_consistent",
+      "authentication_contract_found",
+      "capabilities_loaded"
+    ],
+    "semantics": "official_network_verified means the official discovery and authenticity documents are reachable and consistent with the declared VOID Mainnet-0 identity. It does not claim independent cryptographic signature revalidation."
+  },
+  "version": "1"
+}

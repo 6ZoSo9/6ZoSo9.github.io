@@ -1,0 +1,28 @@
+{
+  "boundary": {
+    "core_node_exposed": false,
+    "dynamic_api": false,
+    "ledgers": false,
+    "payments": false,
+    "static_discovery_only": true,
+    "transactions": false,
+    "wallets": false
+  },
+  "canonical_source_merge_commit": "20cf2bc1711ab4ea63e8bc5d6c60815ed8f8b37a",
+  "public_base": "https://6zoso9.github.io",
+  "routes": {
+    "/.well-known/void-public-node.json": {
+      "bytes": 943,
+      "sha256": "fdcaffd66b0ddd7f9fe468c42b43d33c761674209122afb12f0ca67b1015698c"
+    },
+    "/public-node/agents/first-contact-v1.json": {
+      "bytes": 2829,
+      "sha256": "73b2936cdb03c2028746db27159cbaa6e556e264652d8442a91fafa988dab45f"
+    },
+    "/public-node/agents/join-v1.html": {
+      "bytes": 3693,
+      "sha256": "a5d4801c5354246e9f0fd85d36f0159bee970c6469d06b4deb0921bfd7db0450"
+    }
+  },
+  "schema": "void-ai-agent-first-contact-github-pages-manifest-v1"
+}
