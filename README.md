@@ -58,3 +58,11 @@ Static discovery only. This repository does not host:
 Canonical source merge: `20cf2bc1711ab4ea63e8bc5d6c60815ed8f8b37a`
 
 Canonical mirror commit: `04ae182e65445484239411e9ad4062228c5cb58e`
+## Remote MCP server
+
+- Endpoint: `https://hereby-metals-plumbing-preserve.trycloudflare.com/mcp`
+- Metadata: `https://6zoso9.github.io/mcp/remote-server-v1.json`
+- Client config: `https://6zoso9.github.io/mcp/client-config-v1.json`
+- Transport: Streamable HTTP with plain JSON responses
+- Boundary: stateless and read-only
+- Official Registry: withheld until the endpoint is stable

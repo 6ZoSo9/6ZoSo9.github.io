@@ -1,0 +1,56 @@
+{
+  "activationReceiptSha256": "a20e4cd28d450c33f906d4f8d26c71f99962a392a55aa1d503a0e855ece43dd2",
+  "boundary": {
+    "ledger": false,
+    "operatorMutation": false,
+    "payments": false,
+    "readOnly": true,
+    "secrets": false,
+    "transactions": false,
+    "validatorMutation": false,
+    "wallet": false
+  },
+  "endpoint": "https://hereby-metals-plumbing-preserve.trycloudflare.com/mcp",
+  "jsonResponses": true,
+  "officialRegistry": {
+    "reason": "The current remote URL is ephemeral. Official Registry versions are immutable and should reference a stable public endpoint.",
+    "status": "withheld"
+  },
+  "originPolicy": {
+    "absentOriginAllowed": true,
+    "allowedBrowserOrigins": [
+      "https://6zoso9.github.io",
+      "https://hereby-metals-plumbing-preserve.trycloudflare.com"
+    ]
+  },
+  "protocolVersion": "2025-11-25",
+  "resources": [
+    "void://agents/first-contact",
+    "void://agents/join",
+    "void://chain/head",
+    "void://network/health",
+    "void://network/readiness"
+  ],
+  "schema": "void-remote-mcp-server-v1",
+  "sse": false,
+  "stableDiscovery": "https://6zoso9.github.io",
+  "stateless": true,
+  "status": "live_at_verification",
+  "tools": [
+    "void_get_chain_head",
+    "void_get_first_contact",
+    "void_get_health",
+    "void_get_join_page",
+    "void_get_readiness"
+  ],
+  "transport": "streamable-http",
+  "transportLimitations": {
+    "concurrentRequestLimit": 200,
+    "ephemeralUrl": true,
+    "productionSla": false,
+    "provider": "cloudflare-quick-tunnel",
+    "restartChangesUrl": true,
+    "serverSentEvents": false
+  },
+  "verified_at_utc": "2026-07-26T23:34:00Z"
+}

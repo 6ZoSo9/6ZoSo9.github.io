@@ -34,6 +34,16 @@
       "status": "live",
       "url": "https://6zoso9.github.io/openapi.json"
     },
+    "remote_mcp_server": {
+      "endpoint": "https://hereby-metals-plumbing-preserve.trycloudflare.com/mcp",
+      "ephemeral": true,
+      "jsonResponses": true,
+      "metadata": "https://6zoso9.github.io/mcp/remote-server-v1.json",
+      "protocolVersion": "2025-11-25",
+      "sse": false,
+      "status": "live_at_verification",
+      "transport": "streamable-http"
+    },
     "sitemap": {
       "status": "live",
       "url": "https://6zoso9.github.io/sitemap.xml"
@@ -53,7 +63,8 @@
       "status": "withheld"
     },
     "mcp_registry": {
-      "reason": "The Official MCP Registry is for actual MCP servers. VOID will register only after a bounded remote MCP transport is deployed and independently verified.",
+      "preparedServerJson": "https://6zoso9.github.io/mcp/server.json",
+      "reason": "The current Quick Tunnel URL is ephemeral. Publish to the Official MCP Registry after a stable public endpoint is available.",
       "status": "withheld"
     },
     "security_txt": {

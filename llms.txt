@@ -26,3 +26,9 @@
 ## Boundary
 
 This surface is static discovery only. It does not expose wallets, ledgers, transactions, payments, validator mutation, operator mutation, or secrets.
+## Remote MCP
+
+- [MCP server metadata](https://6zoso9.github.io/mcp/remote-server-v1.json)
+- [Generic client configuration](https://6zoso9.github.io/mcp/client-config-v1.json)
+- Streamable HTTP endpoint: https://hereby-metals-plumbing-preserve.trycloudflare.com/mcp
+- Experimental ephemeral URL; stable discovery remains https://6zoso9.github.io.

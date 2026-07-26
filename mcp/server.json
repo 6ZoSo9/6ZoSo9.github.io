@@ -1,0 +1,23 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "stableDiscovery": "https://6zoso9.github.io",
+      "status": "not-published-ephemeral-endpoint"
+    }
+  },
+  "description": "Bounded stateless read-only MCP access to public VOID health, readiness, chain-head, and agent-discovery data.",
+  "name": "io.github.6zoso9/void-network-readonly",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://hereby-metals-plumbing-preserve.trycloudflare.com/mcp"
+    }
+  ],
+  "repository": {
+    "source": "github",
+    "url": "https://github.com/6ZoSo9/6ZoSo9.github.io"
+  },
+  "title": "VOID Network Read-Only",
+  "version": "0.1.0"
+}

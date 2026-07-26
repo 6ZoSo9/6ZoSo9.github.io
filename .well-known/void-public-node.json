@@ -42,6 +42,12 @@
     "standards_readiness": "https://6zoso9.github.io/standards/readiness-v1.json"
   },
   "marker": "VOID_AI_AGENT_FIRST_CONTACT_FREE_DISCOVERY_MESH_V1",
+  "remote_mcp": {
+    "clientConfig": "https://6zoso9.github.io/mcp/client-config-v1.json",
+    "endpoint": "https://hereby-metals-plumbing-preserve.trycloudflare.com/mcp",
+    "ephemeral": true,
+    "metadata": "https://6zoso9.github.io/mcp/remote-server-v1.json"
+  },
   "schema": "void-public-node-discovery-v1",
   "status": "static_public_discovery_mirror"
 }

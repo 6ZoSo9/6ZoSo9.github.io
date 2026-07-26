@@ -46,6 +46,13 @@
   "marker": "VOID_AI_AGENT_FIRST_CONTACT_FREE_DISCOVERY_MESH_V1",
   "mesh_version": "1",
   "public_base": "https://6zoso9.github.io",
+  "remote_mcp": {
+    "clientConfig": "/mcp/client-config-v1.json",
+    "endpoint": "https://hereby-metals-plumbing-preserve.trycloudflare.com/mcp",
+    "metadata": "/mcp/remote-server-v1.json",
+    "protocolVersion": "2025-11-25",
+    "serverJson": "/mcp/server.json"
+  },
   "routes": {
     "/.well-known/void-public-node.json": {
       "bytes": 943,

@@ -73,6 +73,17 @@
     "well_known": "https://6zoso9.github.io/.well-known/void-public-node.json"
   },
   "public_base": "https://6zoso9.github.io",
+  "remote_mcp": {
+    "clientConfig": "https://6zoso9.github.io/mcp/client-config-v1.json",
+    "endpoint": "https://hereby-metals-plumbing-preserve.trycloudflare.com/mcp",
+    "ephemeral": true,
+    "metadata": "https://6zoso9.github.io/mcp/remote-server-v1.json",
+    "officialRegistry": "withheld_until_stable_endpoint",
+    "protocolVersion": "2025-11-25",
+    "serverJson": "https://6zoso9.github.io/mcp/server.json",
+    "status": "live_at_verification",
+    "transport": "streamable-http"
+  },
   "schema": "void-ai-agent-free-discovery-mesh-v1",
   "status": "live_static_public_discovery"
 }
