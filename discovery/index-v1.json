@@ -38,6 +38,16 @@
       "url": "https://6zoso9.github.io/standards/readiness-v1.json"
     }
   },
+  "experimental_live_gateway": {
+    "activation_receipt_sha256": "bee1269f45209778bb4ba5c8ffae21c7dcd0c59eb79bb040bd7ddad34abf79d3",
+    "ephemeral": true,
+    "openapi": "https://6zoso9.github.io/live/openapi.json",
+    "pointer": "https://6zoso9.github.io/live/gateway-pointer-v1.json",
+    "production_sla": false,
+    "public_base": "https://midnight-belt-reform-styles.trycloudflare.com",
+    "status": "live_at_verification",
+    "verified_at_utc": "2026-07-26T23:02:54Z"
+  },
   "free_distribution": {
     "github_pages": {
       "active": true,

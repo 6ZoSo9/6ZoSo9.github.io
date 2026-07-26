@@ -4,6 +4,14 @@
       "status": "live",
       "url": "https://6zoso9.github.io/feed.xml"
     },
+    "experimental_bounded_gateway": {
+      "ephemeral": true,
+      "note": "Quick Tunnel development preview. The URL changes when the cloudflared process is restarted.",
+      "openapi": "https://6zoso9.github.io/live/openapi.json",
+      "pointer": "https://6zoso9.github.io/live/gateway-pointer-v1.json",
+      "production_sla": false,
+      "status": "live_at_verification"
+    },
     "github_raw": {
       "repository": "6ZoSo9/6ZoSo9.github.io",
       "status": "live"

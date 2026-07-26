@@ -15,6 +15,12 @@
     "replaceable_mirror": true,
     "repository": "6ZoSo9/6ZoSo9.github.io"
   },
+  "experimental_live_gateway": {
+    "ephemeral": true,
+    "openapi": "https://6zoso9.github.io/live/openapi.json",
+    "pointer": "https://6zoso9.github.io/live/gateway-pointer-v1.json",
+    "stable_static_discovery": "https://6zoso9.github.io"
+  },
   "first_contact": {
     "human_readable": "https://6zoso9.github.io/public-node/agents/join-v1.html",
     "human_readable_bytes": 3693,

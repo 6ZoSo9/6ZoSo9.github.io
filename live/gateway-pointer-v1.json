@@ -1,0 +1,38 @@
+{
+  "activation_receipt_sha256": "bee1269f45209778bb4ba5c8ffae21c7dcd0c59eb79bb040bd7ddad34abf79d3",
+  "boundary": {
+    "arbitrary_proxy": false,
+    "ledger": false,
+    "operator_mutation": false,
+    "payments": false,
+    "read_only": true,
+    "secrets": false,
+    "transactions": false,
+    "validator_mutation": false,
+    "wallet": false
+  },
+  "manifest": "https://midnight-belt-reform-styles.trycloudflare.com/live/gateway-v1.json",
+  "marker": "VOID_AI_AGENT_EXPERIMENTAL_LIVE_GATEWAY_POINTER_V1",
+  "openapi": "https://6zoso9.github.io/live/openapi.json",
+  "public_base": "https://midnight-belt-reform-styles.trycloudflare.com",
+  "routes": {
+    "/live/chain-head.json": "https://midnight-belt-reform-styles.trycloudflare.com/live/chain-head.json",
+    "/live/first-contact-v1.json": "https://midnight-belt-reform-styles.trycloudflare.com/live/first-contact-v1.json",
+    "/live/gateway-v1.json": "https://midnight-belt-reform-styles.trycloudflare.com/live/gateway-v1.json",
+    "/live/health.json": "https://midnight-belt-reform-styles.trycloudflare.com/live/health.json",
+    "/live/join-v1.html": "https://midnight-belt-reform-styles.trycloudflare.com/live/join-v1.html",
+    "/live/readiness.json": "https://midnight-belt-reform-styles.trycloudflare.com/live/readiness.json"
+  },
+  "schema": "void-ai-agent-experimental-live-gateway-pointer-v1",
+  "stable_static_discovery": "https://6zoso9.github.io",
+  "status": "live_at_verification",
+  "transport": {
+    "concurrent_request_limit": 200,
+    "ephemeral_url": true,
+    "production_sla": false,
+    "provider": "cloudflare-quick-tunnel",
+    "restart_changes_url": true,
+    "server_sent_events": false
+  },
+  "verified_at_utc": "2026-07-26T23:02:54Z"
+}
