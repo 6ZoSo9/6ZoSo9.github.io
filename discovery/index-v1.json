@@ -1,0 +1,68 @@
+{
+  "boundary": {
+    "core_dependency": false,
+    "ledger": false,
+    "operator_mutation": false,
+    "payments": false,
+    "secrets": false,
+    "static_only": true,
+    "transactions": false,
+    "validator_mutation": false,
+    "wallet": false
+  },
+  "canonical_mirror_commit": "04ae182e65445484239411e9ad4062228c5cb58e",
+  "canonical_source_merge_commit": "20cf2bc1711ab4ea63e8bc5d6c60815ed8f8b37a",
+  "discovery_surfaces": {
+    "atom_feed": {
+      "url": "https://6zoso9.github.io/feed.xml"
+    },
+    "integrity": {
+      "sha256": "9f770f0ae02ac4cda65a666779abc8b71704ac243a35d1b2ddeb15ad66d55354",
+      "url": "https://6zoso9.github.io/integrity/void-first-contact-v1.json"
+    },
+    "llms": {
+      "url": "https://6zoso9.github.io/llms.txt"
+    },
+    "llms_full": {
+      "url": "https://6zoso9.github.io/llms-full.txt"
+    },
+    "openapi": {
+      "sha256": "d5fb23812d1316aab21dca07dcbf38ed61267cd620f9993eb49c743de1580505",
+      "url": "https://6zoso9.github.io/openapi.json"
+    },
+    "sitemap": {
+      "url": "https://6zoso9.github.io/sitemap.xml"
+    },
+    "standards_readiness": {
+      "sha256": "29759f632498cc5d8596962606d360eb93c6374b433be7a2bdc3b46cec79a2c5",
+      "url": "https://6zoso9.github.io/standards/readiness-v1.json"
+    }
+  },
+  "free_distribution": {
+    "github_pages": {
+      "active": true,
+      "url": "https://6zoso9.github.io"
+    },
+    "github_raw": {
+      "base": "https://raw.githubusercontent.com/6ZoSo9/6ZoSo9.github.io/04ae182e65445484239411e9ad4062228c5cb58e",
+      "commit_pinned": true
+    },
+    "github_repository": {
+      "public": true,
+      "url": "https://github.com/6ZoSo9/6ZoSo9.github.io"
+    },
+    "jsdelivr": {
+      "base": "https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@04ae182e65445484239411e9ad4062228c5cb58e",
+      "commit_pinned": true
+    }
+  },
+  "marker": "VOID_AI_AGENT_FIRST_CONTACT_FREE_DISCOVERY_MESH_V1",
+  "primary": {
+    "human_readable": "https://6zoso9.github.io/public-node/agents/join-v1.html",
+    "machine_readable": "https://6zoso9.github.io/public-node/agents/first-contact-v1.json",
+    "well_known": "https://6zoso9.github.io/.well-known/void-public-node.json"
+  },
+  "public_base": "https://6zoso9.github.io",
+  "schema": "void-ai-agent-free-discovery-mesh-v1",
+  "status": "live_static_public_discovery"
+}

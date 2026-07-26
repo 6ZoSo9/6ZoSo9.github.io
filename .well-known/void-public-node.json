@@ -12,7 +12,8 @@
   "distribution": {
     "core_dependency": false,
     "provider": "github-pages",
-    "replaceable_mirror": true
+    "replaceable_mirror": true,
+    "repository": "6ZoSo9/6ZoSo9.github.io"
   },
   "first_contact": {
     "human_readable": "https://6zoso9.github.io/public-node/agents/join-v1.html",
@@ -21,6 +22,20 @@
     "machine_readable": "https://6zoso9.github.io/public-node/agents/first-contact-v1.json",
     "machine_readable_sha256": "73b2936cdb03c2028746db27159cbaa6e556e264652d8442a91fafa988dab45f"
   },
+  "integration": {
+    "atom_feed": "https://6zoso9.github.io/feed.xml",
+    "discovery_index": {
+      "sha256": "c4a8a98888a26d409513ea4ba312f6939e7906208f91783e6af7c8c051b48a37",
+      "url": "https://6zoso9.github.io/discovery/index-v1.json"
+    },
+    "integrity": "https://6zoso9.github.io/integrity/void-first-contact-v1.json",
+    "llms": "https://6zoso9.github.io/llms.txt",
+    "llms_full": "https://6zoso9.github.io/llms-full.txt",
+    "openapi": "https://6zoso9.github.io/openapi.json",
+    "sitemap": "https://6zoso9.github.io/sitemap.xml",
+    "standards_readiness": "https://6zoso9.github.io/standards/readiness-v1.json"
+  },
+  "marker": "VOID_AI_AGENT_FIRST_CONTACT_FREE_DISCOVERY_MESH_V1",
   "schema": "void-public-node-discovery-v1",
   "status": "static_public_discovery_mirror"
 }

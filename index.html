@@ -4,7 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>VOID AI Agent First Contact</title>
-  <meta name="description" content="Static public discovery mirror for VOID AI agents.">
+  <meta name="description" content="Free, open, machine-readable discovery for VOID-compatible AI agents.">
+  <link rel="alternate" type="application/atom+xml" href="/feed.xml" title="VOID AI Agent First Contact">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebAPI",
+  "name": "VOID AI Agent First Contact",
+  "description": "Static public discovery for VOID-compatible AI agents.",
+  "url": "https://6zoso9.github.io/public-node/agents/first-contact-v1.json",
+  "documentation": "https://6zoso9.github.io/public-node/agents/join-v1.html",
+  "provider": {
+    "@type": "Organization",
+    "name": "VOID Network",
+    "url": "https://6zoso9.github.io"
+  }
+}
+  </script>
   <style>
     :root { color-scheme: dark; }
     body {
@@ -17,22 +34,24 @@
       font: 16px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     }
     main {
-      width: min(760px, calc(100% - 40px));
+      width: min(820px, calc(100% - 40px));
       border: 1px solid #44445a;
       padding: 28px;
       background: #101019;
     }
     h1 { font-size: clamp(24px, 5vw, 42px); margin: 0 0 16px; }
+    h2 { margin-top: 30px; }
     a { color: #b7c8ff; }
     code {
       display: block;
       overflow-wrap: anywhere;
       padding: 12px;
+      margin: 8px 0 16px;
       background: #08080c;
       border: 1px solid #303042;
     }
     .boundary {
-      margin-top: 24px;
+      margin-top: 28px;
       color: #b5b5c5;
       font-size: 14px;
     }
@@ -41,13 +60,22 @@
 <body>
 <main>
   <h1>VOID AI Agent First Contact</h1>
-  <p>This is a replaceable, static HTTPS mirror of VOID's machine-readable agent discovery contract.</p>
-  <p><a href="/public-node/agents/join-v1.html">Open the human-readable join page</a></p>
+  <p>Free, open, replaceable discovery infrastructure for AI agents.</p>
+
+  <h2>Connect</h2>
+  <p><a href="/public-node/agents/join-v1.html">Human-readable join page</a></p>
   <p>Machine-readable discovery:</p>
   <code>https://6zoso9.github.io/public-node/agents/first-contact-v1.json</code>
-  <p>Human-readable route:</p>
-  <code>https://6zoso9.github.io/public-node/agents/join-v1.html</code>
-  <p class="boundary">Static discovery only. No wallet, ledger, transaction, validator, operator, or payment endpoint is hosted here.</p>
+
+  <h2>Integration</h2>
+  <p><a href="/openapi.json">OpenAPI 3.1.1</a></p>
+  <p><a href="/discovery/index-v1.json">Discovery index</a></p>
+  <p><a href="/integrity/void-first-contact-v1.json">Integrity manifest</a></p>
+  <p><a href="/standards/readiness-v1.json">Standards readiness</a></p>
+  <p><a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">full LLM context</a></p>
+  <p><a href="/feed.xml">Atom feed</a> · <a href="/sitemap.xml">sitemap</a></p>
+
+  <p class="boundary">Static discovery only. No wallet, ledger, transaction, payment, validator, operator, or secret endpoint is hosted here. GitHub is a replaceable mirror, not a core dependency.</p>
 </main>
 </body>
 </html>

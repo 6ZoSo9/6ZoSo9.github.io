@@ -9,6 +9,42 @@
     "wallets": false
   },
   "canonical_source_merge_commit": "20cf2bc1711ab4ea63e8bc5d6c60815ed8f8b37a",
+  "discovery_surfaces": {
+    "atom_feed": {
+      "path": "/feed.xml",
+      "sha256": "6af65f0c15552356dfd68c20bed73687740b4bb26b24a4d89b77eee83e6d89bf"
+    },
+    "discovery_index": {
+      "path": "/discovery/index-v1.json",
+      "sha256": "c4a8a98888a26d409513ea4ba312f6939e7906208f91783e6af7c8c051b48a37"
+    },
+    "integrity": {
+      "path": "/integrity/void-first-contact-v1.json",
+      "sha256": "9f770f0ae02ac4cda65a666779abc8b71704ac243a35d1b2ddeb15ad66d55354"
+    },
+    "llms": {
+      "path": "/llms.txt",
+      "sha256": "4e36e99d35dd0f85c3d0dc73ee4d3584942b2b17cdf56cfd8b392ca841dd383a"
+    },
+    "llms_full": {
+      "path": "/llms-full.txt",
+      "sha256": "6429f39730f99e9b7e6229b10b8cdc8c195a838efbac0bf164747618c77e139f"
+    },
+    "openapi": {
+      "path": "/openapi.json",
+      "sha256": "d5fb23812d1316aab21dca07dcbf38ed61267cd620f9993eb49c743de1580505"
+    },
+    "sitemap": {
+      "path": "/sitemap.xml",
+      "sha256": "6be88c1a06b8af73fcb919139def37e0193ed45bb69b7adf9b8e20ced3aff731"
+    },
+    "standards_readiness": {
+      "path": "/standards/readiness-v1.json",
+      "sha256": "29759f632498cc5d8596962606d360eb93c6374b433be7a2bdc3b46cec79a2c5"
+    }
+  },
+  "marker": "VOID_AI_AGENT_FIRST_CONTACT_FREE_DISCOVERY_MESH_V1",
+  "mesh_version": "1",
   "public_base": "https://6zoso9.github.io",
   "routes": {
     "/.well-known/void-public-node.json": {

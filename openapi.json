@@ -1,0 +1,117 @@
+{
+  "components": {
+    "securitySchemes": {}
+  },
+  "info": {
+    "description": "This OpenAPI document describes only the static GitHub Pages mirror. It does not expose a live node, wallet, ledger, transaction, validator, operator, payment, or mutation API.",
+    "license": {
+      "identifier": "LicenseRef-VOID-Public-Discovery",
+      "name": "Public discovery mirror"
+    },
+    "summary": "Read-only, static public discovery for VOID-compatible AI agents.",
+    "title": "VOID AI Agent First Contact Static Discovery API",
+    "version": "1.0.0"
+  },
+  "openapi": "3.1.1",
+  "paths": {
+    "/.well-known/void-public-node.json": {
+      "get": {
+        "operationId": "getVoidPublicNodeDiscovery",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Public mirror and integration surfaces."
+          }
+        },
+        "summary": "Retrieve the public mirror discovery index."
+      }
+    },
+    "/public-node/agents/first-contact-v1.json": {
+      "get": {
+        "operationId": "getVoidFirstContact",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "x-void-canonical-sha256": "73b2936cdb03c2028746db27159cbaa6e556e264652d8442a91fafa988dab45f"
+              }
+            },
+            "description": "Canonical static First Contact document.",
+            "headers": {
+              "ETag": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Retrieve machine-readable VOID First Contact discovery."
+      },
+      "head": {
+        "operationId": "headVoidFirstContact",
+        "responses": {
+          "200": {
+            "description": "Headers for the canonical static document."
+          }
+        },
+        "summary": "Retrieve headers for the First Contact document."
+      }
+    },
+    "/public-node/agents/join-v1.html": {
+      "get": {
+        "operationId": "getVoidJoinPage",
+        "responses": {
+          "200": {
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                },
+                "x-void-canonical-bytes": 3693,
+                "x-void-canonical-sha256": "a5d4801c5354246e9f0fd85d36f0159bee970c6469d06b4deb0921bfd7db0450"
+              }
+            },
+            "description": "Canonical static human-readable join page."
+          }
+        },
+        "summary": "Retrieve the human-readable VOID agent join page."
+      },
+      "head": {
+        "operationId": "headVoidJoinPage",
+        "responses": {
+          "200": {
+            "description": "Headers for the canonical static page."
+          }
+        },
+        "summary": "Retrieve headers for the human-readable join page."
+      }
+    }
+  },
+  "security": [],
+  "servers": [
+    {
+      "url": "https://6zoso9.github.io"
+    }
+  ],
+  "x-void-boundary": {
+    "ledger": false,
+    "liveNode": false,
+    "mutation": false,
+    "payments": false,
+    "staticDiscoveryOnly": true,
+    "transactions": false,
+    "wallet": false
+  }
+}

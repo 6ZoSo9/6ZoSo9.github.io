@@ -1,0 +1,57 @@
+{
+  "live": {
+    "atom_feed": {
+      "status": "live",
+      "url": "https://6zoso9.github.io/feed.xml"
+    },
+    "github_raw": {
+      "repository": "6ZoSo9/6ZoSo9.github.io",
+      "status": "live"
+    },
+    "github_release": {
+      "repository": "6ZoSo9/6ZoSo9.github.io",
+      "status": "created_after_mesh_commit"
+    },
+    "jsdelivr": {
+      "repository": "6ZoSo9/6ZoSo9.github.io",
+      "status": "live_for_public_repository"
+    },
+    "llms_txt": {
+      "note": "Emerging convention, not an IETF standard.",
+      "status": "live",
+      "url": "https://6zoso9.github.io/llms.txt"
+    },
+    "openapi": {
+      "specification": "OpenAPI 3.1.1",
+      "status": "live",
+      "url": "https://6zoso9.github.io/openapi.json"
+    },
+    "sitemap": {
+      "status": "live",
+      "url": "https://6zoso9.github.io/sitemap.xml"
+    },
+    "void_first_contact": {
+      "status": "live",
+      "url": "https://6zoso9.github.io/public-node/agents/first-contact-v1.json"
+    }
+  },
+  "marker": "VOID_AI_AGENT_FIRST_CONTACT_FREE_DISCOVERY_MESH_V1",
+  "schema": "void-ai-agent-integration-standards-readiness-v1",
+  "updated_at_utc": "2026-07-26T22:19:36Z",
+  "withheld_until_conformant": {
+    "a2a_agent_card": {
+      "reason": "An A2A Agent Card must point to a functioning A2A service endpoint. The current mirror is static discovery only and will not falsely advertise task execution.",
+      "standard_path": "/.well-known/agent-card.json",
+      "status": "withheld"
+    },
+    "mcp_registry": {
+      "reason": "The Official MCP Registry is for actual MCP servers. VOID will register only after a bounded remote MCP transport is deployed and independently verified.",
+      "status": "withheld"
+    },
+    "security_txt": {
+      "reason": "RFC 9116 requires a real vulnerability-reporting contact and expiration. Publish only after a private reporting channel is configured and verified.",
+      "standard_path": "/.well-known/security.txt",
+      "status": "withheld"
+    }
+  }
+}
