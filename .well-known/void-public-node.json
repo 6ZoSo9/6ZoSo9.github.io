@@ -47,6 +47,12 @@
     "standards_readiness": "https://6zoso9.github.io/standards/readiness-v1.json"
   },
   "marker": "VOID_AI_AGENT_FIRST_CONTACT_FREE_DISCOVERY_MESH_V1",
+  "paid_agent_work_intake": {
+    "catalog": "https://6zoso9.github.io/work/catalog-v1.json",
+    "client": "https://6zoso9.github.io/work/void-paid-work-client.py",
+    "fixed_award_wc": 3,
+    "live": "https://6zoso9.github.io/work/live-v1.json"
+  },
   "public_client_kit": {
     "contentCommit": "72f9920f714d28b3755337a23ea0838b42c62d41",
     "githubRelease": "https://github.com/6ZoSo9/6ZoSo9.github.io/releases/tag/void-agent-client-kit-v1",

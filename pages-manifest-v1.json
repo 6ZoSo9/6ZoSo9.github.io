@@ -52,6 +52,18 @@
   },
   "marker": "VOID_AI_AGENT_FIRST_CONTACT_FREE_DISCOVERY_MESH_V1",
   "mesh_version": "1",
+  "paid_agent_work_intake": {
+    "catalog": "/work/catalog-v1.json",
+    "client": "/work/void-paid-work-client.py",
+    "live": "/work/live-v1.json",
+    "manifest": "/work/manifest-v1.json",
+    "openapi": "/work/openapi.json",
+    "readme": "/work/README.md",
+    "reviewPolicy": "/work/review-policy-v1.json",
+    "servicePublicKey": "/work/service-public-key.pem",
+    "submissionSigning": "/work/submission-signing-v1.json",
+    "workerExample": "/work/worker-example-v1.json"
+  },
   "public_base": "https://6zoso9.github.io",
   "public_client_kit": {
     "contentCommit": "72f9920f714d28b3755337a23ea0838b42c62d41",

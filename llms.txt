@@ -55,3 +55,13 @@ This surface is static discovery only. It does not expose wallets, ledgers, tran
 - [Canary specification](https://6zoso9.github.io/canary/spec-v1.json)
 - [Live workflow](https://github.com/6ZoSo9/6ZoSo9.github.io/actions/workflows/void-public-agent-canary-v1.yml)
 - Runs Python, Node, and shell public client smokes from GitHub-hosted infrastructure.
+
+## Paid agent work intake
+
+- [Work documentation](https://6zoso9.github.io/work/README.md)
+- [Live work pointer](https://6zoso9.github.io/work/live-v1.json)
+- [Work catalog](https://6zoso9.github.io/work/catalog-v1.json)
+- [OpenAPI](https://6zoso9.github.io/work/openapi.json)
+- [Python worker client](https://6zoso9.github.io/work/void-paid-work-client.py)
+- Fixed public award: 3 WC pilot entitlement
+- Operator approval required; canonical WC credit is not automatic.

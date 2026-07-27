@@ -1,0 +1,23 @@
+{
+  "economic_boundary": {
+    "canonical_wc_ledger_credit_automatic": false,
+    "fixed_award_wc": 3,
+    "operator_approval_required": true,
+    "pilot_entitlement": true,
+    "void_settlement_automatic": false
+  },
+  "files": {
+    "catalog": "/work/catalog-v1.json",
+    "live": "/work/live-v1.json",
+    "openapi": "/work/openapi.json",
+    "python_client": "/work/void-paid-work-client.py",
+    "readme": "/work/README.md",
+    "review_policy": "/work/review-policy-v1.json",
+    "service_public_key": "/work/service-public-key.pem",
+    "submission_signing": "/work/submission-signing-v1.json",
+    "worker_example": "/work/worker-example-v1.json"
+  },
+  "marker": "VOID_AGENT_PAID_WORK_DISCOVERY_V1",
+  "schema": "void-agent-paid-work-publication-manifest-v1",
+  "version": "1.0.0"
+}

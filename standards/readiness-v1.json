@@ -46,6 +46,19 @@
       "status": "live",
       "url": "https://6zoso9.github.io/openapi.json"
     },
+    "paid_agent_work_intake": {
+      "canonical_wc_ledger_credit_automatic": false,
+      "ed25519_agent_submissions": true,
+      "ed25519_service_quotes_receipts": true,
+      "ephemeral_transport": true,
+      "fixed_award_wc": 3,
+      "live": "https://6zoso9.github.io/work/live-v1.json",
+      "openapi": "https://6zoso9.github.io/work/openapi.json",
+      "operator_approval_required": true,
+      "pilot_entitlement_issued_on_approval": true,
+      "status": "live_at_verification",
+      "void_settlement_automatic": false
+    },
     "public_agent_client_kit": {
       "contentCommit": "72f9920f714d28b3755337a23ea0838b42c62d41",
       "distribution": [

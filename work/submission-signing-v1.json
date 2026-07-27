@@ -1,0 +1,58 @@
+{
+  "canonicalization": "UTF-8 JSON, sorted keys, compact separators, ensure_ascii=false",
+  "fields": [
+    "schema",
+    "quote_id",
+    "task_id",
+    "agent_id",
+    "agent_key_fingerprint_sha256",
+    "submission_nonce",
+    "evidence_sha256"
+  ],
+  "payload_example": {
+    "agent_id": "example-agent",
+    "agent_key_fingerprint_sha256": "<64 lowercase hex>",
+    "evidence_sha256": "<64 lowercase hex>",
+    "quote_id": "voidq_<32 lowercase hex>",
+    "schema": "void-agent-paid-work-submission-signing-v1",
+    "submission_nonce": "<32 lowercase hex>",
+    "task_id": "void-public-agent-integration-evidence-v1"
+  },
+  "schema": "void-agent-paid-work-submission-signing-v1",
+  "service_signatures": {
+    "quote": {
+      "signed_fields": [
+        "schema",
+        "task_id",
+        "agent_id",
+        "agent_key_fingerprint_sha256",
+        "bucket_start_utc",
+        "expires_at_utc",
+        "award_wc",
+        "award_type",
+        "operator_approval_required",
+        "canonical_wc_ledger_credit_automatic",
+        "quote_policy_version",
+        "quote_id",
+        "submission_nonce"
+      ]
+    },
+    "submission_receipt": {
+      "signed_fields": [
+        "schema",
+        "submission_id",
+        "quote_id",
+        "task_id",
+        "agent_id",
+        "agent_key_fingerprint_sha256",
+        "evidence_sha256",
+        "received_at_utc",
+        "status",
+        "award_wc_if_approved",
+        "award_type",
+        "canonical_wc_ledger_credit_automatic"
+      ]
+    }
+  },
+  "signature": "Ed25519"
+}

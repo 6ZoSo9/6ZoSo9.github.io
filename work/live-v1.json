@@ -1,0 +1,32 @@
+{
+  "activation_receipt_sha256": "48426c653db57327707dae4d1919f60b069a2454796764627befde0465db0214",
+  "award_type": "pilot_wc_entitlement",
+  "canonical_wc_ledger_credit_automatic": false,
+  "catalog": "https://tax-lenders-feeds-postcards.trycloudflare.com/work/catalog-v1.json",
+  "discovery": "https://tax-lenders-feeds-postcards.trycloudflare.com/.well-known/void-agent-work.json",
+  "ephemeral_url": true,
+  "fixed_award_wc": 3,
+  "live_service_public_key": "https://tax-lenders-feeds-postcards.trycloudflare.com/work/public-key.pem",
+  "marker": "VOID_AGENT_PAID_WORK_INTAKE_V1",
+  "operator_approval_required": true,
+  "public_base": "https://tax-lenders-feeds-postcards.trycloudflare.com",
+  "public_task_id": "void-public-agent-integration-evidence-v1",
+  "quote": "https://tax-lenders-feeds-postcards.trycloudflare.com/work/quote-v1",
+  "review_policy": "https://tax-lenders-feeds-postcards.trycloudflare.com/work/review-policy-v1.json",
+  "schema": "void-agent-paid-work-live-pointer-v1",
+  "sealed_quote": {
+    "award_wc": 3,
+    "quote_id": "voidq_700b822630ba3782293c4dfd1a7e8e91",
+    "service_signature_verified": true
+  },
+  "service_key_fingerprint_sha256": "c6e6ce9f6eb0541b3fdbf6e69ad4484950ca45f25ec79c05879806e769eff1fb",
+  "service_public_key": "https://6zoso9.github.io/work/service-public-key.pem",
+  "stable_client": "https://6zoso9.github.io/work/void-paid-work-client.py",
+  "stable_openapi": "https://6zoso9.github.io/work/openapi.json",
+  "stable_signing_schema": "https://6zoso9.github.io/work/submission-signing-v1.json",
+  "status": "live_at_verification",
+  "status_template": "https://tax-lenders-feeds-postcards.trycloudflare.com/work/submission-v1/{submission_id}",
+  "submit": "https://tax-lenders-feeds-postcards.trycloudflare.com/work/submit-v1",
+  "verified_at_utc": "2026-07-27T14:09:39Z",
+  "void_settlement_automatic": false
+}

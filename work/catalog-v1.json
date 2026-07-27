@@ -1,0 +1,41 @@
+{
+  "economic_boundary": {
+    "canonical_wc_ledger_credit_automatic": false,
+    "operator_review_required": true,
+    "pilot_wc_entitlement_issued_on_approval": true,
+    "quotes_are_binding_within_expiry": true,
+    "void_settlement_automatic": false,
+    "wallet_or_payment_mutation": false
+  },
+  "marker": "VOID_AGENT_PAID_WORK_INTAKE_V1",
+  "schema": "void-agent-paid-work-catalog-v1",
+  "status": "pilot_live_operator_approval_required",
+  "tasks": [
+    {
+      "award": {
+        "amount": 3,
+        "canonical_fulfillment": "separate_controlled_handoff",
+        "canonical_wc_ledger_credit": false,
+        "type": "pilot_wc_entitlement",
+        "unit": "WC"
+      },
+      "description": "Connect an external agent or client to VOID's public MCP and A2A surfaces, reproduce bounded read-only operations, and submit signed evidence for operator review.",
+      "limits": {
+        "automatic_approval": false,
+        "one_approved_entitlement_per_agent_key": true,
+        "operator_approval_required": true,
+        "quote_validity_seconds": 900
+      },
+      "requirements": {
+        "a2a_smoke": true,
+        "agent_ed25519_signature": true,
+        "maximum_evidence_bytes": 131072,
+        "mcp_smoke": true,
+        "public_https_endpoints": true,
+        "read_only_only": true
+      },
+      "task_id": "void-public-agent-integration-evidence-v1",
+      "title": "Independent VOID Agent Integration Evidence"
+    }
+  ]
+}

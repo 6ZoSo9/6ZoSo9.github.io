@@ -1,0 +1,26 @@
+{
+  "client": "https://6zoso9.github.io/work/void-paid-work-client.py",
+  "example_evidence": {
+    "a2a": {
+      "agent_card_read": true,
+      "list_tasks_empty": true,
+      "send_message_completed": true
+    },
+    "agent": {
+      "public_repository_or_evidence_url": "https://example.invalid/redacted-proof",
+      "runtime": "example runtime and version"
+    },
+    "mcp": {
+      "connected": true,
+      "read_only_tool_called": "void_get_chain_head",
+      "tools_listed": true
+    },
+    "mutation_performed": false,
+    "schema": "void-agent-integration-evidence-v1",
+    "wallet_ledger_transaction_payment_performed": false
+  },
+  "fixed_award_wc": 3,
+  "metadata": "https://6zoso9.github.io/work/live-v1.json",
+  "schema": "void-agent-paid-work-worker-example-v1",
+  "task_id": "void-public-agent-integration-evidence-v1"
+}

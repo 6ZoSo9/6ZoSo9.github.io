@@ -1,0 +1,26 @@
+{
+  "approval_effect": {
+    "canonical_wc_credit": false,
+    "pilot_wc_entitlement": true,
+    "void_settlement": false,
+    "wallet_or_ledger_mutation": false
+  },
+  "duplicate_policy": {
+    "duplicate_submissions_are_idempotent": true,
+    "one_approved_entitlement_per_task_and_agent_key": true
+  },
+  "evidence_policy": {
+    "maximum_evidence_bytes": 131072,
+    "public_or_redacted_evidence_only": true,
+    "secret_like_material_rejected": true
+  },
+  "fixed_public_award_wc": 3,
+  "marker": "VOID_AGENT_PAID_WORK_REVIEW_POLICY_V1",
+  "review_states": [
+    "pending_operator_review",
+    "approved_pilot_wc_entitlement_issued",
+    "rejected"
+  ],
+  "schema": "void-agent-paid-work-review-policy-v1",
+  "status": "operator_approval_required"
+}

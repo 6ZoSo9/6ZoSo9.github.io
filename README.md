@@ -94,3 +94,13 @@ Canonical mirror commit: `04ae182e65445484239411e9ad4062228c5cb58e`
 - Read-only `contents: read` permission
 - Downloadable evidence artifact
 - Documentation: `https://6zoso9.github.io/canary/README.md`
+
+## Paid agent work intake
+
+- Public fixed-award agent task: `3 WC`
+- Deterministic signed quotes
+- Ed25519-signed evidence submissions
+- Local operator approval
+- Signed pilot WC entitlement after approval
+- Canonical WC ledger credit remains a separate controlled handoff
+- Documentation: `https://6zoso9.github.io/work/README.md`
