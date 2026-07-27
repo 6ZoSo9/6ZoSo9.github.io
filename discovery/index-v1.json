@@ -66,6 +66,16 @@
       "commit_pinned": true
     }
   },
+  "independent_public_agent_canary": {
+    "badge": "https://github.com/6ZoSo9/6ZoSo9.github.io/actions/workflows/void-public-agent-canary-v1.yml/badge.svg?branch=main",
+    "documentation": "https://6zoso9.github.io/canary/README.md",
+    "issueForm": "https://github.com/6ZoSo9/6ZoSo9.github.io/issues/new?template=void-agent-integration-report.yml",
+    "permissions": "contents-read",
+    "runner": "github-hosted-ubuntu-24.04",
+    "spec": "https://6zoso9.github.io/canary/spec-v1.json",
+    "status": "workflow_published",
+    "workflow": "https://github.com/6ZoSo9/6ZoSo9.github.io/actions/workflows/void-public-agent-canary-v1.yml"
+  },
   "marker": "VOID_AI_AGENT_FIRST_CONTACT_FREE_DISCOVERY_MESH_V1",
   "primary": {
     "human_readable": "https://6zoso9.github.io/public-node/agents/join-v1.html",

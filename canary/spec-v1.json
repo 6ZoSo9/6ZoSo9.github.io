@@ -1,0 +1,35 @@
+{
+  "boundary": {
+    "credentials": false,
+    "ledger": false,
+    "operatorMutation": false,
+    "payments": false,
+    "readOnly": true,
+    "repositoryWrite": false,
+    "secrets": false,
+    "transactions": false,
+    "validatorMutation": false,
+    "wallet": false
+  },
+  "issueForm": ".github/ISSUE_TEMPLATE/void-agent-integration-report.yml",
+  "marker": "VOID_PUBLIC_AGENT_CANARY_V1",
+  "pinnedActions": {
+    "actions/checkout@v5.0.0": "08c6903cd8c0fde910a37f88322edcfb5dd907a8",
+    "actions/upload-artifact@v7.0.1": "043fb46d1a93c77aae656e7c1c64a875d1fc6a0a"
+  },
+  "runner": "canary/public-canary-v1.py",
+  "schema": "void-public-agent-canary-spec-v1",
+  "status": "published",
+  "workflow": {
+    "badge": "https://github.com/6ZoSo9/6ZoSo9.github.io/actions/workflows/void-public-agent-canary-v1.yml/badge.svg?branch=main",
+    "file": ".github/workflows/void-public-agent-canary-v1.yml",
+    "permissions": {
+      "contents": "read"
+    },
+    "publicRepositoryInactivityCaveatDays": 60,
+    "runner": "ubuntu-24.04",
+    "scheduleUtc": "37 */6 * * *",
+    "timeoutMinutes": 12,
+    "url": "https://github.com/6ZoSo9/6ZoSo9.github.io/actions/workflows/void-public-agent-canary-v1.yml"
+  }
+}

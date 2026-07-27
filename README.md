@@ -84,3 +84,13 @@ Canonical mirror commit: `04ae182e65445484239411e9ad4062228c5cb58e`
 - Stable endpoint discovery through GitHub Pages
 - Immutable CDN distribution through jsDelivr tag `void-agent-client-kit-v1`
 - Documentation: `https://6zoso9.github.io/clients/README.md`
+
+## Independent public agent canary
+
+[![VOID Public Agent Canary V1](https://github.com/6ZoSo9/6ZoSo9.github.io/actions/workflows/void-public-agent-canary-v1.yml/badge.svg?branch=main)](https://github.com/6ZoSo9/6ZoSo9.github.io/actions/workflows/void-public-agent-canary-v1.yml)
+
+- GitHub-hosted Ubuntu verification
+- Python, Node, and shell public client canaries
+- Read-only `contents: read` permission
+- Downloadable evidence artifact
+- Documentation: `https://6zoso9.github.io/canary/README.md`

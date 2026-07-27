@@ -43,6 +43,13 @@
       "sha256": "29759f632498cc5d8596962606d360eb93c6374b433be7a2bdc3b46cec79a2c5"
     }
   },
+  "independent_public_agent_canary": {
+    "badge": "https://github.com/6ZoSo9/6ZoSo9.github.io/actions/workflows/void-public-agent-canary-v1.yml/badge.svg?branch=main",
+    "readme": "/canary/README.md",
+    "runner": "/canary/public-canary-v1.py",
+    "spec": "/canary/spec-v1.json",
+    "workflow": "https://github.com/6ZoSo9/6ZoSo9.github.io/actions/workflows/void-public-agent-canary-v1.yml"
+  },
   "marker": "VOID_AI_AGENT_FIRST_CONTACT_FREE_DISCOVERY_MESH_V1",
   "mesh_version": "1",
   "public_base": "https://6zoso9.github.io",

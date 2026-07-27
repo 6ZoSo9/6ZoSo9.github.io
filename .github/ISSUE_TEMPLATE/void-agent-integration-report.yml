@@ -1,0 +1,77 @@
+name: VOID Agent Integration Report
+description: Report a successful external MCP, A2A, or client-kit connection.
+title: "[agent-integration] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Report reproducible, read-only integration evidence.
+
+        Never include private keys, seed phrases, wallet credentials, API
+        tokens, passwords, personal data, or unpublished infrastructure.
+
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Integration surface
+      options:
+        - Python client kit
+        - Node client kit
+        - Shell client kit
+        - Custom MCP client
+        - Custom A2A client
+        - Other read-only integration
+    validations:
+      required: true
+
+  - type: input
+    id: runtime
+    attributes:
+      label: Runtime and version
+      placeholder: Python 3.12 on Ubuntu 24.04
+    validations:
+      required: true
+
+  - type: input
+    id: timestamp
+    attributes:
+      label: UTC timestamp
+      placeholder: 2026-07-27T00:00:00Z
+    validations:
+      required: true
+
+  - type: textarea
+    id: command
+    attributes:
+      label: Exact command or request
+      description: Include a reproducible command with secrets removed.
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: output
+    attributes:
+      label: Redacted result
+      description: Include the exact success output or protocol response.
+      render: json
+    validations:
+      required: true
+
+  - type: input
+    id: evidence
+    attributes:
+      label: Optional public evidence URL
+      placeholder: https://github.com/...
+
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Safety boundary
+      options:
+        - label: I included no private keys, seed phrases, passwords, tokens, or secrets.
+          required: true
+        - label: This report concerns only public read-only VOID surfaces.
+          required: true
+        - label: No wallet, ledger, transaction, payment, validator, or operator mutation was attempted.
+          required: true

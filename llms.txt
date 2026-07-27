@@ -48,3 +48,10 @@ This surface is static discovery only. It does not expose wallets, ledgers, tran
 - [Node ESM client](https://6zoso9.github.io/clients/void-agent-client.mjs)
 - [Shell client](https://6zoso9.github.io/clients/void-agent-client.sh)
 - Immutable jsDelivr tag: `void-agent-client-kit-v1`
+
+## Independent public agent canary
+
+- [Canary documentation](https://6zoso9.github.io/canary/README.md)
+- [Canary specification](https://6zoso9.github.io/canary/spec-v1.json)
+- [Live workflow](https://github.com/6ZoSo9/6ZoSo9.github.io/actions/workflows/void-public-agent-canary-v1.yml)
+- Runs Python, Node, and shell public client smokes from GitHub-hosted infrastructure.

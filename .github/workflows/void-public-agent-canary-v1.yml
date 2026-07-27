@@ -1,0 +1,90 @@
+name: VOID Public Agent Canary V1
+
+run-name: >-
+  VOID public agent canary · ${{ github.event_name }} · ${{ github.sha }}
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "37 */6 * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/void-public-agent-canary-v1.yml"
+      - "canary/**"
+      - "clients/**"
+      - "mcp/**"
+      - "a2a/**"
+      - "discovery/index-v1.json"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: void-public-agent-canary-v1
+  cancel-in-progress: true
+
+jobs:
+  public-agent-canary:
+    name: Independent public MCP + A2A canary
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+
+    steps:
+      - name: Check out exact repository revision
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Record public runner versions
+        run: |
+          set -euo pipefail
+          python3 --version
+          node --version
+          curl --version | head -n 1
+          uname -a
+
+      - name: Verify public client and canary syntax
+        run: |
+          set -euo pipefail
+          python3 -m py_compile \
+            clients/void-agent-client.py \
+            canary/public-canary-v1.py
+          node --check clients/void-agent-client.mjs
+          bash -n clients/void-agent-client.sh
+
+      - name: Execute independent public canary
+        run: |
+          set -euo pipefail
+          mkdir -p canary/evidence
+          python3 canary/public-canary-v1.py \
+            --output canary/evidence/void-public-agent-canary-evidence-v1.json
+          cat canary/evidence/void-public-agent-canary-evidence-v1.json
+
+      - name: Write job summary
+        run: |
+          set -euo pipefail
+          {
+            echo "## VOID Public Agent Canary V1"
+            echo
+            echo "- Repository: \`${GITHUB_REPOSITORY}\`"
+            echo "- Commit: \`${GITHUB_SHA}\`"
+            echo "- Run ID: \`${GITHUB_RUN_ID}\`"
+            echo "- Python client: exact green"
+            echo "- Node client: exact green"
+            echo "- Shell client: exact green"
+            echo "- Mutation performed: false"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload exact evidence artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: void-public-agent-canary-v1-${{ github.run_id }}
+          path: canary/evidence/void-public-agent-canary-evidence-v1.json
+          if-no-files-found: error
+          retention-days: 30

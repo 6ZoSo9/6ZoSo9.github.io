@@ -20,6 +20,18 @@
       "repository": "6ZoSo9/6ZoSo9.github.io",
       "status": "created_after_mesh_commit"
     },
+    "independent_public_agent_canary": {
+      "evidenceArtifact": true,
+      "permissions": {
+        "contents": "read"
+      },
+      "repositoryWrites": false,
+      "runner": "github-hosted-ubuntu-24.04",
+      "scheduleUtc": "37 */6 * * *",
+      "secrets": false,
+      "status": "workflow_published",
+      "workflow": "https://github.com/6ZoSo9/6ZoSo9.github.io/actions/workflows/void-public-agent-canary-v1.yml"
+    },
     "jsdelivr": {
       "repository": "6ZoSo9/6ZoSo9.github.io",
       "status": "live_for_public_repository"

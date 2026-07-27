@@ -28,6 +28,11 @@
     "machine_readable": "https://6zoso9.github.io/public-node/agents/first-contact-v1.json",
     "machine_readable_sha256": "73b2936cdb03c2028746db27159cbaa6e556e264652d8442a91fafa988dab45f"
   },
+  "independent_public_agent_canary": {
+    "badge": "https://github.com/6ZoSo9/6ZoSo9.github.io/actions/workflows/void-public-agent-canary-v1.yml/badge.svg?branch=main",
+    "spec": "https://6zoso9.github.io/canary/spec-v1.json",
+    "workflow": "https://github.com/6ZoSo9/6ZoSo9.github.io/actions/workflows/void-public-agent-canary-v1.yml"
+  },
   "integration": {
     "atom_feed": "https://6zoso9.github.io/feed.xml",
     "discovery_index": {
