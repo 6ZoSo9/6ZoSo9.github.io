@@ -32,3 +32,10 @@ This surface is static discovery only. It does not expose wallets, ledgers, tran
 - [Generic client configuration](https://6zoso9.github.io/mcp/client-config-v1.json)
 - Streamable HTTP endpoint: https://hereby-metals-plumbing-preserve.trycloudflare.com/mcp
 - Experimental ephemeral URL; stable discovery remains https://6zoso9.github.io.
+## Remote A2A agent
+
+- [A2A catalogue](https://6zoso9.github.io/a2a/agent-v1.json)
+- [A2A client example](https://6zoso9.github.io/a2a/client-example-v1.json)
+- Agent Card: https://dozen-casting-expired-approximately.trycloudflare.com/.well-known/agent-card.json
+- JSON-RPC endpoint: https://dozen-casting-expired-approximately.trycloudflare.com/a2a
+- Deterministic, read-only, direct message responses; no task persistence, streaming, or push notifications.

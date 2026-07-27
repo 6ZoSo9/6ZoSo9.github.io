@@ -1,0 +1,42 @@
+{
+  "activationReceiptSha256": "825e1ee53f8d2d0c048d49c995d068bb93feba2832fe307e859b2c4617f86336",
+  "agentCard": "https://dozen-casting-expired-approximately.trycloudflare.com/.well-known/agent-card.json",
+  "agentVersion": "1.0.0",
+  "boundary": {
+    "deterministic": true,
+    "ledger": false,
+    "operatorMutation": false,
+    "payments": false,
+    "readOnly": true,
+    "tasksPersisted": false,
+    "transactions": false,
+    "validatorMutation": false,
+    "wallet": false
+  },
+  "capabilities": {
+    "extendedAgentCard": false,
+    "pushNotifications": false,
+    "streaming": false
+  },
+  "endpoint": "https://dozen-casting-expired-approximately.trycloudflare.com/a2a",
+  "protocolBinding": "JSONRPC",
+  "protocolVersion": "1.0",
+  "publicBase": "https://dozen-casting-expired-approximately.trycloudflare.com",
+  "schema": "void-a2a-readonly-agent-catalogue-v1",
+  "skills": [
+    {
+      "id": "read-void-public-network",
+      "name": "Read VOID Public Network Context"
+    }
+  ],
+  "stableDiscovery": "https://6zoso9.github.io",
+  "status": "live_at_verification",
+  "transport": {
+    "concurrentRequestLimit": 200,
+    "ephemeralUrl": true,
+    "productionSla": false,
+    "provider": "cloudflare-quick-tunnel",
+    "restartChangesUrl": true,
+    "serverSentEvents": false
+  }
+}

@@ -66,3 +66,12 @@ Canonical mirror commit: `04ae182e65445484239411e9ad4062228c5cb58e`
 - Transport: Streamable HTTP with plain JSON responses
 - Boundary: stateless and read-only
 - Official Registry: withheld until the endpoint is stable
+## Remote A2A agent
+
+- Agent Card: `https://dozen-casting-expired-approximately.trycloudflare.com/.well-known/agent-card.json`
+- Endpoint: `https://dozen-casting-expired-approximately.trycloudflare.com/a2a`
+- Stable catalogue: `https://6zoso9.github.io/a2a/agent-v1.json`
+- Protocol: A2A 1.0 JSON-RPC
+- Boundary: deterministic and read-only
+- Tasks: direct message responses; no persistent task store
+- Streaming and push notifications: not advertised or supported

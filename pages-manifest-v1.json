@@ -46,6 +46,14 @@
   "marker": "VOID_AI_AGENT_FIRST_CONTACT_FREE_DISCOVERY_MESH_V1",
   "mesh_version": "1",
   "public_base": "https://6zoso9.github.io",
+  "remote_a2a": {
+    "agentCard": "https://dozen-casting-expired-approximately.trycloudflare.com/.well-known/agent-card.json",
+    "catalogue": "/a2a/agent-v1.json",
+    "clientExample": "/a2a/client-example-v1.json",
+    "endpoint": "https://dozen-casting-expired-approximately.trycloudflare.com/a2a",
+    "protocolVersion": "1.0",
+    "readiness": "/a2a/readiness-v1.json"
+  },
   "remote_mcp": {
     "clientConfig": "/mcp/client-config-v1.json",
     "endpoint": "https://hereby-metals-plumbing-preserve.trycloudflare.com/mcp",

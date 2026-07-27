@@ -1,0 +1,25 @@
+{
+  "agentCard": "https://dozen-casting-expired-approximately.trycloudflare.com/.well-known/agent-card.json",
+  "endpoint": "https://dozen-casting-expired-approximately.trycloudflare.com/a2a",
+  "operations": {
+    "CancelTask": "task_not_found",
+    "GetExtendedAgentCard": "unsupported_capability_false",
+    "GetTask": "task_not_found",
+    "ListTasks": "empty_task_list",
+    "SendMessage": "direct_message_response",
+    "SendStreamingMessage": "unsupported_capability_false",
+    "SubscribeToTask": "unsupported_capability_false",
+    "pushNotifications": "unsupported_capability_false"
+  },
+  "protocolVersion": "1.0",
+  "schema": "void-a2a-readonly-agent-readiness-v1",
+  "status": "live_exact_green",
+  "verified": {
+    "agentCard": true,
+    "contentModes": true,
+    "mutationMethodsAbsent": true,
+    "originValidation": true,
+    "readOnlyRouting": true,
+    "versionNegotiation": true
+  }
+}

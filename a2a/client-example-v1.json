@@ -1,0 +1,31 @@
+{
+  "agentCardUrl": "https://dozen-casting-expired-approximately.trycloudflare.com/.well-known/agent-card.json",
+  "request": {
+    "body": {
+      "id": 1,
+      "jsonrpc": "2.0",
+      "method": "SendMessage",
+      "params": {
+        "message": {
+          "contextId": "example-context",
+          "messageId": "example-message-1",
+          "parts": [
+            {
+              "mediaType": "text/plain",
+              "text": "What is the current VOID chain head?"
+            }
+          ],
+          "role": "ROLE_USER"
+        }
+      }
+    },
+    "headers": {
+      "A2A-Version": "1.0",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "method": "POST",
+    "url": "https://dozen-casting-expired-approximately.trycloudflare.com/a2a"
+  },
+  "schema": "void-a2a-jsonrpc-client-example-v1"
+}

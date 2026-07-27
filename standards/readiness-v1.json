@@ -34,6 +34,16 @@
       "status": "live",
       "url": "https://6zoso9.github.io/openapi.json"
     },
+    "remote_a2a_agent": {
+      "agentCard": "https://dozen-casting-expired-approximately.trycloudflare.com/.well-known/agent-card.json",
+      "catalogue": "https://6zoso9.github.io/a2a/agent-v1.json",
+      "endpoint": "https://dozen-casting-expired-approximately.trycloudflare.com/a2a",
+      "ephemeral": true,
+      "protocolVersion": "1.0",
+      "pushNotifications": false,
+      "status": "live_at_verification",
+      "streaming": false
+    },
     "remote_mcp_server": {
       "endpoint": "https://hereby-metals-plumbing-preserve.trycloudflare.com/mcp",
       "ephemeral": true,
@@ -57,11 +67,6 @@
   "schema": "void-ai-agent-integration-standards-readiness-v1",
   "updated_at_utc": "2026-07-26T22:19:36Z",
   "withheld_until_conformant": {
-    "a2a_agent_card": {
-      "reason": "An A2A Agent Card must point to a functioning A2A service endpoint. The current mirror is static discovery only and will not falsely advertise task execution.",
-      "standard_path": "/.well-known/agent-card.json",
-      "status": "withheld"
-    },
     "mcp_registry": {
       "preparedServerJson": "https://6zoso9.github.io/mcp/server.json",
       "reason": "The current Quick Tunnel URL is ephemeral. Publish to the Official MCP Registry after a stable public endpoint is available.",

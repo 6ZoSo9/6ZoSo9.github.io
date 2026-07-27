@@ -73,6 +73,15 @@
     "well_known": "https://6zoso9.github.io/.well-known/void-public-node.json"
   },
   "public_base": "https://6zoso9.github.io",
+  "remote_a2a_agent": {
+    "agentCard": "https://dozen-casting-expired-approximately.trycloudflare.com/.well-known/agent-card.json",
+    "catalogue": "https://6zoso9.github.io/a2a/agent-v1.json",
+    "clientExample": "https://6zoso9.github.io/a2a/client-example-v1.json",
+    "endpoint": "https://dozen-casting-expired-approximately.trycloudflare.com/a2a",
+    "ephemeral": true,
+    "protocolVersion": "1.0",
+    "status": "live_at_verification"
+  },
   "remote_mcp": {
     "clientConfig": "https://6zoso9.github.io/mcp/client-config-v1.json",
     "endpoint": "https://hereby-metals-plumbing-preserve.trycloudflare.com/mcp",
