@@ -1,5 +1,6 @@
 {
   "algorithm": "sha256",
+  "contentCommit": "72f9920f714d28b3755337a23ea0838b42c62d41",
   "files": {
     "clients/README.md": {
       "bytes": 2426,
@@ -14,8 +15,8 @@
       "sha256": "0403653d1110e65ddaaae34a2166ca9e87dd32a832cfbc567bada50c0ab21f16"
     },
     "clients/manifest-v1.json": {
-      "bytes": 2014,
-      "sha256": "2b104c4ac9253447294a47740168f249f1fdba395178e63b2cd040528bfa0cbe"
+      "bytes": 3149,
+      "sha256": "06914288228bc43024471a357318978ab490f73cba4e891089370adf512d4bcd"
     },
     "clients/void-agent-client.mjs": {
       "bytes": 13805,
@@ -32,5 +33,6 @@
   },
   "marker": "VOID_AGENT_CLIENT_KIT_V1_INTEGRITY",
   "schema": "void-agent-client-kit-integrity-v1",
-  "tag": "void-agent-client-kit-v1"
+  "selectedImmutableBase": "https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@72f9920f714d28b3755337a23ea0838b42c62d41/clients",
+  "selectedImmutableProvider": "jsdelivr-github-full-commit"
 }

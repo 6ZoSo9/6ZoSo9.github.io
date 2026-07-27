@@ -47,11 +47,15 @@
   "mesh_version": "1",
   "public_base": "https://6zoso9.github.io",
   "public_client_kit": {
+    "contentCommit": "72f9920f714d28b3755337a23ea0838b42c62d41",
     "integrity": "/clients/integrity-v1.json",
     "manifest": "/clients/manifest-v1.json",
     "node": "/clients/void-agent-client.mjs",
     "python": "/clients/void-agent-client.py",
     "readme": "/clients/README.md",
+    "release": "https://github.com/6ZoSo9/6ZoSo9.github.io/releases/tag/void-agent-client-kit-v1",
+    "selectedImmutableBase": "https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@72f9920f714d28b3755337a23ea0838b42c62d41/clients",
+    "selectedImmutableProvider": "jsdelivr-github-full-commit",
     "shell": "/clients/void-agent-client.sh",
     "tag": "void-agent-client-kit-v1"
   },

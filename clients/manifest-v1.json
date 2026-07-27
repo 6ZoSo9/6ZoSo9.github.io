@@ -13,28 +13,39 @@
   "clients": {
     "node": {
       "cdn": "https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@void-agent-client-kit-v1/clients/void-agent-client.mjs",
+      "immutable": "https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@72f9920f714d28b3755337a23ea0838b42c62d41/clients/void-agent-client.mjs",
       "pages": "https://6zoso9.github.io/clients/void-agent-client.mjs",
       "path": "clients/void-agent-client.mjs",
       "runtime": "Node.js 18+ built-ins"
     },
     "python": {
       "cdn": "https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@void-agent-client-kit-v1/clients/void-agent-client.py",
+      "immutable": "https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@72f9920f714d28b3755337a23ea0838b42c62d41/clients/void-agent-client.py",
       "pages": "https://6zoso9.github.io/clients/void-agent-client.py",
       "path": "clients/void-agent-client.py",
       "runtime": "Python 3 standard library"
     },
     "shell": {
       "cdn": "https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@void-agent-client-kit-v1/clients/void-agent-client.sh",
+      "immutable": "https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@72f9920f714d28b3755337a23ea0838b42c62d41/clients/void-agent-client.sh",
       "pages": "https://6zoso9.github.io/clients/void-agent-client.sh",
       "path": "clients/void-agent-client.sh",
       "runtime": "Bash, curl, Python 3"
     }
   },
   "distribution": {
+    "contentCommit": "72f9920f714d28b3755337a23ea0838b42c62d41",
     "githubPages": "https://6zoso9.github.io/clients/",
+    "githubRelease": "https://github.com/6ZoSo9/6ZoSo9.github.io/releases/tag/void-agent-client-kit-v1",
     "githubReleaseTag": "void-agent-client-kit-v1",
-    "jsDelivrBase": "https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@void-agent-client-kit-v1/clients",
-    "jsDelivrTag": "void-agent-client-kit-v1"
+    "jsDelivrCommitBase": "https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@72f9920f714d28b3755337a23ea0838b42c62d41/clients",
+    "jsDelivrCommitExact": true,
+    "jsDelivrReleaseTagBase": "https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@void-agent-client-kit-v1/clients",
+    "jsDelivrReleaseTagExact": false,
+    "rawGitHubCommitBase": "https://raw.githubusercontent.com/6ZoSo9/6ZoSo9.github.io/72f9920f714d28b3755337a23ea0838b42c62d41/clients",
+    "rawGitHubCommitExact": true,
+    "selectedImmutableBase": "https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@72f9920f714d28b3755337a23ea0838b42c62d41/clients",
+    "selectedImmutableProvider": "jsdelivr-github-full-commit"
   },
   "dnsResilience": {
     "cloudflareDohFallback": true,

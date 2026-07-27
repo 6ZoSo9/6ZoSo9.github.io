@@ -62,3 +62,22 @@ bash void-agent-client.sh smoke
 These clients are read-only. They expose no wallet, ledger, transaction,
 payment, validator mutation, operator mutation, secret, or arbitrary proxy
 operation. The smoke command performs discovery and read canaries only.
+
+
+## Immutable distribution resolution
+
+The immutable client content commit is:
+
+`72f9920f714d28b3755337a23ea0838b42c62d41`
+
+Selected provider: `jsdelivr-github-full-commit`
+
+Selected immutable base: `https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@72f9920f714d28b3755337a23ea0838b42c62d41/clients`
+
+The clients are always resolved from stable GitHub Pages metadata at runtime. This immutable base is for downloading the client files themselves.
+
+- jsDelivr release-tag alias exact: `false`
+- jsDelivr full-commit path exact: `true`
+- raw GitHub full-commit path exact: `true`
+
+The GitHub Release tag remains `void-agent-client-kit-v1`.
