@@ -44,4 +44,9 @@
     <loc>https://6zoso9.github.io/standards/readiness-v1.json</loc>
     <lastmod>2026-07-26</lastmod>
   </url>
+  <url><loc>https://6zoso9.github.io/clients/README.md</loc></url>
+  <url><loc>https://6zoso9.github.io/clients/manifest-v1.json</loc></url>
+  <url><loc>https://6zoso9.github.io/clients/void-agent-client.py</loc></url>
+  <url><loc>https://6zoso9.github.io/clients/void-agent-client.mjs</loc></url>
+  <url><loc>https://6zoso9.github.io/clients/void-agent-client.sh</loc></url>
 </urlset>

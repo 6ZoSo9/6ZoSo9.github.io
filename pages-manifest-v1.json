@@ -46,6 +46,15 @@
   "marker": "VOID_AI_AGENT_FIRST_CONTACT_FREE_DISCOVERY_MESH_V1",
   "mesh_version": "1",
   "public_base": "https://6zoso9.github.io",
+  "public_client_kit": {
+    "integrity": "/clients/integrity-v1.json",
+    "manifest": "/clients/manifest-v1.json",
+    "node": "/clients/void-agent-client.mjs",
+    "python": "/clients/void-agent-client.py",
+    "readme": "/clients/README.md",
+    "shell": "/clients/void-agent-client.sh",
+    "tag": "void-agent-client-kit-v1"
+  },
   "remote_a2a": {
     "agentCard": "https://dozen-casting-expired-approximately.trycloudflare.com/.well-known/agent-card.json",
     "catalogue": "/a2a/agent-v1.json",

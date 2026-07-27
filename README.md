@@ -75,3 +75,12 @@ Canonical mirror commit: `04ae182e65445484239411e9ad4062228c5cb58e`
 - Boundary: deterministic and read-only
 - Tasks: direct message responses; no persistent task store
 - Streaming and push notifications: not advertised or supported
+
+## Public agent client kit
+
+- Python 3 standard-library client
+- Node.js 18+ zero-package ESM client
+- Paste-safe Bash client
+- Stable endpoint discovery through GitHub Pages
+- Immutable CDN distribution through jsDelivr tag `void-agent-client-kit-v1`
+- Documentation: `https://6zoso9.github.io/clients/README.md`

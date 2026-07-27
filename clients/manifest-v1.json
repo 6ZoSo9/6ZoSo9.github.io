@@ -1,0 +1,54 @@
+{
+  "boundary": {
+    "arbitraryProxy": false,
+    "ledger": false,
+    "operatorMutation": false,
+    "payments": false,
+    "readOnly": true,
+    "secrets": false,
+    "transactions": false,
+    "validatorMutation": false,
+    "wallet": false
+  },
+  "clients": {
+    "node": {
+      "cdn": "https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@void-agent-client-kit-v1/clients/void-agent-client.mjs",
+      "pages": "https://6zoso9.github.io/clients/void-agent-client.mjs",
+      "path": "clients/void-agent-client.mjs",
+      "runtime": "Node.js 18+ built-ins"
+    },
+    "python": {
+      "cdn": "https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@void-agent-client-kit-v1/clients/void-agent-client.py",
+      "pages": "https://6zoso9.github.io/clients/void-agent-client.py",
+      "path": "clients/void-agent-client.py",
+      "runtime": "Python 3 standard library"
+    },
+    "shell": {
+      "cdn": "https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@void-agent-client-kit-v1/clients/void-agent-client.sh",
+      "pages": "https://6zoso9.github.io/clients/void-agent-client.sh",
+      "path": "clients/void-agent-client.sh",
+      "runtime": "Bash, curl, Python 3"
+    }
+  },
+  "distribution": {
+    "githubPages": "https://6zoso9.github.io/clients/",
+    "githubReleaseTag": "void-agent-client-kit-v1",
+    "jsDelivrBase": "https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@void-agent-client-kit-v1/clients",
+    "jsDelivrTag": "void-agent-client-kit-v1"
+  },
+  "dnsResilience": {
+    "cloudflareDohFallback": true,
+    "normalDnsFirst": true,
+    "tlsHostnameVerificationPreserved": true
+  },
+  "marker": "VOID_AGENT_CLIENT_KIT_V1",
+  "schema": "void-agent-client-kit-manifest-v1",
+  "stableDiscovery": {
+    "a2a": "https://6zoso9.github.io/a2a/agent-v1.json",
+    "discovery": "https://6zoso9.github.io/discovery/index-v1.json",
+    "mcp": "https://6zoso9.github.io/mcp/remote-server-v1.json",
+    "root": "https://6zoso9.github.io"
+  },
+  "status": "public_readonly_clients",
+  "version": "1.0.0"
+}

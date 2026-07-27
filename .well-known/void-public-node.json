@@ -42,6 +42,13 @@
     "standards_readiness": "https://6zoso9.github.io/standards/readiness-v1.json"
   },
   "marker": "VOID_AI_AGENT_FIRST_CONTACT_FREE_DISCOVERY_MESH_V1",
+  "public_client_kit": {
+    "manifest": "https://6zoso9.github.io/clients/manifest-v1.json",
+    "node": "https://6zoso9.github.io/clients/void-agent-client.mjs",
+    "python": "https://6zoso9.github.io/clients/void-agent-client.py",
+    "releaseTag": "void-agent-client-kit-v1",
+    "shell": "https://6zoso9.github.io/clients/void-agent-client.sh"
+  },
   "remote_a2a_agent": {
     "agentCard": "https://dozen-casting-expired-approximately.trycloudflare.com/.well-known/agent-card.json",
     "catalogue": "https://6zoso9.github.io/a2a/agent-v1.json",

@@ -1,0 +1,13 @@
+{
+  "currentEndpointAtPublication": "https://hereby-metals-plumbing-preserve.trycloudflare.com/mcp",
+  "mcpServers": {
+    "void-network-readonly": {
+      "protocolVersion": "2025-11-25",
+      "type": "streamable-http",
+      "url": "https://hereby-metals-plumbing-preserve.trycloudflare.com/mcp"
+    }
+  },
+  "note": "Resolve stableMetadata before connecting because the current Quick Tunnel endpoint is ephemeral.",
+  "schema": "void-mcp-client-config-v1",
+  "stableMetadata": "https://6zoso9.github.io/mcp/remote-server-v1.json"
+}

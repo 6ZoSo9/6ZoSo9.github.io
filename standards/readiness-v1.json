@@ -34,6 +34,20 @@
       "status": "live",
       "url": "https://6zoso9.github.io/openapi.json"
     },
+    "public_agent_client_kit": {
+      "distribution": [
+        "github-pages",
+        "github-release",
+        "jsdelivr-github"
+      ],
+      "manifest": "https://6zoso9.github.io/clients/manifest-v1.json",
+      "readOnlyBoundary": true,
+      "stableEndpointResolution": true,
+      "status": "published",
+      "version": "1.0.0",
+      "zeroPackageNode": true,
+      "zeroPackagePython": true
+    },
     "remote_a2a_agent": {
       "agentCard": "https://dozen-casting-expired-approximately.trycloudflare.com/.well-known/agent-card.json",
       "catalogue": "https://6zoso9.github.io/a2a/agent-v1.json",

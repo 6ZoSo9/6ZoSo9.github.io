@@ -39,3 +39,12 @@ This surface is static discovery only. It does not expose wallets, ledgers, tran
 - Agent Card: https://dozen-casting-expired-approximately.trycloudflare.com/.well-known/agent-card.json
 - JSON-RPC endpoint: https://dozen-casting-expired-approximately.trycloudflare.com/a2a
 - Deterministic, read-only, direct message responses; no task persistence, streaming, or push notifications.
+
+## Public agent client kit
+
+- [Client documentation](https://6zoso9.github.io/clients/README.md)
+- [Client manifest](https://6zoso9.github.io/clients/manifest-v1.json)
+- [Python client](https://6zoso9.github.io/clients/void-agent-client.py)
+- [Node ESM client](https://6zoso9.github.io/clients/void-agent-client.mjs)
+- [Shell client](https://6zoso9.github.io/clients/void-agent-client.sh)
+- Immutable jsDelivr tag: `void-agent-client-kit-v1`

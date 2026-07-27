@@ -1,0 +1,36 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "clients/README.md": {
+      "bytes": 2426,
+      "sha256": "8e431af7e1b9a00b09db06559aff6867a96658d9cec880254d6b84c75e101a6e"
+    },
+    "clients/examples/a2a-send-message-v1.json": {
+      "bytes": 1142,
+      "sha256": "e4433445df6deded374df5bc8dae1d443f43eb56cfae104d4db3d07fba46ca7e"
+    },
+    "clients/examples/mcp-client-config-v1.json": {
+      "bytes": 536,
+      "sha256": "0403653d1110e65ddaaae34a2166ca9e87dd32a832cfbc567bada50c0ab21f16"
+    },
+    "clients/manifest-v1.json": {
+      "bytes": 2014,
+      "sha256": "2b104c4ac9253447294a47740168f249f1fdba395178e63b2cd040528bfa0cbe"
+    },
+    "clients/void-agent-client.mjs": {
+      "bytes": 13805,
+      "sha256": "1c3542762edc040aaff6400ffd002b73109d5734cf8bb2270962a2614f739e35"
+    },
+    "clients/void-agent-client.py": {
+      "bytes": 19461,
+      "sha256": "2853f0520eb87805c20bcf8b12ee45d27c6929d946ca4dbae9a0dd6acb42a5f0"
+    },
+    "clients/void-agent-client.sh": {
+      "bytes": 3974,
+      "sha256": "d0322f8a63530473a81d252ad02c42ea9651795dbf057da629733bd85670b3fe"
+    }
+  },
+  "marker": "VOID_AGENT_CLIENT_KIT_V1_INTEGRITY",
+  "schema": "void-agent-client-kit-integrity-v1",
+  "tag": "void-agent-client-kit-v1"
+}

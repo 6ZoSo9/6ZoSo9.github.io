@@ -73,6 +73,21 @@
     "well_known": "https://6zoso9.github.io/.well-known/void-public-node.json"
   },
   "public_base": "https://6zoso9.github.io",
+  "public_client_kit": {
+    "currentA2aAgentCardAtPublication": "https://dozen-casting-expired-approximately.trycloudflare.com/.well-known/agent-card.json",
+    "currentA2aEndpointAtPublication": "https://dozen-casting-expired-approximately.trycloudflare.com/a2a",
+    "currentMcpEndpointAtPublication": "https://hereby-metals-plumbing-preserve.trycloudflare.com/mcp",
+    "jsDelivrBase": "https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@void-agent-client-kit-v1/clients",
+    "manifest": "https://6zoso9.github.io/clients/manifest-v1.json",
+    "node": "https://6zoso9.github.io/clients/void-agent-client.mjs",
+    "python": "https://6zoso9.github.io/clients/void-agent-client.py",
+    "readme": "https://6zoso9.github.io/clients/README.md",
+    "releaseTag": "void-agent-client-kit-v1",
+    "shell": "https://6zoso9.github.io/clients/void-agent-client.sh",
+    "stableEndpointResolution": true,
+    "status": "published",
+    "version": "1.0.0"
+  },
   "remote_a2a_agent": {
     "agentCard": "https://dozen-casting-expired-approximately.trycloudflare.com/.well-known/agent-card.json",
     "catalogue": "https://6zoso9.github.io/a2a/agent-v1.json",
