@@ -50,7 +50,10 @@ def command_version(args: list[str]) -> str:
     return process.stdout.strip().splitlines()[0]
 
 
-def run_client(label: str, command: list[str]) -> dict[str, Any]:
+def run_json_command(
+    label: str,
+    command: list[str],
+) -> dict[str, Any]:
     process = subprocess.run(
         command,
         text=True,
@@ -59,24 +62,108 @@ def run_client(label: str, command: list[str]) -> dict[str, Any]:
         check=False,
         timeout=120,
     )
+
     if process.returncode != 0:
         raise CanaryError(
-            f"{label} client failed: {(process.stderr or process.stdout).strip()}"
+            f"{label} failed: "
+            f"{(process.stderr or process.stdout).strip()}"
         )
+
     try:
         value = json.loads(process.stdout)
     except Exception as exc:
-        raise CanaryError(f"{label} client returned invalid JSON: {exc}") from exc
+        raise CanaryError(
+            f"{label} returned invalid JSON: {exc}"
+        ) from exc
+
     if not isinstance(value, dict):
-        raise CanaryError(f"{label} client JSON root differs")
-    if value.get("status") != "exact_green":
-        raise CanaryError(f"{label} client status differs")
-    if value.get("mutationPerformed") is not False:
-        raise CanaryError(f"{label} mutation boundary differs")
-    for key in ("mcpEndpoint", "a2aEndpoint", "a2aAgentCard"):
+        raise CanaryError(
+            f"{label} JSON root differs"
+        )
+
+    return value
+
+
+def validate_https_endpoints(
+    label: str,
+    value: dict[str, Any],
+) -> None:
+    for key in (
+        "mcpEndpoint",
+        "a2aEndpoint",
+        "a2aAgentCard",
+    ):
         endpoint = value.get(key)
-        if not isinstance(endpoint, str) or not endpoint.startswith("https://"):
-            raise CanaryError(f"{label} {key} is not HTTPS")
+
+        if (
+            not isinstance(endpoint, str)
+            or not endpoint.startswith("https://")
+        ):
+            raise CanaryError(
+                f"{label} {key} is not HTTPS"
+            )
+
+
+def run_client(
+    label: str,
+    command: list[str],
+    *,
+    require_endpoints: bool,
+) -> dict[str, Any]:
+    value = run_json_command(
+        f"{label} client",
+        command,
+    )
+
+    if value.get("status") != "exact_green":
+        raise CanaryError(
+            f"{label} client status differs"
+        )
+
+    if value.get("mutationPerformed") is not False:
+        raise CanaryError(
+            f"{label} mutation boundary differs"
+        )
+
+    if require_endpoints:
+        validate_https_endpoints(
+            label,
+            value,
+        )
+
+    return value
+
+
+def run_shell_discovery() -> dict[str, Any]:
+    value = run_json_command(
+        "shell stable discovery",
+        [
+            "bash",
+            "clients/void-agent-client.sh",
+            "discover",
+        ],
+    )
+
+    validate_https_endpoints(
+        "shell discovery",
+        value,
+    )
+
+    for key in (
+        "discoveryUrl",
+        "mcpMetadataUrl",
+        "a2aCatalogueUrl",
+    ):
+        url = value.get(key)
+
+        if (
+            not isinstance(url, str)
+            or not url.startswith("https://")
+        ):
+            raise CanaryError(
+                f"shell discovery {key} is not HTTPS"
+            )
+
     return value
 
 
@@ -85,9 +172,41 @@ def main() -> int:
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
 
+    python_smoke = run_client(
+        "python",
+        CLIENTS["python"],
+        require_endpoints=True,
+    )
+    node_smoke = run_client(
+        "node",
+        CLIENTS["node"],
+        require_endpoints=True,
+    )
+    shell_smoke = run_client(
+        "shell",
+        CLIENTS["shell"],
+        require_endpoints=False,
+    )
+    shell_discovery = run_shell_discovery()
+
+    shell_smoke = {
+        **shell_smoke,
+        "mcpEndpoint":
+            shell_discovery["mcpEndpoint"],
+        "a2aEndpoint":
+            shell_discovery["a2aEndpoint"],
+        "a2aAgentCard":
+            shell_discovery["a2aAgentCard"],
+        "endpointSource":
+            "clients/void-agent-client.sh discover",
+        "stableDiscovery":
+            shell_discovery,
+    }
+
     smokes = {
-        label: run_client(label, command)
-        for label, command in CLIENTS.items()
+        "python": python_smoke,
+        "node": node_smoke,
+        "shell": shell_smoke,
     }
 
     endpoint_sets = {
@@ -148,6 +267,7 @@ def main() -> int:
             "pythonExactGreen": True,
             "nodeExactGreen": True,
             "shellExactGreen": True,
+            "shellDiscoveryExact": True,
             "endpointAgreementExact": True,
             "publicHttpsOnly": True,
             "mutationPerformed": False,
