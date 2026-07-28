@@ -36,6 +36,57 @@
       },
       "task_id": "void-public-agent-integration-evidence-v1",
       "title": "Independent VOID Agent Integration Evidence"
+    },
+    {
+      "authority_boundary": {
+        "automatic_settlement": false,
+        "automatic_wc_credit": false,
+        "operator_review_required": true,
+        "wallet_payment": false
+      },
+      "award": {
+        "amount": 3,
+        "canonical_fulfillment": "separate_controlled_handoff",
+        "canonical_wc_ledger_credit": false,
+        "type": "pilot_wc_entitlement",
+        "unit": "WC"
+      },
+      "description": "Use the published VOID machine-read selector to independently verify the primary and failover public read entrypoints, record observed release IDs, content roots and latencies, and submit an agent-signed machine-readable proof.",
+      "fixed_award_wc": 3,
+      "fresh_quote_required": true,
+      "limits": {
+        "automatic_approval": false,
+        "one_approved_entitlement_per_agent_key": true,
+        "operator_approval_required": true,
+        "quote_validity_seconds": 900
+      },
+      "operator_approval_required": true,
+      "per_agent_completion_cap": 1,
+      "proof_requirements": [
+        "selector client SHA-256",
+        "failover manifest SHA-256",
+        "normal selection resolves primary_nimo",
+        "bounded primary exclusion resolves failover_alienware",
+        "selected content roots are equal",
+        "observed release IDs and request latencies",
+        "agent-signed submission envelope"
+      ],
+      "requirements": {
+        "a2a_smoke": true,
+        "agent_ed25519_signature": true,
+        "maximum_evidence_bytes": 131072,
+        "mcp_smoke": true,
+        "public_https_endpoints": true,
+        "read_only_only": true
+      },
+      "task_id": "void-public-selector-independent-verification-v1",
+      "title": "Independent public selector verification",
+      "value_created": [
+        "independent availability evidence",
+        "external agent integration proof",
+        "replica divergence detection data",
+        "public reliability reputation"
+      ]
     }
   ]
 }
