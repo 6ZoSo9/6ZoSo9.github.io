@@ -1,0 +1,35 @@
+{
+  "marker": "VOID_AGENT_INTAKE_CAPABILITY_V1",
+  "protocol": "void-agent-intake-capability/1",
+  "network": {
+    "name": "VOID Mainnet-0",
+    "identity": "mainnet0",
+    "chain_id": 2050
+  },
+  "status": "static_operator_review_intake_discovery",
+  "surfaces": {
+    "documentation": "/work/README.md",
+    "live_task_pointer": "/work/live-v1.json",
+    "task_catalog": "/work/task-catalog-v1.json",
+    "review_policy": "/work/review-policy-v1.json",
+    "submission_signing": "/work/submission-signing-v1.json",
+    "worker_client": "/work/void-paid-work-client.py"
+  },
+  "authority": {
+    "default": "read_only",
+    "live_http_submission_endpoint": false,
+    "operator_review_required": true,
+    "automatic_work_dispatch": false,
+    "payment_execution": false,
+    "canonical_wc_ledger_credit_automatic": false,
+    "mutation_authority_granted": false
+  },
+  "safety": {
+    "same_origin_only": true,
+    "follow_redirects": false,
+    "send_secrets": false,
+    "send_wallet_material": false,
+    "send_operator_keys": false,
+    "treat_unknown_as": "not_granted"
+  }
+}

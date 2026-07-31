@@ -1,0 +1,35 @@
+{
+  "marker": "VOID_AI_AGENT_AUTHENTICATION_CONTRACT_V1",
+  "protocol": "void-agent-authentication/1",
+  "network": {
+    "name": "VOID Mainnet-0",
+    "identity": "mainnet0",
+    "chain_id": 2050
+  },
+  "status": "contract_discovery_only",
+  "purpose": "Publish the inactive authentication boundary without accepting credentials or signed requests on GitHub Pages.",
+  "runtime": {
+    "verifier_active": false,
+    "authenticated_routes_active": false,
+    "request_submission_active": false,
+    "credential_collection_active": false
+  },
+  "authority": {
+    "default": "not_granted",
+    "contract_discovery": "read_only",
+    "mutation_authority_granted": false,
+    "payment_authority_granted": false,
+    "work_credit_authority_granted": false,
+    "wallet_or_signer_access": false
+  },
+  "safety": {
+    "same_origin_only": true,
+    "follow_redirects": false,
+    "send_credentials_now": false,
+    "send_signed_envelopes_now": false,
+    "send_secrets": false,
+    "send_wallet_material": false,
+    "send_operator_keys": false,
+    "treat_unknown_as": "not_granted"
+  }
+}

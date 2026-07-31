@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <title>VOID Mainnet-0 DataNet discovery</title>
+  <meta name="description" content="Free, read-only discovery metadata and DataNet evidence for VOID Mainnet-0.">
+  <link rel="canonical" href="https://6zoso9.github.io/discovery/">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "VOID Mainnet-0 public discovery and DataNet evidence",
+  "description": "Machine-readable, read-only discovery metadata and verifiable public evidence for VOID Mainnet-0, a decentralized data and useful-work network.",
+  "url": "https://6zoso9.github.io/discovery/",
+  "sameAs": "https://6zoso9.github.io/public-node/",
+  "creator": {
+    "@type": "Organization",
+    "name": "VOID Network",
+    "url": "https://6zoso9.github.io/"
+  },
+  "isAccessibleForFree": true,
+  "license": "https://github.com/6ZoSo9/void-node/blob/main/LICENSE",
+  "dateModified": "2026-07-31",
+  "keywords": [
+    "VOID Network",
+    "DataNet",
+    "AI agents",
+    "decentralized data",
+    "verifiable useful work"
+  ],
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://6zoso9.github.io/.well-known/void-public-node.json"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://6zoso9.github.io/.well-known/void-agent-discovery.json"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://6zoso9.github.io/discovery/index-v1.json"
+    }
+  ]
+}
+  </script>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #08080c;
+      color: #f0f0f5;
+      font: 16px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    main {
+      width: min(880px, calc(100% - 36px));
+      border: 1px solid #44445a;
+      padding: 28px;
+      background: #101019;
+    }
+    h1 { font-size: clamp(2rem, 7vw, 4.5rem); line-height: 1; margin: 0 0 20px; }
+    a { color: #b7c8ff; overflow-wrap: anywhere; }
+    li { margin: 10px 0; }
+    .boundary { margin-top: 28px; color: #b5b5c5; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>VOID DataNet discovery</h1>
+  <p>Free, machine-readable discovery metadata and public evidence for VOID Mainnet-0.</p>
+  <ul>
+    <li><a href="/public-node/">Public-node discovery</a></li>
+    <li><a href="/.well-known/void-agent-discovery.json">AI-agent discovery JSON</a></li>
+    <li><a href="/discovery/index-v1.json">Existing discovery index</a></li>
+    <li><a href="/discovery/void-datanet-dataset-v1.jsonld">Standalone Dataset JSON-LD</a></li>
+    <li><a href="/sitemap.xml">Sitemap</a></li>
+  </ul>
+  <p class="boundary">This page is informational and static. It grants no wallet, signer, payment, Work Credit, validator, operator, ledger, or runtime mutation authority.</p>
+</main>
+</body>
+</html>

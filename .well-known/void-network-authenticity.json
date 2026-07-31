@@ -1,0 +1,96 @@
+{
+  "$schema": "./void-network-authenticity.schema.json",
+  "marker": "VOID_OFFICIAL_NETWORK_AUTHENTICITY_WELL_KNOWN_V1",
+  "protocol": "void-network-authenticity/1",
+  "status": "public_verification_available",
+  "network": {
+    "name": "VOID Mainnet-0",
+    "chain_id": 2050,
+    "legacy_genesis_name": "VOID-DEV",
+    "genesis_sha256": "22f42ef6cfa8e4ebfbc5ea98cdc536ec04c1bb4ddb15885b45b1ac02d0f122ab"
+  },
+  "admission": {
+    "status": "admitted_unactivated",
+    "checkpoint_tag": "ckpt-official-network-authenticity-root-public-admission-v2-1-post-merge-exact-green-20260725T144005Z",
+    "checkpoint_commit": "b8e93d1d0b84e917c16a2d5cdfc195fcb6e4e8af",
+    "source_public_return_zip_sha256": "8a920f18636c86fff4d6386073b2980092df3c6b95a180bfd8ce04f5e22969d9"
+  },
+  "verification": {
+    "algorithm": "Ed25519",
+    "signature_domain": "VOID_OFFICIAL_NETWORK_AUTHENTICITY_ROOT_V2",
+    "key_id": "ed25519:00e7609bf643b41c7cae625c3ae51f5d55c06ec1adba35e8eb80300c64e77a7c",
+    "payload_sha256": "3c3af2b3f7753e03e244c6f2520bcc0501b1b6f1eacea583a9a8e4fe32b8cdf3",
+    "public_key_pem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAM8LTUVXPCUS5N4xn5giOliBKdjPKrdh0xOvpS+g38uw=\n-----END PUBLIC KEY-----\n",
+    "signature_base64": "PqiyCMNkFdEJf4bhy+xDTTdE+mGD1cx6Qo00TiMhKS6qDv+jv56SiD0fmcaNJX6MyZErK0tvMCR6spQ/tuJOAg==",
+    "signed_payload": {
+      "algorithm": "ed25519",
+      "correction_checkpoint": {
+        "commit": "103e90d1ec061829223a306e3dc42b14f362bff1",
+        "tag": "ckpt-official-network-identity-mainnet0-correction-v2-1-post-merge-exact-green-20260724T215316Z"
+      },
+      "forensic_fingerprint_registry": {
+        "canonical_sha256": "5dce889d62623b88ad2c294d4c2c941e2ec9b81e9d46a7c89269264a241408ff",
+        "path": "config/source-forensic-fingerprint-registry-v1.json"
+      },
+      "identity_manifest_canonical_sha256": "a7b5023e38926ebe168036e187235719ecc9c9157c7fde4722bf38b6d36ba98c",
+      "identity_revision": "v2.1",
+      "identity_source_base_commit": "f0bb6b59448ee3a80ed78c3144cba8aae66b188a",
+      "marker": "VOID_OFFICIAL_NETWORK_AUTHENTICITY_ROOT_SIGNING_PAYLOAD_V2_1",
+      "official_network_identity": {
+        "chain_id": 2050,
+        "genesis_file": "genesis.json",
+        "genesis_network_name": "VOID-DEV",
+        "genesis_sha256": "22f42ef6cfa8e4ebfbc5ea98cdc536ec04c1bb4ddb15885b45b1ac02d0f122ab",
+        "network_name": "VOID Mainnet-0"
+      },
+      "policy_canonical_sha256": "cac6c5260524ea3da8ccd4540d05701d9b0c4b8d672f2c0f40b8c348be737b89",
+      "preparation_tool": {
+        "path": "scripts/prepare_official_network_authenticity_root_v2.mjs",
+        "sha256": "15d12e6180628080a96f1f33c2cedb3374a9d345943d076fcb863c18eed0332c"
+      },
+      "project": "VOID Network",
+      "repository": "6ZoSo9/void-node",
+      "schema": "void.official-network-authenticity-root-signing-payload.v2.1",
+      "sealed_history": {
+        "v1": {
+          "checkpoint_commit": "48c8413d6dc6f737532e71dc86d80dca91d1eec7",
+          "checkpoint_tag": "ckpt-official-network-authenticity-wall-v1-post-merge-exact-green-20260724T211149Z",
+          "merge_commit": "48c8413d6dc6f737532e71dc86d80dca91d1eec7"
+        },
+        "v2": {
+          "checkpoint_commit": "628772440e5ea8ab2a504909e40e445a1432c17c",
+          "checkpoint_tag": "ckpt-official-network-authenticity-root-v2-post-merge-exact-green-20260724T212919Z",
+          "merge_commit": "628772440e5ea8ab2a504909e40e445a1432c17c"
+        }
+      },
+      "signature_domain": "VOID_OFFICIAL_NETWORK_AUTHENTICITY_ROOT_V2",
+      "supersedes_payload_sha256": "b624f7bb029e5b3eca8b2e14050711d4f764d2d39bba56455f1f94697de2708e"
+    }
+  },
+  "supersession": {
+    "superseded_payload_sha256": "b624f7bb029e5b3eca8b2e14050711d4f764d2d39bba56455f1f94697de2708e",
+    "quarantined_key_id": "ed25519:0ccca842c156fc87af3279b15830fca826db1225d669b790e97705e2b402362b",
+    "quarantined_candidate_admitted": false
+  },
+  "authority": {
+    "verification_only": true,
+    "mutation_authority_granted": false,
+    "runtime_authority_granted": false,
+    "service_enablement_granted": false,
+    "wallet_authority_granted": false,
+    "validator_authority_granted": false,
+    "work_credit_authority_granted": false,
+    "buy_void_authority_granted": false,
+    "economic_authority_granted": false,
+    "third_party_network_control_granted": false
+  },
+  "safety": {
+    "private_key_present": false,
+    "credentials_required": false,
+    "send_secrets": false,
+    "send_wallet_material": false,
+    "send_operator_keys": false,
+    "follow_redirects": false,
+    "treat_unknown_as": "not_official"
+  }
+}

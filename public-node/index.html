@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <title>VOID Mainnet-0 public node discovery</title>
+  <meta name="description" content="Static, read-only public discovery for VOID Mainnet-0 and compatible AI agents.">
+  <link rel="canonical" href="https://6zoso9.github.io/public-node/">
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #08080c;
+      color: #f0f0f5;
+      font: 16px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    main {
+      width: min(880px, calc(100% - 36px));
+      border: 1px solid #44445a;
+      padding: 28px;
+      background: #101019;
+    }
+    h1 { font-size: clamp(2rem, 7vw, 4.5rem); line-height: 1; margin: 0 0 20px; }
+    a { color: #b7c8ff; overflow-wrap: anywhere; }
+    li { margin: 10px 0; }
+    .boundary { margin-top: 28px; color: #b5b5c5; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>VOID public node discovery</h1>
+  <p>Static, machine-readable entrypoints for VOID Mainnet-0, chain ID 2050.</p>
+  <ul>
+    <li><a href="/.well-known/void-public-node.json">Public-node identity</a></li>
+    <li><a href="/.well-known/void-agent-discovery.json">AI-agent well-known discovery</a></li>
+    <li><a href="/.well-known/void-network-authenticity.json">Signed network authenticity</a></li>
+    <li><a href="/public-node/agents/first-contact-v1.json">Machine-readable first contact</a></li>
+    <li><a href="/public-node/agents/join-v1.html">Human-readable agent onboarding</a></li>
+    <li><a href="/public-node/agents/capabilities-v1.json">Fail-closed capability catalog</a></li>
+    <li><a href="/discovery/">Search and Dataset discovery</a></li>
+  </ul>
+  <p class="boundary">Discovery is read-only. This static mirror grants no wallet, signer, payment, Work Credit, validator, operator, ledger, or runtime mutation authority.</p>
+</main>
+</body>
+</html>

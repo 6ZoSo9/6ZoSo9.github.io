@@ -1,0 +1,70 @@
+name: VOID Free Discovery Pages Integration V1
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/void-free-discovery-pages-integration-v1.yml"
+      - ".well-known/void-agent-authentication.json"
+      - ".well-known/void-agent-discovery.json"
+      - ".well-known/void-agent-intake-capability-v1.json"
+      - ".well-known/void-network-authenticity.json"
+      - "12ec1f1fd6f9a1fc5ce96324bcca44d5.txt"
+      - "discovery/index.html"
+      - "discovery/void-datanet-dataset-v1.jsonld"
+      - "pages-manifest-v1.json"
+      - "public-node/index.html"
+      - "public-node/agents/authentication-v1.json"
+      - "public-node/agents/capabilities-v1.json"
+      - "public-node/agents/discovery-v1.json"
+      - "robots.txt"
+      - "scripts/prove_void_free_discovery_pages_integration_v1.mjs"
+      - "sitemap.xml"
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/void-free-discovery-pages-integration-v1.yml"
+      - ".well-known/void-agent-authentication.json"
+      - ".well-known/void-agent-discovery.json"
+      - ".well-known/void-agent-intake-capability-v1.json"
+      - ".well-known/void-network-authenticity.json"
+      - "12ec1f1fd6f9a1fc5ce96324bcca44d5.txt"
+      - "discovery/index.html"
+      - "discovery/void-datanet-dataset-v1.jsonld"
+      - "pages-manifest-v1.json"
+      - "public-node/index.html"
+      - "public-node/agents/authentication-v1.json"
+      - "public-node/agents/capabilities-v1.json"
+      - "public-node/agents/discovery-v1.json"
+      - "robots.txt"
+      - "scripts/prove_void_free_discovery_pages_integration_v1.mjs"
+      - "sitemap.xml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: void-free-discovery-pages-integration-v1-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  prove:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Check out exact repository revision
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Prove additive static discovery boundary
+        run: |
+          set -euo pipefail
+          node --check scripts/prove_void_free_discovery_pages_integration_v1.mjs
+          node scripts/prove_void_free_discovery_pages_integration_v1.mjs | tee /tmp/void-free-discovery-pages-proof.log
+          grep -Fx 'VOID_FREE_DISCOVERY_PAGES_INTEGRATION_V1_PROOF_GREEN' /tmp/void-free-discovery-pages-proof.log
+          grep -Fx 'network_calls=false' /tmp/void-free-discovery-pages-proof.log
+          grep -Fx 'live_submission=false' /tmp/void-free-discovery-pages-proof.log
+          grep -Fx 'payment_execution=false' /tmp/void-free-discovery-pages-proof.log

@@ -1,0 +1,40 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "VOID Mainnet-0 public discovery and DataNet evidence",
+  "description": "Machine-readable, read-only discovery metadata and verifiable public evidence for VOID Mainnet-0, a decentralized data and useful-work network.",
+  "url": "https://6zoso9.github.io/discovery/",
+  "sameAs": "https://6zoso9.github.io/public-node/",
+  "creator": {
+    "@type": "Organization",
+    "name": "VOID Network",
+    "url": "https://6zoso9.github.io/"
+  },
+  "isAccessibleForFree": true,
+  "license": "https://github.com/6ZoSo9/void-node/blob/main/LICENSE",
+  "dateModified": "2026-07-31",
+  "keywords": [
+    "VOID Network",
+    "DataNet",
+    "AI agents",
+    "decentralized data",
+    "verifiable useful work"
+  ],
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://6zoso9.github.io/.well-known/void-public-node.json"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://6zoso9.github.io/.well-known/void-agent-discovery.json"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://6zoso9.github.io/discovery/index-v1.json"
+    }
+  ]
+}

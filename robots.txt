@@ -1,3 +1,11 @@
+# VOID_FREE_DISCOVERY_PAGES_INTEGRATION_V1
+# Crawling policy is guidance, not an authorization boundary.
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /internal/
+Disallow: /operator/
+Disallow: /private/
+Disallow: /debug/
+Disallow: /metrics
 Sitemap: https://6zoso9.github.io/sitemap.xml
