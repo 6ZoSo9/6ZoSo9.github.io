@@ -61,4 +61,14 @@
   <url><loc>https://6zoso9.github.io/work/worker-example-v1.json</loc></url>
   <url><loc>https://6zoso9.github.io/work/void-paid-work-client.py</loc></url>
   <url><loc>https://6zoso9.github.io/work/manifest-v1.json</loc></url>
+  <url><loc>https://6zoso9.github.io/public-node/</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://6zoso9.github.io/public-node/agents/discovery-v1.json</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://6zoso9.github.io/public-node/agents/capabilities-v1.json</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://6zoso9.github.io/public-node/agents/authentication-v1.json</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://6zoso9.github.io/.well-known/void-agent-discovery.json</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://6zoso9.github.io/.well-known/void-agent-authentication.json</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://6zoso9.github.io/.well-known/void-agent-intake-capability-v1.json</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://6zoso9.github.io/.well-known/void-network-authenticity.json</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://6zoso9.github.io/discovery/</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://6zoso9.github.io/discovery/void-datanet-dataset-v1.jsonld</loc><lastmod>2026-07-31</lastmod></url>
 </urlset>

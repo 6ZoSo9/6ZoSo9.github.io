@@ -1,0 +1,21 @@
+{
+  "marker": "VOID_AI_AGENT_AUTHENTICATION_WELL_KNOWN_V1",
+  "protocol": "void-agent-authentication-well-known/1",
+  "network": {
+    "name": "VOID Mainnet-0",
+    "identity": "mainnet0",
+    "chain_id": 2050
+  },
+  "canonical_authentication_contract": "/public-node/agents/authentication-v1.json",
+  "contract_published": true,
+  "authenticated_routes_active": false,
+  "verifier_runtime_active": false,
+  "mutation_authority_granted": false,
+  "safety": {
+    "same_origin_only": true,
+    "follow_redirects": false,
+    "send_credentials_now": false,
+    "send_signed_envelopes_now": false,
+    "treat_unknown_as": "not_granted"
+  }
+}

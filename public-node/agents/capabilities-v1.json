@@ -1,0 +1,118 @@
+{
+  "marker": "VOID_AI_AGENT_CAPABILITY_NEGOTIATION_V1",
+  "protocol": "void-agent-capability-negotiation/1",
+  "network": {
+    "name": "VOID Mainnet-0",
+    "identity": "mainnet0",
+    "chain_id": 2050
+  },
+  "purpose": "Fail-closed client-side capability intersection for the static VOID Pages mirror.",
+  "authority": {
+    "default": "not_granted",
+    "discovery_authority": "read_only",
+    "authentication_active": false,
+    "signed_request_envelopes_active": false,
+    "payment_submission_active": false,
+    "work_credit_awards_active": false,
+    "buy_void_automatic_fulfillment_active": false,
+    "mutation_authority_granted": false
+  },
+  "capabilities": [
+    {
+      "id": "public_discovery",
+      "enabled": true,
+      "state": "live_static",
+      "access": "anonymous",
+      "authority": "read_only",
+      "http_methods": [
+        "GET",
+        "HEAD"
+      ],
+      "paths": [
+        "/.well-known/void-public-node.json",
+        "/.well-known/void-agent-discovery.json",
+        "/public-node/agents/discovery-v1.json",
+        "/public-node/agents/first-contact-v1.json"
+      ]
+    },
+    {
+      "id": "network_authenticity_verification",
+      "enabled": true,
+      "state": "live_static",
+      "access": "anonymous",
+      "authority": "verification_only",
+      "http_methods": [
+        "GET",
+        "HEAD"
+      ],
+      "paths": [
+        "/.well-known/void-network-authenticity.json"
+      ]
+    },
+    {
+      "id": "authentication_contract_discovery",
+      "enabled": true,
+      "state": "contract_only_runtime_inactive",
+      "access": "anonymous",
+      "authority": "read_only",
+      "http_methods": [
+        "GET",
+        "HEAD"
+      ],
+      "paths": [
+        "/.well-known/void-agent-authentication.json",
+        "/public-node/agents/authentication-v1.json"
+      ]
+    },
+    {
+      "id": "static_dataset_discovery",
+      "enabled": true,
+      "state": "live_static",
+      "access": "anonymous",
+      "authority": "read_only",
+      "http_methods": [
+        "GET",
+        "HEAD"
+      ],
+      "paths": [
+        "/discovery/",
+        "/discovery/index-v1.json",
+        "/discovery/void-datanet-dataset-v1.jsonld"
+      ]
+    },
+    {
+      "id": "paid_work_intake_discovery",
+      "enabled": true,
+      "state": "operator_review_required",
+      "access": "anonymous",
+      "authority": "read_only_discovery_only",
+      "http_methods": [
+        "GET",
+        "HEAD"
+      ],
+      "paths": [
+        "/.well-known/void-agent-intake-capability-v1.json",
+        "/work/README.md",
+        "/work/live-v1.json",
+        "/work/task-catalog-v1.json"
+      ]
+    }
+  ],
+  "negotiation": {
+    "mode": "client_side_intersection",
+    "request_submission_enabled": false,
+    "server_round_trip_required": false,
+    "default_result": "not_granted",
+    "unknown_capability_result": "not_granted",
+    "ambiguous_capability_result": "not_granted"
+  },
+  "safety": {
+    "same_origin_only": true,
+    "follow_redirects": false,
+    "send_credentials": false,
+    "send_secrets": false,
+    "send_wallet_material": false,
+    "send_operator_keys": false,
+    "mutation_without_separate_signed_capability": "forbidden"
+  }
+}

@@ -36,12 +36,39 @@
     },
     "sitemap": {
       "path": "/sitemap.xml",
-      "sha256": "6be88c1a06b8af73fcb919139def37e0193ed45bb69b7adf9b8e20ced3aff731"
+      "sha256": "68a4f00054a992ca3f49960e96d073c11fb9b30e280355a826b7a45caed21c1a"
     },
     "standards_readiness": {
       "path": "/standards/readiness-v1.json",
       "sha256": "29759f632498cc5d8596962606d360eb93c6374b433be7a2bdc3b46cec79a2c5"
     }
+  },
+  "free_discovery_pages_integration_v1": {
+    "marker": "VOID_FREE_DISCOVERY_PAGES_INTEGRATION_V1",
+    "origin": "https://6zoso9.github.io",
+    "source_repository": "6ZoSo9/void-node",
+    "source_commit": "b9b8189347a12bfe0528f980f4edb7dffd3e6e1a",
+    "indexnow_key_location": "https://6zoso9.github.io/12ec1f1fd6f9a1fc5ce96324bcca44d5.txt",
+    "files": {
+      ".well-known/void-agent-authentication.json": "536e1e9f65b65c24976eb91dbbd7ea04b4a3623b9c5b5fe452062b435c8ed398",
+      ".well-known/void-agent-discovery.json": "7781fc2fc562231f77f634debe8aa739d68c5715635989573f43f8f8c0128325",
+      ".well-known/void-agent-intake-capability-v1.json": "292f80a77d3ade2c85b0183ff7242c7c86e9f11dc6a36b1ad1922bcb6f36db01",
+      ".well-known/void-network-authenticity.json": "597c451a349728c4713e1ac2ce9ca5478a80378bfc12cf0ca1ce4138e82ea692",
+      "12ec1f1fd6f9a1fc5ce96324bcca44d5.txt": "7d7787e862b17bcaebfade2bcfba895d9392e5a600051e347294375600deb512",
+      "discovery/index.html": "66342e31b68892cf5869a114e19b80d5dd2611eb945943015f7b6c2abc3c4e33",
+      "discovery/void-datanet-dataset-v1.jsonld": "1ec8dcc4c1d1396889a04d200b3f6befe912b9cde72ff145d418cd483c592373",
+      "public-node/index.html": "1bc347090eedb2c8d6f9983b938c1b815afdabbf85dcd1a7026250131b87401b",
+      "public-node/agents/authentication-v1.json": "ee5d09a98df19a1ba94b580012ed88cb39922ff17bb02c9902d35bc16e31239b",
+      "public-node/agents/capabilities-v1.json": "c41e858d81e6d5160499b3ca5b07bf7a197f7f18543264ea63a0f15a34b80509",
+      "public-node/agents/discovery-v1.json": "7ed3a3a3ae1e1181e2aec963cd434ea8d5cd59df1aa86473bcf307b9dea8873b",
+      "robots.txt": "188e84fe5f21d241ab46c340d7c567392aefa22d9b3936999bcaec194166e1cc",
+      "sitemap.xml": "68a4f00054a992ca3f49960e96d073c11fb9b30e280355a826b7a45caed21c1a"
+    },
+    "live_submission": false,
+    "provider_account_mutation": false,
+    "payment_method_collection": false,
+    "payment_execution": false,
+    "wallet_or_signer_access": false
   },
   "independent_public_agent_canary": {
     "badge": "https://github.com/6ZoSo9/6ZoSo9.github.io/actions/workflows/void-public-agent-canary-v1.yml/badge.svg?branch=main",
@@ -95,8 +122,52 @@
   },
   "routes": {
     "/.well-known/void-public-node.json": {
-      "bytes": 943,
-      "sha256": "fdcaffd66b0ddd7f9fe468c42b43d33c761674209122afb12f0ca67b1015698c"
+      "bytes": 3847,
+      "sha256": "0e6d6060ed52656bd8f2334959f7f625e53ee1016a01603aa28033cf12f8e04e"
+    },
+    "/.well-known/void-agent-authentication.json": {
+      "bytes": 639,
+      "sha256": "536e1e9f65b65c24976eb91dbbd7ea04b4a3623b9c5b5fe452062b435c8ed398"
+    },
+    "/.well-known/void-agent-discovery.json": {
+      "bytes": 1297,
+      "sha256": "7781fc2fc562231f77f634debe8aa739d68c5715635989573f43f8f8c0128325"
+    },
+    "/.well-known/void-agent-intake-capability-v1.json": {
+      "bytes": 1084,
+      "sha256": "292f80a77d3ade2c85b0183ff7242c7c86e9f11dc6a36b1ad1922bcb6f36db01"
+    },
+    "/.well-known/void-network-authenticity.json": {
+      "bytes": 4615,
+      "sha256": "597c451a349728c4713e1ac2ce9ca5478a80378bfc12cf0ca1ce4138e82ea692"
+    },
+    "/12ec1f1fd6f9a1fc5ce96324bcca44d5.txt": {
+      "bytes": 33,
+      "sha256": "7d7787e862b17bcaebfade2bcfba895d9392e5a600051e347294375600deb512"
+    },
+    "/discovery/index.html": {
+      "bytes": 3172,
+      "sha256": "66342e31b68892cf5869a114e19b80d5dd2611eb945943015f7b6c2abc3c4e33"
+    },
+    "/discovery/void-datanet-dataset-v1.jsonld": {
+      "bytes": 1294,
+      "sha256": "1ec8dcc4c1d1396889a04d200b3f6befe912b9cde72ff145d418cd483c592373"
+    },
+    "/public-node/index.html": {
+      "bytes": 2096,
+      "sha256": "1bc347090eedb2c8d6f9983b938c1b815afdabbf85dcd1a7026250131b87401b"
+    },
+    "/public-node/agents/authentication-v1.json": {
+      "bytes": 1084,
+      "sha256": "ee5d09a98df19a1ba94b580012ed88cb39922ff17bb02c9902d35bc16e31239b"
+    },
+    "/public-node/agents/capabilities-v1.json": {
+      "bytes": 3194,
+      "sha256": "c41e858d81e6d5160499b3ca5b07bf7a197f7f18543264ea63a0f15a34b80509"
+    },
+    "/public-node/agents/discovery-v1.json": {
+      "bytes": 3183,
+      "sha256": "7ed3a3a3ae1e1181e2aec963cd434ea8d5cd59df1aa86473bcf307b9dea8873b"
     },
     "/public-node/agents/first-contact-v1.json": {
       "bytes": 2829,

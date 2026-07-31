@@ -1,0 +1,96 @@
+{
+  "marker": "VOID_AI_AGENT_DISCOVERY_CONTRACT_WALL_V1",
+  "protocol": "void-agent-discovery/1",
+  "network": {
+    "name": "VOID Mainnet-0",
+    "identity": "mainnet0",
+    "chain_id": 2050
+  },
+  "purpose": "Machine-readable same-origin discovery for the static VOID GitHub Pages mirror without granting mutation authority.",
+  "distribution": {
+    "mode": "static_public_mirror",
+    "provider": "github-pages",
+    "replaceable": true,
+    "core_dependency": false
+  },
+  "authority": {
+    "default": "read_only",
+    "granted_http_methods": [
+      "GET",
+      "HEAD"
+    ],
+    "mutation_authority_granted": false,
+    "credentials_required_for_discovery": false,
+    "payment_authority_granted": false,
+    "wallet_or_signer_access": false,
+    "work_credit_write_authority": false
+  },
+  "entrypoints": {
+    "node_identity": "/.well-known/void-public-node.json",
+    "well_known_discovery": "/.well-known/void-agent-discovery.json",
+    "network_authenticity": "/.well-known/void-network-authenticity.json",
+    "public_node_root": "/public-node/",
+    "first_contact": "/public-node/agents/first-contact-v1.json",
+    "human_join": "/public-node/agents/join-v1.html",
+    "capability_negotiation": "/public-node/agents/capabilities-v1.json",
+    "authentication_contract": "/public-node/agents/authentication-v1.json",
+    "intake_capability": "/.well-known/void-agent-intake-capability-v1.json",
+    "discovery_landing": "/discovery/",
+    "discovery_index": "/discovery/index-v1.json",
+    "dataset": "/discovery/void-datanet-dataset-v1.jsonld",
+    "public_client_kit": "/clients/manifest-v1.json"
+  },
+  "capabilities": [
+    {
+      "id": "public_discovery",
+      "state": "live_static",
+      "authority": "read_only",
+      "discovery": "/.well-known/void-agent-discovery.json"
+    },
+    {
+      "id": "network_authenticity_verification",
+      "state": "live_static",
+      "authority": "verification_only",
+      "discovery": "/.well-known/void-network-authenticity.json"
+    },
+    {
+      "id": "capability_negotiation",
+      "state": "live_static",
+      "authority": "read_only",
+      "discovery": "/public-node/agents/capabilities-v1.json"
+    },
+    {
+      "id": "authentication_contract_discovery",
+      "state": "contract_only_runtime_inactive",
+      "authority": "read_only",
+      "discovery": "/public-node/agents/authentication-v1.json"
+    },
+    {
+      "id": "paid_work_intake_discovery",
+      "state": "operator_review_required",
+      "authority": "read_only_discovery_only",
+      "discovery": "/.well-known/void-agent-intake-capability-v1.json"
+    },
+    {
+      "id": "buy_void_automatic_fulfillment",
+      "state": "guarded",
+      "authority": "not_granted",
+      "enabled": false
+    },
+    {
+      "id": "wallet_treasury_validator_or_ledger_mutation",
+      "state": "guarded",
+      "authority": "not_granted",
+      "enabled": false
+    }
+  ],
+  "safety": {
+    "same_origin_only": true,
+    "follow_cross_origin_links_automatically": false,
+    "send_credentials": false,
+    "send_secrets": false,
+    "send_wallet_material": false,
+    "send_operator_keys": false,
+    "treat_unknown_capability_as": "not_granted"
+  }
+}
