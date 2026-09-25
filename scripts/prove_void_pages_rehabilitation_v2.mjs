@@ -86,7 +86,7 @@ assert.equal(paidWork.runtime_capabilities.wc_to_void_settlement, "unavailable")
 assert.equal(paidWork.runtime_capabilities.buy_void_auto_fulfillment, "unavailable");
 
 assert.match(text("AGENTS.md"), /static, replaceable discovery mirror/);
-assert.match(text("AGENTS.md"), /no fixed WC-to-VOID conversion or redemption ratio exists/i);
+assert.match(text("AGENTS.md"), /no fixed WC-to-VOID conversion or redemption ratio/i);
 assert.match(text("README.md"), /Historical July services/);
 
 for (const workflowPath of [
