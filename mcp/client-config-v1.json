@@ -1,11 +1,8 @@
 {
-  "mcpServers": {
-    "void-network-readonly": {
-      "protocolVersion": "2025-11-25",
-      "type": "streamable-http",
-      "url": "https://hereby-metals-plumbing-preserve.trycloudflare.com/mcp"
-    }
-  },
-  "note": "Generic configuration shape. Client-specific configuration fields may differ.",
-  "schema": "void-generic-mcp-client-config-v1"
+  "schema": "void-generic-mcp-client-config-v1",
+  "status": "historical_unverified",
+  "mcpServers": {},
+  "current_endpoint": null,
+  "current_state": "https://6zoso9.github.io/current-state-v2.json",
+  "note": "No current remote MCP endpoint is advertised by the September 25 mirror refresh. The July Quick Tunnel configuration is historical only."
 }
