@@ -1,117 +1,120 @@
 {
-  "components": {
-    "securitySchemes": {}
-  },
-  "info": {
-    "description": "This OpenAPI document describes only the static GitHub Pages mirror. It does not expose a live node, wallet, ledger, transaction, validator, operator, payment, or mutation API.",
-    "license": {
-      "identifier": "LicenseRef-VOID-Public-Discovery",
-      "name": "Public discovery mirror"
-    },
-    "summary": "Read-only, static public discovery for VOID-compatible AI agents.",
-    "title": "VOID AI Agent First Contact Static Discovery API",
-    "version": "1.0.0"
-  },
   "openapi": "3.1.1",
-  "paths": {
-    "/.well-known/void-public-node.json": {
-      "get": {
-        "operationId": "getVoidPublicNodeDiscovery",
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Public mirror and integration surfaces."
-          }
-        },
-        "summary": "Retrieve the public mirror discovery index."
-      }
-    },
-    "/public-node/agents/first-contact-v1.json": {
-      "get": {
-        "operationId": "getVoidFirstContact",
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "type": "object"
-                },
-                "x-void-canonical-sha256": "73b2936cdb03c2028746db27159cbaa6e556e264652d8442a91fafa988dab45f"
-              }
-            },
-            "description": "Canonical static First Contact document.",
-            "headers": {
-              "ETag": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        },
-        "summary": "Retrieve machine-readable VOID First Contact discovery."
-      },
-      "head": {
-        "operationId": "headVoidFirstContact",
-        "responses": {
-          "200": {
-            "description": "Headers for the canonical static document."
-          }
-        },
-        "summary": "Retrieve headers for the First Contact document."
-      }
-    },
-    "/public-node/agents/join-v1.html": {
-      "get": {
-        "operationId": "getVoidJoinPage",
-        "responses": {
-          "200": {
-            "content": {
-              "text/html": {
-                "schema": {
-                  "type": "string"
-                },
-                "x-void-canonical-bytes": 3693,
-                "x-void-canonical-sha256": "a5d4801c5354246e9f0fd85d36f0159bee970c6469d06b4deb0921bfd7db0450"
-              }
-            },
-            "description": "Canonical static human-readable join page."
-          }
-        },
-        "summary": "Retrieve the human-readable VOID agent join page."
-      },
-      "head": {
-        "operationId": "headVoidJoinPage",
-        "responses": {
-          "200": {
-            "description": "Headers for the canonical static page."
-          }
-        },
-        "summary": "Retrieve headers for the human-readable join page."
-      }
-    }
+  "info": {
+    "title": "VOID Network Static Discovery Mirror",
+    "version": "2.0.0",
+    "summary": "Read-only, source-bound static discovery for VOID Mainnet-0.",
+    "description": "This GitHub Pages API is static distribution only. Canonical source is 6ZoSo9/void-node. It grants no mutation, wallet, payment, validator, Work Credit write, or funds authority."
   },
-  "security": [],
   "servers": [
     {
       "url": "https://6zoso9.github.io"
     }
   ],
+  "paths": {
+    "/current-state-v2.json": {
+      "get": {
+        "operationId": "getVoidMirrorCurrentState",
+        "summary": "Get current mirror/source binding state.",
+        "responses": {
+          "200": {
+            "description": "Current fail-closed mirror state."
+          }
+        }
+      }
+    },
+    "/.well-known/void-public-node.json": {
+      "get": {
+        "operationId": "getVoidPublicNodeDiscovery",
+        "summary": "Get canonical current public-node discovery mirrored from void-node.",
+        "responses": {
+          "200": {
+            "description": "Current public-node discovery."
+          }
+        }
+      }
+    },
+    "/.well-known/void-agent-discovery.json": {
+      "get": {
+        "operationId": "getVoidAgentDiscovery",
+        "summary": "Get canonical agent discovery mirrored from void-node.",
+        "responses": {
+          "200": {
+            "description": "Agent discovery contract."
+          }
+        }
+      }
+    },
+    "/public-node/agents/first-contact-v1.json": {
+      "get": {
+        "operationId": "getVoidFirstContact",
+        "summary": "Get current AI-agent First Contact contract.",
+        "responses": {
+          "200": {
+            "description": "First Contact JSON."
+          }
+        }
+      }
+    },
+    "/public-node/agents/capabilities-v1.json": {
+      "get": {
+        "operationId": "getVoidAgentCapabilities",
+        "summary": "Get current capability-negotiation contract.",
+        "responses": {
+          "200": {
+            "description": "Capabilities contract."
+          }
+        }
+      }
+    },
+    "/public-node/agents/public-utility-v1.json": {
+      "get": {
+        "operationId": "getVoidAgentPublicUtility",
+        "summary": "Get current public utility catalog.",
+        "responses": {
+          "200": {
+            "description": "Public utility catalog."
+          }
+        }
+      }
+    },
+    "/public-node/agents/paid-work-v1.json": {
+      "get": {
+        "operationId": "getVoidPaidWorkProtocol",
+        "summary": "Get read-only paid-work protocol discovery.",
+        "responses": {
+          "200": {
+            "description": "Paid-work protocol discovery; not a live submission endpoint."
+          }
+        }
+      }
+    },
+    "/mirror/source-bindings-v2.json": {
+      "get": {
+        "operationId": "getVoidMirrorSourceBindings",
+        "summary": "Get exact void-node Git blob bindings for mirrored contracts.",
+        "responses": {
+          "200": {
+            "description": "Source binding manifest."
+          }
+        }
+      }
+    }
+  },
+  "security": [],
+  "x-void-source": {
+    "repository": "6ZoSo9/void-node",
+    "commit": "d4a8f43462be30699678a2da710c427e38768655"
+  },
   "x-void-boundary": {
-    "ledger": false,
+    "staticDiscoveryOnly": true,
     "liveNode": false,
     "mutation": false,
-    "payments": false,
-    "staticDiscoveryOnly": true,
+    "wallet": false,
     "transactions": false,
-    "wallet": false
+    "payments": false,
+    "workCreditWrite": false,
+    "validatorMutation": false,
+    "fundsMovement": false
   }
 }

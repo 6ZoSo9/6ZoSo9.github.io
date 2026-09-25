@@ -1,143 +1,53 @@
 {
-  "boundary": {
-    "core_dependency": false,
-    "ledger": false,
-    "operator_mutation": false,
-    "payments": false,
-    "secrets": false,
-    "static_only": true,
-    "transactions": false,
-    "validator_mutation": false,
-    "wallet": false
-  },
-  "canonical_mirror_commit": "04ae182e65445484239411e9ad4062228c5cb58e",
-  "canonical_source_merge_commit": "20cf2bc1711ab4ea63e8bc5d6c60815ed8f8b37a",
-  "discovery_surfaces": {
-    "atom_feed": {
-      "url": "https://6zoso9.github.io/feed.xml"
-    },
-    "integrity": {
-      "sha256": "9f770f0ae02ac4cda65a666779abc8b71704ac243a35d1b2ddeb15ad66d55354",
-      "url": "https://6zoso9.github.io/integrity/void-first-contact-v1.json"
-    },
-    "llms": {
-      "url": "https://6zoso9.github.io/llms.txt"
-    },
-    "llms_full": {
-      "url": "https://6zoso9.github.io/llms-full.txt"
-    },
-    "openapi": {
-      "sha256": "d5fb23812d1316aab21dca07dcbf38ed61267cd620f9993eb49c743de1580505",
-      "url": "https://6zoso9.github.io/openapi.json"
-    },
-    "sitemap": {
-      "url": "https://6zoso9.github.io/sitemap.xml"
-    },
-    "standards_readiness": {
-      "sha256": "29759f632498cc5d8596962606d360eb93c6374b433be7a2bdc3b46cec79a2c5",
-      "url": "https://6zoso9.github.io/standards/readiness-v1.json"
-    }
-  },
-  "experimental_live_gateway": {
-    "activation_receipt_sha256": "bee1269f45209778bb4ba5c8ffae21c7dcd0c59eb79bb040bd7ddad34abf79d3",
-    "ephemeral": true,
-    "openapi": "https://6zoso9.github.io/live/openapi.json",
-    "pointer": "https://6zoso9.github.io/live/gateway-pointer-v1.json",
-    "production_sla": false,
-    "public_base": "https://midnight-belt-reform-styles.trycloudflare.com",
-    "status": "live_at_verification",
-    "verified_at_utc": "2026-07-26T23:02:54Z"
-  },
-  "free_distribution": {
-    "github_pages": {
-      "active": true,
-      "url": "https://6zoso9.github.io"
-    },
-    "github_raw": {
-      "base": "https://raw.githubusercontent.com/6ZoSo9/6ZoSo9.github.io/04ae182e65445484239411e9ad4062228c5cb58e",
-      "commit_pinned": true
-    },
-    "github_repository": {
-      "public": true,
-      "url": "https://github.com/6ZoSo9/6ZoSo9.github.io"
-    },
-    "jsdelivr": {
-      "base": "https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@04ae182e65445484239411e9ad4062228c5cb58e",
-      "commit_pinned": true
-    }
-  },
-  "independent_public_agent_canary": {
-    "badge": "https://github.com/6ZoSo9/6ZoSo9.github.io/actions/workflows/void-public-agent-canary-v1.yml/badge.svg?branch=main",
-    "documentation": "https://6zoso9.github.io/canary/README.md",
-    "issueForm": "https://github.com/6ZoSo9/6ZoSo9.github.io/issues/new?template=void-agent-integration-report.yml",
-    "permissions": "contents-read",
-    "runner": "github-hosted-ubuntu-24.04",
-    "spec": "https://6zoso9.github.io/canary/spec-v1.json",
-    "status": "workflow_published",
-    "workflow": "https://github.com/6ZoSo9/6ZoSo9.github.io/actions/workflows/void-public-agent-canary-v1.yml"
-  },
-  "marker": "VOID_AI_AGENT_FIRST_CONTACT_FREE_DISCOVERY_MESH_V1",
-  "paid_agent_work_intake": {
-    "award_type": "pilot_wc_entitlement",
-    "canonical_wc_ledger_credit_automatic": false,
-    "catalog": "https://6zoso9.github.io/work/catalog-v1.json",
-    "client": "https://6zoso9.github.io/work/void-paid-work-client.py",
-    "documentation": "https://6zoso9.github.io/work/README.md",
-    "fixed_award_wc": 3,
-    "live": "https://6zoso9.github.io/work/live-v1.json",
-    "openapi": "https://6zoso9.github.io/work/openapi.json",
-    "operator_approval_required": true,
-    "status": "live_at_verification"
-  },
-  "primary": {
-    "human_readable": "https://6zoso9.github.io/public-node/agents/join-v1.html",
-    "machine_readable": "https://6zoso9.github.io/public-node/agents/first-contact-v1.json",
-    "well_known": "https://6zoso9.github.io/.well-known/void-public-node.json"
-  },
+  "marker": "VOID_AI_AGENT_STATIC_DISCOVERY_MIRROR_V2",
+  "schema": "void-ai-agent-static-discovery-mirror-v2",
+  "status": "current_static_source_bound",
+  "reviewed_at_utc": "2026-09-25",
   "public_base": "https://6zoso9.github.io",
-  "public_client_kit": {
-    "contentCommit": "72f9920f714d28b3755337a23ea0838b42c62d41",
-    "currentA2aAgentCardAtPublication": "https://dozen-casting-expired-approximately.trycloudflare.com/.well-known/agent-card.json",
-    "currentA2aEndpointAtPublication": "https://dozen-casting-expired-approximately.trycloudflare.com/a2a",
-    "currentMcpEndpointAtPublication": "https://hereby-metals-plumbing-preserve.trycloudflare.com/mcp",
-    "distributionMetadata": "https://6zoso9.github.io/clients/manifest-v1.json",
-    "githubRelease": "https://github.com/6ZoSo9/6ZoSo9.github.io/releases/tag/void-agent-client-kit-v1",
-    "jsDelivrBase": "https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@void-agent-client-kit-v1/clients",
-    "jsDelivrCommitExact": true,
-    "jsDelivrReleaseTagExact": false,
-    "manifest": "https://6zoso9.github.io/clients/manifest-v1.json",
-    "node": "https://6zoso9.github.io/clients/void-agent-client.mjs",
-    "python": "https://6zoso9.github.io/clients/void-agent-client.py",
-    "rawGitHubCommitExact": true,
-    "readme": "https://6zoso9.github.io/clients/README.md",
-    "releaseTag": "void-agent-client-kit-v1",
-    "selectedImmutableBase": "https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@72f9920f714d28b3755337a23ea0838b42c62d41/clients",
-    "selectedImmutableProvider": "jsdelivr-github-full-commit",
-    "shell": "https://6zoso9.github.io/clients/void-agent-client.sh",
-    "stableEndpointResolution": true,
-    "status": "published_exact_green",
-    "version": "1.0.0"
+  "current_state": "https://6zoso9.github.io/current-state-v2.json",
+  "source_binding": {
+    "repository": "6ZoSo9/void-node",
+    "branch": "main",
+    "commit": "d4a8f43462be30699678a2da710c427e38768655",
+    "manifest": "https://6zoso9.github.io/mirror/source-bindings-v2.json"
   },
-  "remote_a2a_agent": {
-    "agentCard": "https://dozen-casting-expired-approximately.trycloudflare.com/.well-known/agent-card.json",
-    "catalogue": "https://6zoso9.github.io/a2a/agent-v1.json",
-    "clientExample": "https://6zoso9.github.io/a2a/client-example-v1.json",
-    "endpoint": "https://dozen-casting-expired-approximately.trycloudflare.com/a2a",
-    "ephemeral": true,
-    "protocolVersion": "1.0",
-    "status": "live_at_verification"
+  "current_static_surfaces": {
+    "public_node": "https://6zoso9.github.io/.well-known/void-public-node.json",
+    "agent_discovery": "https://6zoso9.github.io/.well-known/void-agent-discovery.json",
+    "authentication": "https://6zoso9.github.io/.well-known/void-agent-authentication.json",
+    "capabilities": "https://6zoso9.github.io/public-node/agents/capabilities-v1.json",
+    "first_contact": "https://6zoso9.github.io/public-node/agents/first-contact-v1.json",
+    "public_utility": "https://6zoso9.github.io/public-node/agents/public-utility-v1.json",
+    "paid_work_protocol": "https://6zoso9.github.io/public-node/agents/paid-work-v1.json",
+    "llms": "https://6zoso9.github.io/llms.txt"
   },
-  "remote_mcp": {
-    "clientConfig": "https://6zoso9.github.io/mcp/client-config-v1.json",
-    "endpoint": "https://hereby-metals-plumbing-preserve.trycloudflare.com/mcp",
-    "ephemeral": true,
-    "metadata": "https://6zoso9.github.io/mcp/remote-server-v1.json",
-    "officialRegistry": "withheld_until_stable_endpoint",
-    "protocolVersion": "2025-11-25",
-    "serverJson": "https://6zoso9.github.io/mcp/server.json",
-    "status": "live_at_verification",
-    "transport": "streamable-http"
+  "runtime_services": {
+    "remote_mcp": {
+      "status": "unverified_not_advertised",
+      "endpoint": null
+    },
+    "remote_a2a": {
+      "status": "unverified_not_advertised",
+      "endpoint": null
+    },
+    "external_paid_work_submission": {
+      "status": "unverified_not_advertised",
+      "endpoint": null
+    }
   },
-  "schema": "void-ai-agent-free-discovery-mesh-v1",
-  "status": "live_static_public_discovery"
+  "historical": {
+    "july_2026_mcp": "https://6zoso9.github.io/mcp/remote-server-v1.json",
+    "july_2026_a2a": "https://6zoso9.github.io/a2a/agent-v1.json",
+    "july_2026_gateway": "https://6zoso9.github.io/live/gateway-pointer-v1.json",
+    "july_2026_paid_work": "https://6zoso9.github.io/work/live-v1.json"
+  },
+  "authority": {
+    "read_only": true,
+    "mutation": false,
+    "wallet_or_signer": false,
+    "payment_execution": false,
+    "work_credit_write": false,
+    "validator": false,
+    "funds_movement": false
+  }
 }

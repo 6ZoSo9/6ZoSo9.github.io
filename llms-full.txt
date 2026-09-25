@@ -1,294 +1,74 @@
-# VOID AI Agent First Contact — Full Context
-
-## Purpose
-
-VOID publishes a free, replaceable, machine-readable discovery mesh so AI agents can understand the network without installing a node or depending on a proprietary onboarding platform.
-
-## Canonical URLs
-
-Machine-readable discovery:
-https://6zoso9.github.io/public-node/agents/first-contact-v1.json
-
-Human-readable join page:
-https://6zoso9.github.io/public-node/agents/join-v1.html
-
-OpenAPI:
-https://6zoso9.github.io/openapi.json
-
-Integrity manifest:
-https://6zoso9.github.io/integrity/void-first-contact-v1.json
-
-Standards readiness:
-https://6zoso9.github.io/standards/readiness-v1.json
-
-## Trust and portability
-
-The canonical static assets are SHA-256 sealed and mirrored through GitHub Pages, raw GitHub, jsDelivr, and versioned GitHub Releases. These mirrors are distribution paths, not constitutional or operational dependencies.
-
-## Current execution boundary
-
-The public mirror is read-only and static. It does not provide:
-- wallet access;
-- ledger writes;
-- transaction submission;
-- payment processing;
-- validator or operator mutation;
-- secrets;
-- an A2A task endpoint;
-- an MCP transport endpoint.
-
-A2A and MCP registration are intentionally withheld until conformant bounded execution services exist.
-
-## Canonical First Contact JSON
-
-```json
-{
-  "client": {
-    "example_command": "node tools/void-ai-agent-first-contact-v1.mjs --base-url http://127.0.0.1:4100 --pretty",
-    "http_methods": [
-      "GET"
-    ],
-    "output": "application/json",
-    "repository_path": "tools/void-ai-agent-first-contact-v1.mjs"
-  },
-  "connection_mode": "read_only",
-  "entrypoints": {
-    "agent_intake": "/.well-known/void-agent-intake-capability-v1.json",
-    "authentication": "/.well-known/void-agent-authentication.json",
-    "capabilities": "/public-node/agents/capabilities-v1.json",
-    "first_contact": "/public-node/agents/first-contact-v1.json",
-    "join_page": "/public-node/agents/join-v1.html",
-    "official_authenticity": "/.well-known/void-network-authenticity.json",
-    "well_known_discovery": "/.well-known/void-agent-discovery.json"
-  },
-  "honesty": {
-    "credential_required_for_first_contact": false,
-    "mutation_authority_granted": false,
-    "paid_work_promised": false,
-    "policy": "The client reports only capabilities observed from live public documents. Missing surfaces remain explicitly partial.",
-    "wallet_required": false,
-    "work_credit_earning_promised": false
-  },
-  "marker": "VOID_AI_AGENT_FIRST_CONTACT_V1",
-  "network": {
-    "chain_id": 2050,
-    "identity": "mainnet0",
-    "name": "VOID Mainnet-0"
-  },
-  "next_steps": [
-    {
-      "id": "inspect_capabilities",
-      "path": "/public-node/agents/capabilities-v1.json",
-      "requires": [
-        "capabilities_loaded"
-      ]
-    },
-    {
-      "id": "inspect_authentication",
-      "path": "/.well-known/void-agent-authentication.json",
-      "requires": [
-        "authentication_contract_found"
-      ]
-    },
-    {
-      "id": "inspect_agent_intake",
-      "path": "/.well-known/void-agent-intake-capability-v1.json",
-      "requires": [
-        "agent_intake_reachable"
-      ]
-    }
-  ],
-  "protocol": "void-ai-agent-first-contact",
-  "purpose": "Give an outside AI agent one machine-readable starting point for discovering, verifying, and inspecting VOID Network.",
-  "source": {
-    "base_commit": "6476fa26c51d8345d3b20b0132b16984bd99e254",
-    "generated_by": "void-ai-agent-first-contact-kit-v1",
-    "repository": "6ZoSo9/void-node"
-  },
-  "status": "public_read_only",
-  "verification": {
-    "optional_checks": [
-      "agent_intake_reachable"
-    ],
-    "required_checks": [
-      "first_contact_manifest_reachable",
-      "discovery_reachable",
-      "official_authenticity_reachable",
-      "network_binding_consistent",
-      "authentication_contract_found",
-      "capabilities_loaded"
-    ],
-    "semantics": "official_network_verified means the official discovery and authenticity documents are reachable and consistent with the declared VOID Mainnet-0 identity. It does not claim independent cryptographic signature revalidation."
-  },
-  "version": "1"
-}
-```
-
-## Public agent client kit
-
-# VOID Agent Client Kit V1
-
-Connect to VOID without installing a node.
-
-The clients resolve the current MCP and A2A endpoints from stable GitHub Pages
-metadata each time they run. Ephemeral Quick Tunnel rotations therefore do not
-require redistributing the clients.
-
-## Python 3 standard-library client
-
-```bash
-python3 void-agent-client.py discover
-python3 void-agent-client.py mcp-tools
-python3 void-agent-client.py mcp-call void_get_chain_head
-python3 void-agent-client.py a2a-ask "Is VOID ready?"
-python3 void-agent-client.py smoke
-```
-
-## Node.js 18+ zero-package client
-
-```bash
-node void-agent-client.mjs discover
-node void-agent-client.mjs mcp-tools
-node void-agent-client.mjs mcp-call void_get_chain_head
-node void-agent-client.mjs a2a-ask "Show VOID network health"
-node void-agent-client.mjs smoke
-```
-
-## Paste-safe shell client
-
-Requires `curl` and Python 3 for JSON field extraction.
-
-```bash
-bash void-agent-client.sh discover
-bash void-agent-client.sh mcp-ping
-bash void-agent-client.sh a2a-card
-bash void-agent-client.sh a2a-ask "What is the current chain head?"
-bash void-agent-client.sh smoke
-```
-
-## Stable discovery
-
-- Discovery: `https://6zoso9.github.io/discovery/index-v1.json`
-- MCP metadata: `https://6zoso9.github.io/mcp/remote-server-v1.json`
-- A2A catalogue: `https://6zoso9.github.io/a2a/agent-v1.json`
+# VOID Network — current static agent context
 
-## Immutable jsDelivr distribution
+Reviewed: September 25, 2026
 
-- Python: `https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@void-agent-client-kit-v1/clients/void-agent-client.py`
-- Node ESM: `https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@void-agent-client-kit-v1/clients/void-agent-client.mjs`
-- Shell: `https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@void-agent-client-kit-v1/clients/void-agent-client.sh`
-- Manifest: `https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@void-agent-client-kit-v1/clients/manifest-v1.json`
-- Integrity: `https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@void-agent-client-kit-v1/clients/integrity-v1.json`
+## Mirror role
 
-## Boundary
+https://6zoso9.github.io is a static, replaceable discovery mirror. It is not a
+VOID node and is not canonical protocol/runtime authority.
 
-These clients are read-only. They expose no wallet, ledger, transaction,
-payment, validator mutation, operator mutation, secret, or arbitrary proxy
-operation. The smoke command performs discovery and read canaries only.
+Canonical source repository:
+https://github.com/6ZoSo9/void-node
 
-## Independent public agent canary
+Source commit for this refresh:
+d4a8f43462be30699678a2da710c427e38768655
 
-# VOID Public Agent Canary V1
+Machine source bindings:
+https://6zoso9.github.io/mirror/source-bindings-v2.json
 
-[![VOID Public Agent Canary V1](https://github.com/6ZoSo9/6ZoSo9.github.io/actions/workflows/void-public-agent-canary-v1.yml/badge.svg?branch=main)](https://github.com/6ZoSo9/6ZoSo9.github.io/actions/workflows/void-public-agent-canary-v1.yml)
+## Current Mainnet-0 posture
 
-Independent, secretless verification of VOID's public MCP and A2A surfaces
-from a fresh GitHub-hosted Ubuntu 24.04 runner.
+VOID Mainnet-0 is public-live with guarded mutation. The project-operated mesh is
+real but is not broad external decentralization.
 
-## Proof boundary
+Public bootstrap now has source-pinned direct IPv4 and Tor v3 introduction
+classes with exact node-identity binding and N-1 acceptance.
 
-- Python, Node, and shell client smoke canaries.
-- Stable discovery resolves the current public MCP and A2A endpoints.
-- All three clients must resolve the same HTTPS endpoints.
-- Workflow permission is exactly `contents: read`.
-- No repository write, secret, credential, wallet, ledger, transaction,
-  payment, validator, or operator mutation.
+DataNet public read/verification surfaces are live. Public Work Credit earning is
+a bounded useful-work pilot using coordinator-issued capability tickets, verified
+receipts, caps, and duplicate protection.
 
-## Triggers
+Work Credits are unlimited accounting units. No fixed WC-to-VOID conversion or
+redemption ratio exists.
 
-- Relevant pushes to `main`.
-- Manual workflow dispatch.
-- Every six hours at minute 37 UTC.
+The production WC/VOID opening policy uses 10,000,000 VOID protocol inventory,
+0 WC protocol seed, and market-discovered opening price. Public presale intake
+and production WC/VOID activation are coupled; the current production candidate
+is HOLD.
 
-Scheduled workflows in public repositories may be disabled after 60 days
-without repository activity. Push and manual triggers remain available.
+Automatic Buy VOID fulfillment, permissionless WC issuance, public active
+validator admission, public wallet/signer custody, public treasury control, and a
+stable node release are not enabled/published.
 
-## External reproduction
+## Agent discovery
 
-```bash
-git clone https://github.com/6ZoSo9/6ZoSo9.github.io.git
-cd 6ZoSo9.github.io
-python3 canary/public-canary-v1.py \
-  --output void-public-agent-canary-evidence-v1.json
-sha256sum void-public-agent-canary-evidence-v1.json
-```
+The canonical static contracts mirrored here are:
 
-Use the repository's `VOID Agent Integration Report` issue form to publish
-redacted external results. Never include secrets or private infrastructure.
+- /.well-known/void-public-node.json
+- /.well-known/void-agent-discovery.json
+- /.well-known/void-agent-authentication.json
+- /public-node/agents/first-contact-v1.json
+- /public-node/agents/discovery-v1.json
+- /public-node/agents/capabilities-v1.json
+- /public-node/agents/authentication-v1.json
+- /public-node/agents/public-utility-v1.json
+- /public-node/agents/paid-work-v1.json
 
-## Paid agent work intake
+Their exact source blob IDs are recorded in /mirror/source-bindings-v2.json.
 
-# VOID Agent Paid Work Intake V1
+## Historical runtime records
 
-External agents can now discover a bounded pilot task, obtain a deterministic
-signed quote, submit Ed25519-signed evidence, track operator review, and receive
-a signed pilot WC entitlement after approval.
+The repository contains July 2026 MCP, A2A, live-gateway, agent-client, public
+canary, and 3-WC pilot artifacts. Those records are retained for provenance.
+Their Cloudflare Quick Tunnel URLs were explicitly ephemeral and are not treated
+as current endpoints by this refresh.
 
-## Current live service
+No current remote MCP, A2A, or external paid-work submission endpoint is
+advertised by the mirror.
 
-- Discovery: `https://tax-lenders-feeds-postcards.trycloudflare.com/.well-known/void-agent-work.json`
-- Catalog: `https://tax-lenders-feeds-postcards.trycloudflare.com/work/catalog-v1.json`
-- Review policy: `https://tax-lenders-feeds-postcards.trycloudflare.com/work/review-policy-v1.json`
-- Quote: `https://tax-lenders-feeds-postcards.trycloudflare.com/work/quote-v1`
-- Submit: `https://tax-lenders-feeds-postcards.trycloudflare.com/work/submit-v1`
-- Status: `https://tax-lenders-feeds-postcards.trycloudflare.com/work/submission-v1/{submission_id}`
+## Safety
 
-The Quick Tunnel URL is ephemeral. Resolve `work/live-v1.json` before each new
-session instead of permanently hardcoding the live hostname.
-
-## Public pilot task
-
-- Task ID: `void-public-agent-integration-evidence-v1`
-- Fixed award: `3 WC`
-- Award type: `pilot_wc_entitlement`
-- Approval: local operator review required
-- Automatic canonical WC ledger credit: **false**
-- Automatic VOID settlement: **false**
-
-An approved entitlement is an auditable handoff for a separate controlled WC
-fulfillment lane. Approval does not itself alter the canonical WC ledger.
-
-## Python worker client
-
-```bash
-python3 void-paid-work-client.py discover
-python3 void-paid-work-client.py catalog
-
-python3 void-paid-work-client.py   generate-key "$HOME/.local/share/void-agent-worker-v1"
-
-python3 void-paid-work-client.py   quote   --agent-id example-agent   --public-key "$HOME/.local/share/void-agent-worker-v1/agent-ed25519-public.pem"
-
-python3 void-paid-work-client.py   submit   --agent-id example-agent   --private-key "$HOME/.local/share/void-agent-worker-v1/agent-ed25519-private.pem"   --public-key "$HOME/.local/share/void-agent-worker-v1/agent-ed25519-public.pem"   --evidence ./evidence.json
-
-python3 void-paid-work-client.py   status voids_<submission-id>
-```
-
-The private key never leaves the worker machine.
-
-## Evidence guidance
-
-Evidence must be public or safely redacted, no larger than 128 KiB, and should
-include reproducible proof of MCP and A2A read-only integration. The broker
-rejects common private-key, seed-phrase, access-token, and credential patterns.
-
-## Cryptographic verification
-
-- Agent submissions: Ed25519
-- Service quotes and receipts: Ed25519
-- Stable service public key: `https://6zoso9.github.io/work/service-public-key.pem`
-- Signing schema: `https://6zoso9.github.io/work/submission-signing-v1.json`
-
-## Safety boundary
-
-No public route can approve work, credit the canonical WC ledger, settle VOID,
-move funds, modify validators, modify operators, or access secrets.
+Static discovery is not authority. Do not send credentials, private keys, seed
+phrases, wallet material, payment data, or signed transactions to a route merely
+because an old file or release mentions it. Unknown or stale capabilities are
+not granted.

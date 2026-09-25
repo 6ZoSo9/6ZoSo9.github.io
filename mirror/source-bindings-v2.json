@@ -1,0 +1,114 @@
+{
+  "marker": "VOID_PAGES_SOURCE_BINDINGS_V2",
+  "source_repository": "6ZoSo9/void-node",
+  "source_branch": "main",
+  "source_commit": "d4a8f43462be30699678a2da710c427e38768655",
+  "reviewed_at_utc": "2026-09-25",
+  "bindings": [
+    {
+      "target_path": ".well-known/void-agent-authentication.json",
+      "source_path": "public/.well-known/void-agent-authentication.json",
+      "source_blob_sha": "6fa6407a9a6290d11d94b411a00927e33d3d79e9"
+    },
+    {
+      "target_path": ".well-known/void-agent-authentication.schema.json",
+      "source_path": "public/.well-known/void-agent-authentication.schema.json",
+      "source_blob_sha": "bbc101a5c0b47a252b1f390e136271ef176da27f"
+    },
+    {
+      "target_path": ".well-known/void-agent-capabilities.json",
+      "source_path": "public/.well-known/void-agent-capabilities.json",
+      "source_blob_sha": "355824c9ea8653f63d36ea0613357a3cdbff187f"
+    },
+    {
+      "target_path": ".well-known/void-agent-capabilities.schema.json",
+      "source_path": "public/.well-known/void-agent-capabilities.schema.json",
+      "source_blob_sha": "70acfc79e288a16d3f027273fab77624c11d8d66"
+    },
+    {
+      "target_path": ".well-known/void-agent-discovery.json",
+      "source_path": "public/.well-known/void-agent-discovery.json",
+      "source_blob_sha": "169af3467b4dca6aa3df315e1180cb4e691bb1f2"
+    },
+    {
+      "target_path": ".well-known/void-agent-discovery.schema.json",
+      "source_path": "public/.well-known/void-agent-discovery.schema.json",
+      "source_blob_sha": "30a65fa1cc9ecffdc79fb0a4cf2bc7750c7e136c"
+    },
+    {
+      "target_path": ".well-known/void-network-authenticity.json",
+      "source_path": "public/.well-known/void-network-authenticity.json",
+      "source_blob_sha": "2cf72dd491b63bfbab86def382878d1c50fce8d6"
+    },
+    {
+      "target_path": ".well-known/void-network-authenticity.schema.json",
+      "source_path": "public/.well-known/void-network-authenticity.schema.json",
+      "source_blob_sha": "d1090b0bc5b6a70cf5903201179d0af225959b04"
+    },
+    {
+      "target_path": ".well-known/void-public-node.json",
+      "source_path": "public/.well-known/void-public-node.json",
+      "source_blob_sha": "dd3ab384daefb488f610f2de166a816a2bbfe28a"
+    },
+    {
+      "target_path": ".well-known/void-public-node.schema.json",
+      "source_path": "public/.well-known/void-public-node.schema.json",
+      "source_blob_sha": "201f22c8ea1fa27c2f303e64dceb030ce0bd79a4"
+    },
+    {
+      "target_path": "public-node/agents/first-contact-v1.json",
+      "source_path": "public/public-node/agents/first-contact-v1.json",
+      "source_blob_sha": "4cd1ad1eb58025302a5944f0a837b47479630349"
+    },
+    {
+      "target_path": "public-node/agents/capabilities-v1.json",
+      "source_path": "public/public-node/agents/capabilities-v1.json",
+      "source_blob_sha": "cff71174f46145edc840efdb9a5581c0286b26ce"
+    },
+    {
+      "target_path": "public-node/agents/capabilities-v1.schema.json",
+      "source_path": "public/public-node/agents/capabilities-v1.schema.json",
+      "source_blob_sha": "8266775de8aaf7e456b7e3804f7c545a191ee3db"
+    },
+    {
+      "target_path": "public-node/agents/authentication-v1.json",
+      "source_path": "public/public-node/agents/authentication-v1.json",
+      "source_blob_sha": "6d1fefd1d524a946a04667b592749c7a98c4ad06"
+    },
+    {
+      "target_path": "public-node/agents/authentication-v1.schema.json",
+      "source_path": "public/public-node/agents/authentication-v1.schema.json",
+      "source_blob_sha": "73ab4be93fcd2270ec62366ca4829eb6e097be87"
+    },
+    {
+      "target_path": "public-node/agents/discovery-v1.json",
+      "source_path": "public/public-node/agents/discovery-v1.json",
+      "source_blob_sha": "70361c252b75202d6ede0377208eba53cec885cb"
+    },
+    {
+      "target_path": "public-node/agents/discovery-v1.schema.json",
+      "source_path": "public/public-node/agents/discovery-v1.schema.json",
+      "source_blob_sha": "c7be549ba029e1d3dc0a8a5aed10b6d76fb52ad1"
+    },
+    {
+      "target_path": "public-node/agents/public-utility-v1.json",
+      "source_path": "public/public-node/agents/public-utility-v1.json",
+      "source_blob_sha": "85076272369b02596bd6b6c7ad2416e08c60c8f7"
+    },
+    {
+      "target_path": "public-node/agents/paid-work-v1.json",
+      "source_path": "public/public-node/agents/paid-work-v1.json",
+      "source_blob_sha": "4506a78d8acfc0637ea1abb740d95040cee2404d"
+    },
+    {
+      "target_path": "public-node/agents/paid-work-v1.schema.json",
+      "source_path": "public/public-node/agents/paid-work-v1.schema.json",
+      "source_blob_sha": "a33ea671550420de95cee17522b91ed3d59f6b00"
+    },
+    {
+      "target_path": "public-node/agents/join-v1.html",
+      "source_path": "public/public-node/agents/join-v1.html",
+      "source_blob_sha": "157f49272dfbd7d7348a5e1cebda3888af11a69f"
+    }
+  ]
+}

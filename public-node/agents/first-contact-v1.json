@@ -1,5 +1,6 @@
 {
   "client": {
+    "cold_start_curl_command": "test -n \"$VOID_PUBLIC_ORIGIN\" && curl --disable --noproxy '*' --disallow-username-in-url --proto '=https' --max-redirs 0 --fail --silent --show-error --max-time 8 --max-filesize 65536 --header 'Accept: application/json' \"${VOID_PUBLIC_ORIGIN%/}/public-node/agents/first-contact-v1.json\"",
     "example_command": "node tools/void-ai-agent-first-contact-v1.mjs --base-url http://127.0.0.1:4100 --pretty",
     "http_methods": [
       "GET"
@@ -15,6 +16,7 @@
     "first_contact": "/public-node/agents/first-contact-v1.json",
     "join_page": "/public-node/agents/join-v1.html",
     "official_authenticity": "/.well-known/void-network-authenticity.json",
+    "public_utility": "/public-node/agents/public-utility-v1.json",
     "well_known_discovery": "/.well-known/void-agent-discovery.json"
   },
   "honesty": {
@@ -26,12 +28,20 @@
     "work_credit_earning_promised": false
   },
   "marker": "VOID_AI_AGENT_FIRST_CONTACT_V1",
+  "manifest_fingerprint_sha256": "ed56951c1bc043911ede167dc2cddbab38af62f069d07638dc1825d7e936f413",
   "network": {
     "chain_id": 2050,
     "identity": "mainnet0",
     "name": "VOID Mainnet-0"
   },
   "next_steps": [
+    {
+      "id": "inspect_public_utility",
+      "path": "/public-node/agents/public-utility-v1.json",
+      "requires": [
+        "public_utility_catalog_loaded"
+      ]
+    },
     {
       "id": "inspect_capabilities",
       "path": "/public-node/agents/capabilities-v1.json",
@@ -72,7 +82,9 @@
       "official_authenticity_reachable",
       "network_binding_consistent",
       "authentication_contract_found",
-      "capabilities_loaded"
+      "capabilities_loaded",
+      "public_utility_catalog_loaded",
+      "public_utility_resources_observed"
     ],
     "semantics": "official_network_verified means the official discovery and authenticity documents are reachable and consistent with the declared VOID Mainnet-0 identity. It does not claim independent cryptographic signature revalidation."
   },

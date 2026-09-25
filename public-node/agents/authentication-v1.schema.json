@@ -1,0 +1,137 @@
+{
+  "$id": "https://voidchain.io/public/public-node/agents/authentication-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "canonicalization": {
+      "type": "object"
+    },
+    "current_runtime_boundary": {
+      "additionalProperties": false,
+      "properties": {
+        "authorization_header_active": {
+          "const": false
+        },
+        "buy_void_automatic_fulfillment_active": {
+          "const": false
+        },
+        "challenge_endpoint_active": {
+          "const": false
+        },
+        "mutation_authority_granted": {
+          "const": false
+        },
+        "payment_submission_active": {
+          "const": false
+        },
+        "protected_read_routes_active": {
+          "const": false
+        },
+        "send_signed_envelopes_now": {
+          "const": false
+        },
+        "session_endpoint_active": {
+          "const": false
+        },
+        "work_credit_awards_active": {
+          "const": false
+        }
+      },
+      "required": [
+        "send_signed_envelopes_now",
+        "authorization_header_active",
+        "session_endpoint_active",
+        "challenge_endpoint_active",
+        "protected_read_routes_active",
+        "mutation_authority_granted",
+        "payment_submission_active",
+        "work_credit_awards_active",
+        "buy_void_automatic_fulfillment_active"
+      ],
+      "type": "object"
+    },
+    "future_verifier_requirements": {
+      "type": "object"
+    },
+    "identity": {
+      "type": "object"
+    },
+    "marker": {
+      "const": "VOID_AI_AGENT_AUTHENTICATION_CONTRACT_V1"
+    },
+    "network": {
+      "additionalProperties": false,
+      "properties": {
+        "chain_id": {
+          "const": 2050
+        },
+        "name": {
+          "const": "VOID Mainnet-0"
+        }
+      },
+      "required": [
+        "name",
+        "chain_id"
+      ],
+      "type": "object"
+    },
+    "next_lane": {
+      "type": "object"
+    },
+    "protocol": {
+      "const": "void-agent-authentication/1"
+    },
+    "publication": {
+      "additionalProperties": false,
+      "properties": {
+        "authenticated_routes_active": {
+          "const": false
+        },
+        "contract_published": {
+          "const": true
+        },
+        "request_submission_active": {
+          "const": false
+        },
+        "session_issuance_active": {
+          "const": false
+        },
+        "verifier_runtime_active": {
+          "const": false
+        }
+      },
+      "required": [
+        "contract_published",
+        "verifier_runtime_active",
+        "session_issuance_active",
+        "authenticated_routes_active",
+        "request_submission_active"
+      ],
+      "type": "object"
+    },
+    "reference_tool": {
+      "type": "object"
+    },
+    "signed_request_envelope": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "marker",
+    "protocol",
+    "network",
+    "publication",
+    "identity",
+    "canonicalization",
+    "signed_request_envelope",
+    "future_verifier_requirements",
+    "current_runtime_boundary",
+    "reference_tool",
+    "next_lane"
+  ],
+  "title": "VOID AI-Agent Authentication Contract V1",
+  "type": "object"
+}

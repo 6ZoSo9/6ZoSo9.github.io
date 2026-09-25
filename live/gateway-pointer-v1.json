@@ -1,38 +1,22 @@
 {
-  "activation_receipt_sha256": "a20e4cd28d450c33f906d4f8d26c71f99962a392a55aa1d503a0e855ece43dd2",
+  "marker": "VOID_AI_AGENT_EXPERIMENTAL_LIVE_GATEWAY_POINTER_V1",
+  "schema": "void-ai-agent-experimental-live-gateway-pointer-v1",
+  "status": "historical_unverified",
+  "current": false,
+  "public_base": null,
+  "current_state": "https://6zoso9.github.io/current-state-v2.json",
+  "last_verified_at_utc": "2026-07-26T23:34:00Z",
+  "historical_public_base": "https://hereby-metals-plumbing-preserve.trycloudflare.com",
+  "reason": "The July Quick Tunnel was ephemeral and is not a current live gateway claim.",
   "boundary": {
+    "read_only": true,
     "arbitrary_proxy": false,
     "ledger": false,
-    "operator_mutation": false,
     "payments": false,
-    "read_only": true,
-    "secrets": false,
     "transactions": false,
     "validator_mutation": false,
-    "wallet": false
-  },
-  "manifest": "https://hereby-metals-plumbing-preserve.trycloudflare.com/live/gateway-v1.json",
-  "marker": "VOID_AI_AGENT_EXPERIMENTAL_LIVE_GATEWAY_POINTER_V1",
-  "openapi": "https://6zoso9.github.io/live/openapi.json",
-  "public_base": "https://hereby-metals-plumbing-preserve.trycloudflare.com",
-  "routes": {
-    "/live/chain-head.json": "https://hereby-metals-plumbing-preserve.trycloudflare.com/live/chain-head.json",
-    "/live/first-contact-v1.json": "https://hereby-metals-plumbing-preserve.trycloudflare.com/live/first-contact-v1.json",
-    "/live/gateway-v1.json": "https://hereby-metals-plumbing-preserve.trycloudflare.com/live/gateway-v1.json",
-    "/live/health.json": "https://hereby-metals-plumbing-preserve.trycloudflare.com/live/health.json",
-    "/live/join-v1.html": "https://hereby-metals-plumbing-preserve.trycloudflare.com/live/join-v1.html",
-    "/live/readiness.json": "https://hereby-metals-plumbing-preserve.trycloudflare.com/live/readiness.json"
-  },
-  "schema": "void-ai-agent-experimental-live-gateway-pointer-v1",
-  "stable_static_discovery": "https://6zoso9.github.io",
-  "status": "live_at_verification",
-  "transport": {
-    "concurrent_request_limit": 200,
-    "ephemeral_url": true,
-    "production_sla": false,
-    "provider": "cloudflare-quick-tunnel",
-    "restart_changes_url": true,
-    "server_sent_events": false
-  },
-  "verified_at_utc": "2026-07-26T23:34:00Z"
+    "operator_mutation": false,
+    "wallet": false,
+    "secrets": false
+  }
 }

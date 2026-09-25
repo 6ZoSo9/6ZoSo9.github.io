@@ -1,18 +1,12 @@
 {
+  "$schema": "./discovery-v1.schema.json",
   "marker": "VOID_AI_AGENT_DISCOVERY_CONTRACT_WALL_V1",
   "protocol": "void-agent-discovery/1",
   "network": {
     "name": "VOID Mainnet-0",
-    "identity": "mainnet0",
     "chain_id": 2050
   },
-  "purpose": "Machine-readable same-origin discovery for the static VOID GitHub Pages mirror without granting mutation authority.",
-  "distribution": {
-    "mode": "static_public_mirror",
-    "provider": "github-pages",
-    "replaceable": true,
-    "core_dependency": false
-  },
+  "purpose": "Machine-readable same-origin discovery for AI agents without granting mutation authority.",
   "authority": {
     "default": "read_only",
     "granted_http_methods": [
@@ -21,55 +15,64 @@
     ],
     "mutation_authority_granted": false,
     "credentials_required_for_discovery": false,
-    "payment_authority_granted": false,
-    "wallet_or_signer_access": false,
-    "work_credit_write_authority": false
+    "forbidden_assumptions": [
+      "A visible route grants write authority.",
+      "A bounded pilot is permissionless.",
+      "A wallet, treasury, validator, Work Credit, Buy VOID, or operator mutation is available unless a separate signed capability explicitly proves it.",
+      "Failure, timeout, or ambiguous output means an action succeeded."
+    ]
   },
   "entrypoints": {
     "node_identity": "/.well-known/void-public-node.json",
-    "well_known_discovery": "/.well-known/void-agent-discovery.json",
-    "network_authenticity": "/.well-known/void-network-authenticity.json",
-    "public_node_root": "/public-node/",
-    "first_contact": "/public-node/agents/first-contact-v1.json",
-    "human_join": "/public-node/agents/join-v1.html",
+    "public_index": "/public-node/index.json",
+    "readiness": "/__void/ready.json",
+    "participant_app": "/app/",
     "capability_negotiation": "/public-node/agents/capabilities-v1.json",
     "authentication_contract": "/public-node/agents/authentication-v1.json",
-    "intake_capability": "/.well-known/void-agent-intake-capability-v1.json",
-    "discovery_landing": "/discovery/",
-    "discovery_index": "/discovery/index-v1.json",
-    "dataset": "/discovery/void-datanet-dataset-v1.jsonld",
-    "public_client_kit": "/clients/manifest-v1.json"
+    "paid_work_protocol": "/public-node/agents/paid-work-v1.json"
   },
   "capabilities": [
     {
-      "id": "public_discovery",
-      "state": "live_static",
+      "id": "network_discovery",
+      "state": "live",
       "authority": "read_only",
-      "discovery": "/.well-known/void-agent-discovery.json"
+      "discovery": "/.well-known/void-public-node.json"
     },
     {
-      "id": "network_authenticity_verification",
-      "state": "live_static",
-      "authority": "verification_only",
-      "discovery": "/.well-known/void-network-authenticity.json"
+      "id": "public_status_and_evidence",
+      "state": "live",
+      "authority": "read_only",
+      "discovery": "/public-node/index.json"
     },
     {
       "id": "capability_negotiation",
-      "state": "live_static",
+      "state": "live",
       "authority": "read_only",
       "discovery": "/public-node/agents/capabilities-v1.json"
     },
     {
       "id": "authentication_contract_discovery",
-      "state": "contract_only_runtime_inactive",
+      "state": "live",
       "authority": "read_only",
       "discovery": "/public-node/agents/authentication-v1.json"
     },
     {
-      "id": "paid_work_intake_discovery",
-      "state": "operator_review_required",
-      "authority": "read_only_discovery_only",
-      "discovery": "/.well-known/void-agent-intake-capability-v1.json"
+      "id": "paid_work_protocol_discovery",
+      "state": "live",
+      "authority": "read_only",
+      "discovery": "/public-node/agents/paid-work-v1.json"
+    },
+    {
+      "id": "datanet_public_read_and_verify",
+      "state": "live",
+      "authority": "read_only",
+      "discovery": "/public-node/datanet/"
+    },
+    {
+      "id": "work_credit_earning",
+      "state": "bounded_pilot",
+      "authority": "coordinator_ticket_and_verified_receipt_only",
+      "discovery": "/public-node/work-credits/"
     },
     {
       "id": "buy_void_automatic_fulfillment",
@@ -78,16 +81,90 @@
       "enabled": false
     },
     {
-      "id": "wallet_treasury_validator_or_ledger_mutation",
+      "id": "validator_activation",
+      "state": "guarded",
+      "authority": "not_granted",
+      "enabled": false
+    },
+    {
+      "id": "wallet_treasury_or_ledger_mutation",
       "state": "guarded",
       "authority": "not_granted",
       "enabled": false
     }
   ],
+  "agent_onboarding": {
+    "steps": [
+      {
+        "order": 1,
+        "action": "fetch",
+        "method": "GET",
+        "path": "/public-node/agents/discovery-v1.json",
+        "required": true
+      },
+      {
+        "order": 2,
+        "action": "fetch",
+        "method": "GET",
+        "path": "/public-node/agents/capabilities-v1.json",
+        "required": true
+      },
+      {
+        "order": 3,
+        "action": "fetch",
+        "method": "GET",
+        "path": "/public-node/agents/authentication-v1.json",
+        "required": true
+      },
+      {
+        "order": 4,
+        "action": "fetch",
+        "method": "GET",
+        "path": "/.well-known/void-public-node.json",
+        "required": true
+      },
+      {
+        "order": 5,
+        "action": "fetch",
+        "method": "GET",
+        "path": "/public-node/index.json",
+        "required": true
+      },
+      {
+        "order": 6,
+        "action": "fetch",
+        "method": "GET",
+        "path": "/__void/ready.json",
+        "required": false
+      },
+      {
+        "order": 7,
+        "action": "fetch",
+        "method": "GET",
+        "path": "/public-node/agents/paid-work-v1.json",
+        "required": false
+      },
+      {
+        "order": 8,
+        "action": "enforce_authority_boundary",
+        "required": true,
+        "rule": "Use only routes and methods explicitly advertised by a fetched capability. Stop before mutation when authority is absent, guarded, ambiguous, expired, or unverifiable."
+      }
+    ],
+    "stop_conditions": [
+      "The discovery marker or protocol is wrong.",
+      "The chain ID is not 2050.",
+      "Any discovery entrypoint resolves off origin.",
+      "The capability-negotiation marker, protocol, chain identity, same-origin rule, or fail-closed default is wrong.",
+      "The authentication-contract marker, protocol, chain identity, same-origin rule, or inactive-runtime boundary is wrong.",
+      "Any granted discovery method is not GET or HEAD.",
+      "Mutation authority is claimed by this discovery document.",
+      "A required response is unavailable, malformed, ambiguous, or contradicts the advertised boundary."
+    ]
+  },
   "safety": {
     "same_origin_only": true,
     "follow_cross_origin_links_automatically": false,
-    "send_credentials": false,
     "send_secrets": false,
     "send_wallet_material": false,
     "send_operator_keys": false,

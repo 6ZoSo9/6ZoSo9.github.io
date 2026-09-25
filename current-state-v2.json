@@ -1,0 +1,62 @@
+{
+  "marker": "VOID_PAGES_CURRENT_STATE_V2",
+  "schema": "void-pages-current-state-v2",
+  "reviewed_at_utc": "2026-09-25",
+  "mirror": {
+    "repository": "6ZoSo9/6ZoSo9.github.io",
+    "origin": "https://6zoso9.github.io",
+    "role": "static_replaceable_discovery_mirror",
+    "core_dependency": false,
+    "dynamic_api": false
+  },
+  "source": {
+    "repository": "6ZoSo9/void-node",
+    "branch": "main",
+    "commit": "d4a8f43462be30699678a2da710c427e38768655",
+    "bindings": "/mirror/source-bindings-v2.json"
+  },
+  "network": {
+    "name": "VOID Mainnet-0",
+    "chain_id": 2050,
+    "state": "PUBLIC_MAINNET0_LIVE_WITH_GUARDED_MUTATION",
+    "canonical_agent_origin": "http://r4r4rkuj522ildqsn6kvd7bkuclasm2qvlsolwg7xwizmuy6qohmhxid.onion"
+  },
+  "capabilities": {
+    "static_agent_discovery": "live",
+    "datanet_public_read_and_verify": "live",
+    "work_credit_earning": "bounded_pilot",
+    "public_presale_intake": "guarded_hold",
+    "production_wc_void_market": "guarded_hold",
+    "automatic_buy_void_fulfillment": "not_enabled",
+    "public_active_validator_admission": "not_enabled",
+    "stable_node_release": "not_published"
+  },
+  "economics": {
+    "wc_unlimited_accounting_units": true,
+    "fixed_wc_void_conversion": false,
+    "wc_void_protocol_void_inventory": "10000000",
+    "wc_void_protocol_wc_seed": "0",
+    "wc_void_opening_price": "market_discovered",
+    "presale_wc_void_coupled_launch": true
+  },
+  "runtime_pointers": {
+    "legacy_cloudflare_quick_tunnels": {
+      "current": false,
+      "status": "historical_unverified",
+      "reason": "July 2026 ephemeral URLs are not revalidated by this refresh"
+    },
+    "current_remote_mcp_endpoint": null,
+    "current_remote_a2a_endpoint": null,
+    "current_paid_work_submission_endpoint": null
+  },
+  "authority": {
+    "mutation": false,
+    "wallet_or_signer": false,
+    "transaction": false,
+    "validator": false,
+    "work_credit_write": false,
+    "payment_execution": false,
+    "treasury_or_liquidity": false,
+    "funds_movement": false
+  }
+}

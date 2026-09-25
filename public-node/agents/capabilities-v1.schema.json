@@ -1,0 +1,304 @@
+{
+  "$id": "https://voidchain.io/public/public-node/agents/capabilities-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "authority": {
+      "additionalProperties": false,
+      "properties": {
+        "authentication_active": {
+          "const": false
+        },
+        "authentication_contract_published": {
+          "const": true
+        },
+        "buy_void_automatic_fulfillment_active": {
+          "const": false
+        },
+        "default": {
+          "const": "not_granted"
+        },
+        "discovery_authority": {
+          "const": "read_only"
+        },
+        "mutation_authority_granted": {
+          "const": false
+        },
+        "payment_submission_active": {
+          "const": false
+        },
+        "signed_request_envelopes_active": {
+          "const": false
+        },
+        "work_credit_awards_active": {
+          "const": false
+        }
+      },
+      "required": [
+        "default",
+        "discovery_authority",
+        "mutation_authority_granted",
+        "authentication_active",
+        "signed_request_envelopes_active",
+        "payment_submission_active",
+        "work_credit_awards_active",
+        "buy_void_automatic_fulfillment_active",
+        "authentication_contract_published"
+      ],
+      "type": "object"
+    },
+    "capabilities": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "access": {
+            "enum": [
+              "anonymous",
+              "not_published",
+              "operator_coordinated_only"
+            ]
+          },
+          "authority": {
+            "enum": [
+              "read_only",
+              "not_granted",
+              "not_granted_on_public_gateway"
+            ]
+          },
+          "description": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "http_methods": {
+            "items": {
+              "enum": [
+                "GET",
+                "HEAD"
+              ]
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "id": {
+            "pattern": "^[a-z0-9_]+$",
+            "type": "string"
+          },
+          "paths": {
+            "items": {
+              "pattern": "^/(?!/)",
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "state": {
+            "enum": [
+              "live",
+              "bounded_pilot",
+              "guarded",
+              "planned"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "description",
+          "state",
+          "enabled",
+          "access",
+          "authority",
+          "http_methods",
+          "paths"
+        ],
+        "type": "object"
+      },
+      "minItems": 10,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "client_algorithm": {
+      "type": "object"
+    },
+    "marker": {
+      "const": "VOID_AI_AGENT_CAPABILITY_NEGOTIATION_V1"
+    },
+    "negotiation": {
+      "additionalProperties": false,
+      "properties": {
+        "default_result": {
+          "const": "not_granted"
+        },
+        "grant_requirements": {
+          "additionalProperties": false,
+          "properties": {
+            "access": {
+              "const": "anonymous"
+            },
+            "authority": {
+              "const": "read_only"
+            },
+            "enabled": {
+              "const": true
+            },
+            "http_methods_subset_of": {
+              "const": [
+                "GET",
+                "HEAD"
+              ]
+            },
+            "same_origin_paths_only": {
+              "const": true
+            },
+            "state": {
+              "const": "live"
+            }
+          },
+          "required": [
+            "state",
+            "enabled",
+            "access",
+            "authority",
+            "http_methods_subset_of",
+            "same_origin_paths_only"
+          ],
+          "type": "object"
+        },
+        "mode": {
+          "const": "client_side_intersection"
+        },
+        "request_submission_enabled": {
+          "const": false
+        },
+        "result_states": {
+          "const": [
+            "granted",
+            "not_granted"
+          ]
+        },
+        "server_round_trip_required": {
+          "const": false
+        }
+      },
+      "required": [
+        "mode",
+        "request_submission_enabled",
+        "server_round_trip_required",
+        "default_result",
+        "grant_requirements",
+        "result_states"
+      ],
+      "type": "object"
+    },
+    "network": {
+      "additionalProperties": false,
+      "properties": {
+        "chain_id": {
+          "const": 2050
+        },
+        "name": {
+          "const": "VOID Mainnet-0"
+        }
+      },
+      "required": [
+        "name",
+        "chain_id"
+      ],
+      "type": "object"
+    },
+    "next_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "authenticated_routes_active": {
+          "const": false
+        },
+        "authentication_contract": {
+          "const": "/public-node/agents/authentication-v1.json"
+        },
+        "name": {
+          "const": "AI-agent read-only verifier runtime v1"
+        },
+        "verifier_runtime_active": {
+          "const": false
+        }
+      },
+      "required": [
+        "name",
+        "authentication_contract",
+        "verifier_runtime_active",
+        "authenticated_routes_active"
+      ],
+      "type": "object"
+    },
+    "protocol": {
+      "const": "void-agent-capability-negotiation/1"
+    },
+    "purpose": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "safety": {
+      "additionalProperties": false,
+      "properties": {
+        "ambiguous_capability_result": {
+          "const": "not_granted"
+        },
+        "follow_redirects": {
+          "const": false
+        },
+        "mutation_without_separate_signed_capability": {
+          "const": "forbidden"
+        },
+        "same_origin_only": {
+          "const": true
+        },
+        "send_credentials": {
+          "const": false
+        },
+        "send_operator_keys": {
+          "const": false
+        },
+        "send_secrets": {
+          "const": false
+        },
+        "send_wallet_material": {
+          "const": false
+        },
+        "unknown_capability_result": {
+          "const": "not_granted"
+        }
+      },
+      "required": [
+        "same_origin_only",
+        "follow_redirects",
+        "send_credentials",
+        "send_secrets",
+        "send_wallet_material",
+        "send_operator_keys",
+        "unknown_capability_result",
+        "ambiguous_capability_result",
+        "mutation_without_separate_signed_capability"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "marker",
+    "protocol",
+    "network",
+    "purpose",
+    "negotiation",
+    "authority",
+    "capabilities",
+    "client_algorithm",
+    "safety",
+    "next_contract"
+  ],
+  "title": "VOID AI-Agent Capability Negotiation V1",
+  "type": "object"
+}

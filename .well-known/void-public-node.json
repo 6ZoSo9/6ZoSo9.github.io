@@ -1,81 +1,89 @@
 {
-  "boundary": {
-    "ledger": false,
-    "operator_mutation": false,
-    "payment_processing": false,
-    "static_only": true,
-    "transaction_submission": false,
-    "validator_mutation": false,
-    "wallet": false
+  "$schema": "./void-public-node.schema.json",
+  "marker": "VOID_PUBLIC_NODE_AGENT_DISCOVERY_V1",
+  "version": 1,
+  "purpose": "well_known_public_node_agent_discovery",
+  "protocol": "void-public-node-discovery-v1",
+  "status": "public_node_agent_discovery_ready",
+  "effective_base_url": "http://r4r4rkuj522ildqsn6kvd7bkuclasm2qvlsolwg7xwizmuy6qohmhxid.onion",
+  "network": {
+    "name": "VOID Mainnet-0",
+    "identity": "mainnet0",
+    "chain_id": 2050
   },
-  "canonical_source_merge_commit": "20cf2bc1711ab4ea63e8bc5d6c60815ed8f8b37a",
-  "distribution": {
-    "core_dependency": false,
-    "provider": "github-pages",
-    "replaceable_mirror": true,
-    "repository": "6ZoSo9/6ZoSo9.github.io"
+  "transport": {
+    "protocol": "tor-v3-onion-service",
+    "onion_hostname": "r4r4rkuj522ildqsn6kvd7bkuclasm2qvlsolwg7xwizmuy6qohmhxid.onion",
+    "virtual_port": 80,
+    "address_role": "canonical_public_read_only_agent_origin"
   },
-  "experimental_live_gateway": {
-    "ephemeral": true,
-    "openapi": "https://6zoso9.github.io/live/openapi.json",
-    "pointer": "https://6zoso9.github.io/live/gateway-pointer-v1.json",
-    "stable_static_discovery": "https://6zoso9.github.io"
+  "identity": {
+    "signed_node_binding_required": true,
+    "binding_paths": [
+      "/.well-known/void-node-onion-binding-v1.json",
+      "/public-node/transports/tor-v1-binding.json"
+    ],
+    "authenticity_path": "/.well-known/void-network-authenticity.json"
   },
-  "first_contact": {
-    "human_readable": "https://6zoso9.github.io/public-node/agents/join-v1.html",
-    "human_readable_bytes": 3693,
-    "human_readable_sha256": "a5d4801c5354246e9f0fd85d36f0159bee970c6469d06b4deb0921bfd7db0450",
-    "machine_readable": "https://6zoso9.github.io/public-node/agents/first-contact-v1.json",
-    "machine_readable_sha256": "73b2936cdb03c2028746db27159cbaa6e556e264652d8442a91fafa988dab45f"
+  "links": {
+    "public_node_root": "http://r4r4rkuj522ildqsn6kvd7bkuclasm2qvlsolwg7xwizmuy6qohmhxid.onion/.well-known/void-public-node.json",
+    "agent_discovery_well_known": "http://r4r4rkuj522ildqsn6kvd7bkuclasm2qvlsolwg7xwizmuy6qohmhxid.onion/.well-known/void-agent-discovery.json",
+    "network_authenticity": "http://r4r4rkuj522ildqsn6kvd7bkuclasm2qvlsolwg7xwizmuy6qohmhxid.onion/.well-known/void-network-authenticity.json",
+    "tor_transport": "http://r4r4rkuj522ildqsn6kvd7bkuclasm2qvlsolwg7xwizmuy6qohmhxid.onion/.well-known/void-tor-onion-transport-v1.json",
+    "signed_node_binding": "http://r4r4rkuj522ildqsn6kvd7bkuclasm2qvlsolwg7xwizmuy6qohmhxid.onion/.well-known/void-node-onion-binding-v1.json",
+    "mcp_descriptor": "http://r4r4rkuj522ildqsn6kvd7bkuclasm2qvlsolwg7xwizmuy6qohmhxid.onion/.well-known/void-agent-mcp-onion-v1.json",
+    "canonical_agent_discovery": "http://r4r4rkuj522ildqsn6kvd7bkuclasm2qvlsolwg7xwizmuy6qohmhxid.onion/public-node/agents/discovery-v1.json",
+    "capability_negotiation": "http://r4r4rkuj522ildqsn6kvd7bkuclasm2qvlsolwg7xwizmuy6qohmhxid.onion/public-node/agents/capabilities-v1.json",
+    "authentication_contract": "http://r4r4rkuj522ildqsn6kvd7bkuclasm2qvlsolwg7xwizmuy6qohmhxid.onion/public-node/agents/authentication-v1.json",
+    "first_contact": "http://r4r4rkuj522ildqsn6kvd7bkuclasm2qvlsolwg7xwizmuy6qohmhxid.onion/public-node/agents/first-contact-v1.json",
+    "paid_work_runtime": "http://r4r4rkuj522ildqsn6kvd7bkuclasm2qvlsolwg7xwizmuy6qohmhxid.onion/public-node/agents/paid-work-v1.json",
+    "paid_work_public_discovery_alias": "http://r4r4rkuj522ildqsn6kvd7bkuclasm2qvlsolwg7xwizmuy6qohmhxid.onion/public-node/agent-paid-work-public-discovery-v1.json",
+    "datanet_index": "http://r4r4rkuj522ildqsn6kvd7bkuclasm2qvlsolwg7xwizmuy6qohmhxid.onion/public-node/datanet/index.json",
+    "paid_read_quote": "http://r4r4rkuj522ildqsn6kvd7bkuclasm2qvlsolwg7xwizmuy6qohmhxid.onion/public-node/datanet/paid-read-quote-v1.json"
   },
-  "independent_public_agent_canary": {
-    "badge": "https://github.com/6ZoSo9/6ZoSo9.github.io/actions/workflows/void-public-agent-canary-v1.yml/badge.svg?branch=main",
-    "spec": "https://6zoso9.github.io/canary/spec-v1.json",
-    "workflow": "https://github.com/6ZoSo9/6ZoSo9.github.io/actions/workflows/void-public-agent-canary-v1.yml"
+  "route_markers": {
+    "public_node_root": "VOID_PUBLIC_NODE_AGENT_DISCOVERY_V1",
+    "agent_discovery_well_known": "VOID_AI_AGENT_WELL_KNOWN_ENTRYPOINT_V1",
+    "network_authenticity": "VOID_OFFICIAL_NETWORK_AUTHENTICITY_WELL_KNOWN_V1",
+    "tor_transport": "VOID_TOR_ONION_TRANSPORT_V1",
+    "signed_node_binding": "VOID_NODE_ONION_BINDING_V1",
+    "mcp_descriptor": "VOID_TOR_AGENT_MCP_READONLY_V1",
+    "canonical_agent_discovery": "VOID_AI_AGENT_DISCOVERY_CONTRACT_WALL_V1",
+    "capability_negotiation": "VOID_AI_AGENT_CAPABILITY_NEGOTIATION_V1",
+    "authentication_contract": "VOID_AI_AGENT_AUTHENTICATION_CONTRACT_V1",
+    "first_contact": "VOID_AI_AGENT_FIRST_CONTACT_V1",
+    "paid_work_runtime": "VOID_AGENT_PAID_WORK_RUNTIME_DISCOVERY_V1",
+    "paid_work_public_discovery_alias": "VOID_AGENT_PAID_WORK_RUNTIME_DISCOVERY_V1"
   },
-  "integration": {
-    "atom_feed": "https://6zoso9.github.io/feed.xml",
-    "discovery_index": {
-      "sha256": "c4a8a98888a26d409513ea4ba312f6939e7906208f91783e6af7c8c051b48a37",
-      "url": "https://6zoso9.github.io/discovery/index-v1.json"
-    },
-    "integrity": "https://6zoso9.github.io/integrity/void-first-contact-v1.json",
-    "llms": "https://6zoso9.github.io/llms.txt",
-    "llms_full": "https://6zoso9.github.io/llms-full.txt",
-    "openapi": "https://6zoso9.github.io/openapi.json",
-    "sitemap": "https://6zoso9.github.io/sitemap.xml",
-    "standards_readiness": "https://6zoso9.github.io/standards/readiness-v1.json"
+  "parity": {
+    "profile": "/config/void-tor-agent-discovery-parity-v1.json",
+    "route_count": 14,
+    "client_profile_marker": "VOID_TOR_AGENT_ACCESS_CLIENT_PROFILE_V1",
+    "client_optional_probe_paths": [
+      "/.well-known/void-public-node.json",
+      "/.well-known/void-agent-discovery.json",
+      "/.well-known/void-network-authenticity.json",
+      "/public-node/agents/first-contact-v1.json",
+      "/public-node/agent-paid-work-public-discovery-v1.json"
+    ],
+    "expected_client_discovery_parity": "full"
   },
-  "marker": "VOID_AI_AGENT_FIRST_CONTACT_FREE_DISCOVERY_MESH_V1",
-  "paid_agent_work_intake": {
-    "catalog": "https://6zoso9.github.io/work/catalog-v1.json",
-    "client": "https://6zoso9.github.io/work/void-paid-work-client.py",
-    "fixed_award_wc": 3,
-    "live": "https://6zoso9.github.io/work/live-v1.json"
+  "authority": {
+    "read_only": true,
+    "mutation_authority_granted": false,
+    "paid_work_submission": false,
+    "payment_execution": false,
+    "work_credit_write": false,
+    "wallet_or_signer_access": false,
+    "node_runtime_mutation": false,
+    "operator_control": false
   },
-  "public_client_kit": {
-    "contentCommit": "72f9920f714d28b3755337a23ea0838b42c62d41",
-    "githubRelease": "https://github.com/6ZoSo9/6ZoSo9.github.io/releases/tag/void-agent-client-kit-v1",
-    "manifest": "https://6zoso9.github.io/clients/manifest-v1.json",
-    "node": "https://6zoso9.github.io/clients/void-agent-client.mjs",
-    "python": "https://6zoso9.github.io/clients/void-agent-client.py",
-    "releaseTag": "void-agent-client-kit-v1",
-    "selectedImmutableBase": "https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@72f9920f714d28b3755337a23ea0838b42c62d41/clients",
-    "selectedImmutableProvider": "jsdelivr-github-full-commit",
-    "shell": "https://6zoso9.github.io/clients/void-agent-client.sh"
-  },
-  "remote_a2a_agent": {
-    "agentCard": "https://dozen-casting-expired-approximately.trycloudflare.com/.well-known/agent-card.json",
-    "catalogue": "https://6zoso9.github.io/a2a/agent-v1.json",
-    "endpoint": "https://dozen-casting-expired-approximately.trycloudflare.com/a2a",
-    "ephemeral": true
-  },
-  "remote_mcp": {
-    "clientConfig": "https://6zoso9.github.io/mcp/client-config-v1.json",
-    "endpoint": "https://hereby-metals-plumbing-preserve.trycloudflare.com/mcp",
-    "ephemeral": true,
-    "metadata": "https://6zoso9.github.io/mcp/remote-server-v1.json"
-  },
-  "schema": "void-public-node-discovery-v1",
-  "status": "static_public_discovery_mirror"
+  "safety": {
+    "same_origin_only": true,
+    "follow_redirects": false,
+    "send_credentials": false,
+    "send_secrets": false,
+    "send_wallet_material": false,
+    "treat_unknown_as": "not_granted"
+  }
 }

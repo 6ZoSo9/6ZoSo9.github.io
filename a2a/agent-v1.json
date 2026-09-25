@@ -1,42 +1,23 @@
 {
-  "activationReceiptSha256": "825e1ee53f8d2d0c048d49c995d068bb93feba2832fe307e859b2c4617f86336",
-  "agentCard": "https://dozen-casting-expired-approximately.trycloudflare.com/.well-known/agent-card.json",
-  "agentVersion": "1.0.0",
-  "boundary": {
-    "deterministic": true,
-    "ledger": false,
-    "operatorMutation": false,
-    "payments": false,
-    "readOnly": true,
-    "tasksPersisted": false,
-    "transactions": false,
-    "validatorMutation": false,
-    "wallet": false
-  },
-  "capabilities": {
-    "extendedAgentCard": false,
-    "pushNotifications": false,
-    "streaming": false
-  },
-  "endpoint": "https://dozen-casting-expired-approximately.trycloudflare.com/a2a",
-  "protocolBinding": "JSONRPC",
-  "protocolVersion": "1.0",
-  "publicBase": "https://dozen-casting-expired-approximately.trycloudflare.com",
   "schema": "void-a2a-readonly-agent-catalogue-v1",
-  "skills": [
-    {
-      "id": "read-void-public-network",
-      "name": "Read VOID Public Network Context"
-    }
-  ],
-  "stableDiscovery": "https://6zoso9.github.io",
-  "status": "live_at_verification",
-  "transport": {
-    "concurrentRequestLimit": 200,
-    "ephemeralUrl": true,
-    "productionSla": false,
-    "provider": "cloudflare-quick-tunnel",
-    "restartChangesUrl": true,
-    "serverSentEvents": false
-  }
+  "status": "historical_unverified",
+  "current": false,
+  "endpoint": null,
+  "agentCard": null,
+  "stableDiscovery": "https://6zoso9.github.io/current-state-v2.json",
+  "last_verified_at_utc": "2026-07-26T23:34:00Z",
+  "historical_endpoint": "https://dozen-casting-expired-approximately.trycloudflare.com/a2a",
+  "historical_agent_card": "https://dozen-casting-expired-approximately.trycloudflare.com/.well-known/agent-card.json",
+  "historical_provider": "cloudflare-quick-tunnel",
+  "reason": "The July endpoint was explicitly ephemeral and has not been reverified by the September 25 mirror refresh.",
+  "boundary": {
+    "readOnly": true,
+    "wallet": false,
+    "ledger": false,
+    "transactions": false,
+    "payments": false,
+    "validatorMutation": false,
+    "operatorMutation": false
+  },
+  "current_client_action": "Do not connect from this record. Resolve current-state-v2.json and current canonical VOID discovery first."
 }

@@ -1,35 +1,113 @@
 {
-  "marker": "VOID_AI_AGENT_AUTHENTICATION_CONTRACT_V1",
-  "protocol": "void-agent-authentication/1",
-  "network": {
-    "name": "VOID Mainnet-0",
-    "identity": "mainnet0",
-    "chain_id": 2050
+  "$schema": "./authentication-v1.schema.json",
+  "canonicalization": {
+    "array_order": "preserved",
+    "encoding": "UTF-8",
+    "name": "void-canonical-json/1",
+    "object_keys": "lexicographic",
+    "unsupported_values": [
+      "undefined",
+      "non-finite numbers",
+      "functions",
+      "symbols"
+    ],
+    "whitespace": "none"
   },
-  "status": "contract_discovery_only",
-  "purpose": "Publish the inactive authentication boundary without accepting credentials or signed requests on GitHub Pages.",
-  "runtime": {
-    "verifier_active": false,
-    "authenticated_routes_active": false,
-    "request_submission_active": false,
-    "credential_collection_active": false
-  },
-  "authority": {
-    "default": "not_granted",
-    "contract_discovery": "read_only",
+  "current_runtime_boundary": {
+    "authorization_header_active": false,
+    "buy_void_automatic_fulfillment_active": false,
+    "challenge_endpoint_active": false,
     "mutation_authority_granted": false,
-    "payment_authority_granted": false,
-    "work_credit_authority_granted": false,
-    "wallet_or_signer_access": false
-  },
-  "safety": {
-    "same_origin_only": true,
-    "follow_redirects": false,
-    "send_credentials_now": false,
+    "payment_submission_active": false,
+    "protected_read_routes_active": false,
     "send_signed_envelopes_now": false,
-    "send_secrets": false,
-    "send_wallet_material": false,
-    "send_operator_keys": false,
-    "treat_unknown_as": "not_granted"
+    "session_endpoint_active": false,
+    "work_credit_awards_active": false
+  },
+  "future_verifier_requirements": {
+    "derive_and_match_agent_id": true,
+    "fail_closed": true,
+    "require_advertised_live_capability": true,
+    "require_get_or_head": true,
+    "require_nonce_replay_cache": true,
+    "require_read_only_authority": true,
+    "require_same_origin_path": true,
+    "require_unexpired_envelope": true,
+    "verify_ed25519_signature": true
+  },
+  "identity": {
+    "agent_id": {
+      "digest": "SHA-256",
+      "encoding": "base64url-no-padding",
+      "input": "void-canonical-json/1 public JWK",
+      "prefix": "void-agent:ed25519:"
+    },
+    "curve": "Ed25519",
+    "key_type": "OKP",
+    "private_key_transmission": "forbidden",
+    "public_key_format": "JWK"
+  },
+  "marker": "VOID_AI_AGENT_AUTHENTICATION_CONTRACT_V1",
+  "network": {
+    "chain_id": 2050,
+    "name": "VOID Mainnet-0"
+  },
+  "next_lane": {
+    "name": "AI-agent read-only verifier runtime v1",
+    "requirements": [
+      "separate isolated verifier process",
+      "expiry and replay enforcement",
+      "authenticated GET and HEAD only",
+      "no paid work or Work Credit award authority",
+      "no Buy VOID fulfillment authority"
+    ]
+  },
+  "protocol": "void-agent-authentication/1",
+  "publication": {
+    "authenticated_routes_active": false,
+    "contract_published": true,
+    "request_submission_active": false,
+    "session_issuance_active": false,
+    "verifier_runtime_active": false
+  },
+  "reference_tool": {
+    "mode": "ephemeral_demo_only",
+    "path": "/tools/void-ai-agent-auth-envelope-v1.mjs",
+    "private_key_output": false
+  },
+  "signed_request_envelope": {
+    "constraints": {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "maximum_clock_skew_seconds": 15,
+      "maximum_ttl_seconds": 60,
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "minimum_nonce_bytes": 16,
+      "network_chain_id": 2050,
+      "query": "empty_in_v1",
+      "same_origin_path_only": true
+    },
+    "marker": "VOID_AI_AGENT_SIGNED_READONLY_REQUEST_V1",
+    "required_fields": [
+      "marker",
+      "version",
+      "network_chain_id",
+      "agent_id",
+      "public_key_jwk",
+      "capability_id",
+      "method",
+      "path",
+      "query",
+      "body_sha256",
+      "issued_at",
+      "expires_at",
+      "nonce"
+    ],
+    "signature_algorithm": "Ed25519",
+    "signature_encoding": "base64url-no-padding",
+    "signed_value": "void-canonical-json/1 envelope object",
+    "version": 1
   }
 }

@@ -1,0 +1,263 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://voidchain.org/.well-known/void-network-authenticity.schema.json",
+  "title": "VOID Official Network Authenticity Well-Known V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "marker",
+    "protocol",
+    "status",
+    "network",
+    "admission",
+    "verification",
+    "supersession",
+    "authority",
+    "safety"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "marker": {
+      "const": "VOID_OFFICIAL_NETWORK_AUTHENTICITY_WELL_KNOWN_V1"
+    },
+    "protocol": {
+      "const": "void-network-authenticity/1"
+    },
+    "status": {
+      "const": "public_verification_available"
+    },
+    "network": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "chain_id",
+        "legacy_genesis_name",
+        "genesis_sha256"
+      ],
+      "properties": {
+        "name": {
+          "const": "VOID Mainnet-0"
+        },
+        "chain_id": {
+          "const": 2050
+        },
+        "legacy_genesis_name": {
+          "const": "VOID-DEV"
+        },
+        "genesis_sha256": {
+          "const": "22f42ef6cfa8e4ebfbc5ea98cdc536ec04c1bb4ddb15885b45b1ac02d0f122ab"
+        }
+      }
+    },
+    "admission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "checkpoint_tag",
+        "checkpoint_commit",
+        "source_public_return_zip_sha256"
+      ],
+      "properties": {
+        "status": {
+          "const": "admitted_unactivated"
+        },
+        "checkpoint_tag": {
+          "const": "ckpt-official-network-authenticity-root-public-admission-v2-1-post-merge-exact-green-20260725T144005Z"
+        },
+        "checkpoint_commit": {
+          "const": "b8e93d1d0b84e917c16a2d5cdfc195fcb6e4e8af"
+        },
+        "source_public_return_zip_sha256": {
+          "const": "8a920f18636c86fff4d6386073b2980092df3c6b95a180bfd8ce04f5e22969d9"
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "algorithm",
+        "signature_domain",
+        "key_id",
+        "payload_sha256",
+        "public_key_pem",
+        "signature_base64",
+        "signed_payload"
+      ],
+      "properties": {
+        "algorithm": {
+          "const": "Ed25519"
+        },
+        "signature_domain": {
+          "const": "VOID_OFFICIAL_NETWORK_AUTHENTICITY_ROOT_V2"
+        },
+        "key_id": {
+          "const": "ed25519:00e7609bf643b41c7cae625c3ae51f5d55c06ec1adba35e8eb80300c64e77a7c"
+        },
+        "payload_sha256": {
+          "const": "3c3af2b3f7753e03e244c6f2520bcc0501b1b6f1eacea583a9a8e4fe32b8cdf3"
+        },
+        "public_key_pem": {
+          "type": "string"
+        },
+        "signature_base64": {
+          "type": "string"
+        },
+        "signed_payload": {
+          "const": {
+            "algorithm": "ed25519",
+            "correction_checkpoint": {
+              "commit": "103e90d1ec061829223a306e3dc42b14f362bff1",
+              "tag": "ckpt-official-network-identity-mainnet0-correction-v2-1-post-merge-exact-green-20260724T215316Z"
+            },
+            "forensic_fingerprint_registry": {
+              "canonical_sha256": "5dce889d62623b88ad2c294d4c2c941e2ec9b81e9d46a7c89269264a241408ff",
+              "path": "config/source-forensic-fingerprint-registry-v1.json"
+            },
+            "identity_manifest_canonical_sha256": "a7b5023e38926ebe168036e187235719ecc9c9157c7fde4722bf38b6d36ba98c",
+            "identity_revision": "v2.1",
+            "identity_source_base_commit": "f0bb6b59448ee3a80ed78c3144cba8aae66b188a",
+            "marker": "VOID_OFFICIAL_NETWORK_AUTHENTICITY_ROOT_SIGNING_PAYLOAD_V2_1",
+            "official_network_identity": {
+              "chain_id": 2050,
+              "genesis_file": "genesis.json",
+              "genesis_network_name": "VOID-DEV",
+              "genesis_sha256": "22f42ef6cfa8e4ebfbc5ea98cdc536ec04c1bb4ddb15885b45b1ac02d0f122ab",
+              "network_name": "VOID Mainnet-0"
+            },
+            "policy_canonical_sha256": "cac6c5260524ea3da8ccd4540d05701d9b0c4b8d672f2c0f40b8c348be737b89",
+            "preparation_tool": {
+              "path": "scripts/prepare_official_network_authenticity_root_v2.mjs",
+              "sha256": "15d12e6180628080a96f1f33c2cedb3374a9d345943d076fcb863c18eed0332c"
+            },
+            "project": "VOID Network",
+            "repository": "6ZoSo9/void-node",
+            "schema": "void.official-network-authenticity-root-signing-payload.v2.1",
+            "sealed_history": {
+              "v1": {
+                "checkpoint_commit": "48c8413d6dc6f737532e71dc86d80dca91d1eec7",
+                "checkpoint_tag": "ckpt-official-network-authenticity-wall-v1-post-merge-exact-green-20260724T211149Z",
+                "merge_commit": "48c8413d6dc6f737532e71dc86d80dca91d1eec7"
+              },
+              "v2": {
+                "checkpoint_commit": "628772440e5ea8ab2a504909e40e445a1432c17c",
+                "checkpoint_tag": "ckpt-official-network-authenticity-root-v2-post-merge-exact-green-20260724T212919Z",
+                "merge_commit": "628772440e5ea8ab2a504909e40e445a1432c17c"
+              }
+            },
+            "signature_domain": "VOID_OFFICIAL_NETWORK_AUTHENTICITY_ROOT_V2",
+            "supersedes_payload_sha256": "b624f7bb029e5b3eca8b2e14050711d4f764d2d39bba56455f1f94697de2708e"
+          }
+        }
+      }
+    },
+    "supersession": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "superseded_payload_sha256",
+        "quarantined_key_id",
+        "quarantined_candidate_admitted"
+      ],
+      "properties": {
+        "superseded_payload_sha256": {
+          "const": "b624f7bb029e5b3eca8b2e14050711d4f764d2d39bba56455f1f94697de2708e"
+        },
+        "quarantined_key_id": {
+          "const": "ed25519:0ccca842c156fc87af3279b15830fca826db1225d669b790e97705e2b402362b"
+        },
+        "quarantined_candidate_admitted": {
+          "const": false
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "verification_only",
+        "mutation_authority_granted",
+        "runtime_authority_granted",
+        "service_enablement_granted",
+        "wallet_authority_granted",
+        "validator_authority_granted",
+        "work_credit_authority_granted",
+        "buy_void_authority_granted",
+        "economic_authority_granted",
+        "third_party_network_control_granted"
+      ],
+      "properties": {
+        "verification_only": {
+          "const": true
+        },
+        "mutation_authority_granted": {
+          "const": false
+        },
+        "runtime_authority_granted": {
+          "const": false
+        },
+        "service_enablement_granted": {
+          "const": false
+        },
+        "wallet_authority_granted": {
+          "const": false
+        },
+        "validator_authority_granted": {
+          "const": false
+        },
+        "work_credit_authority_granted": {
+          "const": false
+        },
+        "buy_void_authority_granted": {
+          "const": false
+        },
+        "economic_authority_granted": {
+          "const": false
+        },
+        "third_party_network_control_granted": {
+          "const": false
+        }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "private_key_present",
+        "credentials_required",
+        "send_secrets",
+        "send_wallet_material",
+        "send_operator_keys",
+        "follow_redirects",
+        "treat_unknown_as"
+      ],
+      "properties": {
+        "private_key_present": {
+          "const": false
+        },
+        "credentials_required": {
+          "const": false
+        },
+        "send_secrets": {
+          "const": false
+        },
+        "send_wallet_material": {
+          "const": false
+        },
+        "send_operator_keys": {
+          "const": false
+        },
+        "follow_redirects": {
+          "const": false
+        },
+        "treat_unknown_as": {
+          "const": "not_official"
+        }
+      }
+    }
+  }
+}
