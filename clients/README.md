@@ -1,83 +1,22 @@
-# VOID Agent Client Kit V1
+# VOID Agent Client Kit V1 — historical distribution
 
-Connect to VOID without installing a node.
+The V1 Python, Node, and shell clients remain available as historical July 2026
+release artifacts.
 
-The clients resolve the current MCP and A2A endpoints from stable GitHub Pages
-metadata each time they run. Ephemeral Quick Tunnel rotations therefore do not
-require redistributing the clients.
+They were designed to resolve MCP and A2A endpoints from Pages metadata. The
+September 25 rehabilitation intentionally publishes **no current MCP or A2A
+endpoint**, because the old Cloudflare Quick Tunnels were ephemeral and have not
+been reverified.
 
-Each client uses normal DNS first. If a newly issued Quick Tunnel hostname has
-not reached the local resolver yet, it falls back to Cloudflare
-DNS-over-HTTPS while preserving the original TLS hostname and certificate
-verification.
+Do not treat a successful download of these clients as evidence that a remote MCP
+or A2A service is currently available.
 
-## Python 3 standard-library client
+For current discovery use:
 
-```bash
-python3 void-agent-client.py discover
-python3 void-agent-client.py mcp-tools
-python3 void-agent-client.py mcp-call void_get_chain_head
-python3 void-agent-client.py a2a-ask "Is VOID ready?"
-python3 void-agent-client.py smoke
-```
+- `/current-state-v2.json`
+- `/.well-known/void-public-node.json`
+- `/public-node/agents/first-contact-v1.json`
+- `/public-node/agents/capabilities-v1.json`
 
-## Node.js 18+ zero-package client
-
-```bash
-node void-agent-client.mjs discover
-node void-agent-client.mjs mcp-tools
-node void-agent-client.mjs mcp-call void_get_chain_head
-node void-agent-client.mjs a2a-ask "Show VOID network health"
-node void-agent-client.mjs smoke
-```
-
-## Paste-safe shell client
-
-Requires `curl` and Python 3 for JSON field extraction.
-
-```bash
-bash void-agent-client.sh discover
-bash void-agent-client.sh mcp-ping
-bash void-agent-client.sh a2a-card
-bash void-agent-client.sh a2a-ask "What is the current chain head?"
-bash void-agent-client.sh smoke
-```
-
-## Stable discovery
-
-- Discovery: `https://6zoso9.github.io/discovery/index-v1.json`
-- MCP metadata: `https://6zoso9.github.io/mcp/remote-server-v1.json`
-- A2A catalogue: `https://6zoso9.github.io/a2a/agent-v1.json`
-
-## Immutable jsDelivr distribution
-
-- Python: `https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@void-agent-client-kit-v1/clients/void-agent-client.py`
-- Node ESM: `https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@void-agent-client-kit-v1/clients/void-agent-client.mjs`
-- Shell: `https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@void-agent-client-kit-v1/clients/void-agent-client.sh`
-- Manifest: `https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@void-agent-client-kit-v1/clients/manifest-v1.json`
-- Integrity: `https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@void-agent-client-kit-v1/clients/integrity-v1.json`
-
-## Boundary
-
-These clients are read-only. They expose no wallet, ledger, transaction,
-payment, validator mutation, operator mutation, secret, or arbitrary proxy
-operation. The smoke command performs discovery and read canaries only.
-
-
-## Immutable distribution resolution
-
-The immutable client content commit is:
-
-`72f9920f714d28b3755337a23ea0838b42c62d41`
-
-Selected provider: `jsdelivr-github-full-commit`
-
-Selected immutable base: `https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@72f9920f714d28b3755337a23ea0838b42c62d41/clients`
-
-The clients are always resolved from stable GitHub Pages metadata at runtime. This immutable base is for downloading the client files themselves.
-
-- jsDelivr release-tag alias exact: `false`
-- jsDelivr full-commit path exact: `true`
-- raw GitHub full-commit path exact: `true`
-
-The GitHub Release tag remains `void-agent-client-kit-v1`.
+The immutable V1 release and commit-pinned distributions remain valid historical
+artifacts.
