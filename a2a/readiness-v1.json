@@ -1,25 +1,11 @@
 {
-  "agentCard": "https://dozen-casting-expired-approximately.trycloudflare.com/.well-known/agent-card.json",
-  "endpoint": "https://dozen-casting-expired-approximately.trycloudflare.com/a2a",
-  "operations": {
-    "CancelTask": "task_not_found",
-    "GetExtendedAgentCard": "unsupported_capability_false",
-    "GetTask": "task_not_found",
-    "ListTasks": "empty_task_list",
-    "SendMessage": "direct_message_response",
-    "SendStreamingMessage": "unsupported_capability_false",
-    "SubscribeToTask": "unsupported_capability_false",
-    "pushNotifications": "unsupported_capability_false"
-  },
-  "protocolVersion": "1.0",
   "schema": "void-a2a-readonly-agent-readiness-v1",
-  "status": "live_exact_green",
-  "verified": {
-    "agentCard": true,
-    "contentModes": true,
-    "mutationMethodsAbsent": true,
-    "originValidation": true,
-    "readOnlyRouting": true,
-    "versionNegotiation": true
-  }
+  "status": "historical_unverified",
+  "current": false,
+  "endpoint": null,
+  "agentCard": null,
+  "last_verified_at_utc": "2026-07-26T23:34:00Z",
+  "historical_endpoint": "https://dozen-casting-expired-approximately.trycloudflare.com/a2a",
+  "current_state": "https://6zoso9.github.io/current-state-v2.json",
+  "reason": "Ephemeral July Quick Tunnel not reverified by current mirror refresh."
 }
