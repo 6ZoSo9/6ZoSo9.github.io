@@ -1,0 +1,97 @@
+{
+  "$id": "https://voidchain.org/.well-known/void-agent-capabilities.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "authority": {
+      "additionalProperties": false,
+      "properties": {
+        "credentials_required": {
+          "const": false
+        },
+        "default": {
+          "const": "not_granted"
+        },
+        "discovery_authority": {
+          "const": "read_only"
+        },
+        "mutation_authority_granted": {
+          "const": false
+        }
+      },
+      "required": [
+        "default",
+        "discovery_authority",
+        "mutation_authority_granted",
+        "credentials_required"
+      ],
+      "type": "object"
+    },
+    "canonical_capabilities": {
+      "const": "/public-node/agents/capabilities-v1.json"
+    },
+    "marker": {
+      "const": "VOID_AI_AGENT_CAPABILITY_WELL_KNOWN_V1"
+    },
+    "negotiation_mode": {
+      "const": "client_side_intersection"
+    },
+    "network": {
+      "additionalProperties": false,
+      "properties": {
+        "chain_id": {
+          "const": 2050
+        },
+        "name": {
+          "const": "VOID Mainnet-0"
+        }
+      },
+      "required": [
+        "name",
+        "chain_id"
+      ],
+      "type": "object"
+    },
+    "protocol": {
+      "const": "void-agent-capability-well-known/1"
+    },
+    "safety": {
+      "additionalProperties": false,
+      "properties": {
+        "follow_redirects": {
+          "const": false
+        },
+        "same_origin_only": {
+          "const": true
+        },
+        "send_credentials": {
+          "const": false
+        },
+        "treat_unknown_as": {
+          "const": "not_granted"
+        }
+      },
+      "required": [
+        "same_origin_only",
+        "follow_redirects",
+        "send_credentials",
+        "treat_unknown_as"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "marker",
+    "protocol",
+    "network",
+    "canonical_capabilities",
+    "negotiation_mode",
+    "authority",
+    "safety"
+  ],
+  "title": "VOID AI-Agent Capability Well-Known V1",
+  "type": "object"
+}
