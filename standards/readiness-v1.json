@@ -1,128 +1,58 @@
 {
-  "live": {
-    "atom_feed": {
+  "marker": "VOID_AI_AGENT_INTEGRATION_STANDARDS_READINESS_V2",
+  "schema": "void-ai-agent-integration-standards-readiness-v2",
+  "updated_at_utc": "2026-09-25",
+  "current": {
+    "github_pages_static_mirror": {
       "status": "live",
-      "url": "https://6zoso9.github.io/feed.xml"
+      "url": "https://6zoso9.github.io"
     },
-    "experimental_bounded_gateway": {
-      "ephemeral": true,
-      "note": "Quick Tunnel development preview. The URL changes when the cloudflared process is restarted.",
-      "openapi": "https://6zoso9.github.io/live/openapi.json",
-      "pointer": "https://6zoso9.github.io/live/gateway-pointer-v1.json",
-      "production_sla": false,
-      "status": "live_at_verification"
-    },
-    "github_raw": {
-      "repository": "6ZoSo9/6ZoSo9.github.io",
-      "status": "live"
-    },
-    "github_release": {
-      "repository": "6ZoSo9/6ZoSo9.github.io",
-      "status": "created_after_mesh_commit"
-    },
-    "independent_public_agent_canary": {
-      "evidenceArtifact": true,
-      "permissions": {
-        "contents": "read"
-      },
-      "repositoryWrites": false,
-      "runner": "github-hosted-ubuntu-24.04",
-      "scheduleUtc": "37 */6 * * *",
-      "secrets": false,
-      "status": "workflow_published",
-      "workflow": "https://github.com/6ZoSo9/6ZoSo9.github.io/actions/workflows/void-public-agent-canary-v1.yml"
-    },
-    "jsdelivr": {
-      "repository": "6ZoSo9/6ZoSo9.github.io",
-      "status": "live_for_public_repository"
+    "openapi_static_discovery": {
+      "status": "live",
+      "url": "https://6zoso9.github.io/openapi.json",
+      "specification": "OpenAPI 3.1.1"
     },
     "llms_txt": {
-      "note": "Emerging convention, not an IETF standard.",
       "status": "live",
-      "url": "https://6zoso9.github.io/llms.txt"
+      "url": "https://6zoso9.github.io/llms.txt",
+      "note": "Emerging convention, not an IETF standard."
     },
-    "openapi": {
-      "specification": "OpenAPI 3.1.1",
-      "status": "live",
-      "url": "https://6zoso9.github.io/openapi.json"
-    },
-    "paid_agent_work_intake": {
-      "canonical_wc_ledger_credit_automatic": false,
-      "ed25519_agent_submissions": true,
-      "ed25519_service_quotes_receipts": true,
-      "ephemeral_transport": true,
-      "fixed_award_wc": 3,
-      "live": "https://6zoso9.github.io/work/live-v1.json",
-      "openapi": "https://6zoso9.github.io/work/openapi.json",
-      "operator_approval_required": true,
-      "pilot_entitlement_issued_on_approval": true,
-      "status": "live_at_verification",
-      "void_settlement_automatic": false
-    },
-    "public_agent_client_kit": {
-      "contentCommit": "72f9920f714d28b3755337a23ea0838b42c62d41",
-      "distribution": [
-        "github-pages",
-        "github-release",
-        "jsdelivr-github"
-      ],
-      "githubPagesExact": true,
-      "githubReleaseExact": true,
-      "jsDelivrCommitExact": true,
-      "jsDelivrReleaseTagExact": false,
-      "manifest": "https://6zoso9.github.io/clients/manifest-v1.json",
-      "rawGitHubCommitExact": true,
-      "readOnlyBoundary": true,
-      "selectedImmutableBase": "https://cdn.jsdelivr.net/gh/6ZoSo9/6ZoSo9.github.io@72f9920f714d28b3755337a23ea0838b42c62d41/clients",
-      "selectedImmutableProvider": "jsdelivr-github-full-commit",
-      "stableEndpointResolution": true,
-      "status": "published_exact_green",
-      "version": "1.0.0",
-      "zeroPackageNode": true,
-      "zeroPackagePython": true
-    },
-    "remote_a2a_agent": {
-      "agentCard": "https://dozen-casting-expired-approximately.trycloudflare.com/.well-known/agent-card.json",
-      "catalogue": "https://6zoso9.github.io/a2a/agent-v1.json",
-      "endpoint": "https://dozen-casting-expired-approximately.trycloudflare.com/a2a",
-      "ephemeral": true,
-      "protocolVersion": "1.0",
-      "pushNotifications": false,
-      "status": "live_at_verification",
-      "streaming": false
-    },
-    "remote_mcp_server": {
-      "endpoint": "https://hereby-metals-plumbing-preserve.trycloudflare.com/mcp",
-      "ephemeral": true,
-      "jsonResponses": true,
-      "metadata": "https://6zoso9.github.io/mcp/remote-server-v1.json",
-      "protocolVersion": "2025-11-25",
-      "sse": false,
-      "status": "live_at_verification",
-      "transport": "streamable-http"
-    },
-    "sitemap": {
-      "status": "live",
-      "url": "https://6zoso9.github.io/sitemap.xml"
-    },
-    "void_first_contact": {
-      "status": "live",
+    "first_contact": {
+      "status": "live_static",
       "url": "https://6zoso9.github.io/public-node/agents/first-contact-v1.json"
+    },
+    "source_bindings": {
+      "status": "live",
+      "url": "https://6zoso9.github.io/mirror/source-bindings-v2.json"
     }
   },
-  "marker": "VOID_AI_AGENT_FIRST_CONTACT_FREE_DISCOVERY_MESH_V1",
-  "schema": "void-ai-agent-integration-standards-readiness-v1",
-  "updated_at_utc": "2026-07-26T22:19:36Z",
+  "runtime_services": {
+    "remote_mcp": {
+      "status": "unverified_not_advertised",
+      "endpoint": null
+    },
+    "remote_a2a": {
+      "status": "unverified_not_advertised",
+      "endpoint": null
+    },
+    "paid_work_submission": {
+      "status": "unverified_not_advertised",
+      "endpoint": null
+    }
+  },
+  "historical": {
+    "july_2026_quick_tunnels": "retained_as_provenance_not_current_availability",
+    "public_agent_client_kit_v1": "historical_release",
+    "paid_work_intake_v1": "historical_release"
+  },
   "withheld_until_conformant": {
     "mcp_registry": {
-      "preparedServerJson": "https://6zoso9.github.io/mcp/server.json",
-      "reason": "The current Quick Tunnel URL is ephemeral. Publish to the Official MCP Registry after a stable public endpoint is available.",
-      "status": "withheld"
+      "status": "withheld",
+      "reason": "No current stable public MCP endpoint is advertised."
     },
     "security_txt": {
-      "reason": "RFC 9116 requires a real vulnerability-reporting contact and expiration. Publish only after a private reporting channel is configured and verified.",
-      "standard_path": "/.well-known/security.txt",
-      "status": "withheld"
+      "status": "withheld",
+      "reason": "Publish only with a verified private vulnerability-reporting contact and valid expiration."
     }
   }
 }
