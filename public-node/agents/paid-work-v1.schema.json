@@ -1,0 +1,2465 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://voidchain.io/public/public-node/agents/paid-work-v1.schema.json",
+  "title": "VOID Agent Paid Work Runtime Discovery V1",
+  "description": "A read-only runtime adapter exposing the immutable repository paid-work discovery manifest without granting submission, payment, Work Credit ledger, settlement, wallet, runtime administration, or Buy VOID fulfillment authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "marker",
+    "version",
+    "protocol",
+    "network",
+    "status",
+    "authority",
+    "routes",
+    "repository_binding",
+    "runtime_capabilities",
+    "repository_manifest",
+    "safety",
+    "runtime_discovery_id"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "./paid-work-v1.schema.json"
+    },
+    "marker": {
+      "const": "VOID_AGENT_PAID_WORK_RUNTIME_DISCOVERY_V1"
+    },
+    "version": {
+      "const": 1
+    },
+    "protocol": {
+      "const": "void-agent-paid-work-runtime-discovery/1"
+    },
+    "network": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "chain_id"
+      ],
+      "properties": {
+        "name": {
+          "const": "VOID Mainnet-0"
+        },
+        "chain_id": {
+          "const": 2050
+        }
+      }
+    },
+    "status": {
+      "const": "read_only_protocol_discovery_live"
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "default",
+        "granted_http_methods",
+        "mutation_authority_granted",
+        "credentials_required"
+      ],
+      "properties": {
+        "default": {
+          "const": "read_only"
+        },
+        "granted_http_methods": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "prefixItems": [
+            {
+              "const": "GET"
+            },
+            {
+              "const": "HEAD"
+            }
+          ],
+          "items": false
+        },
+        "mutation_authority_granted": {
+          "const": false
+        },
+        "credentials_required": {
+          "const": false
+        }
+      }
+    },
+    "routes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "self",
+        "schema",
+        "canonical_agent_discovery"
+      ],
+      "properties": {
+        "self": {
+          "const": "/public-node/agents/paid-work-v1.json"
+        },
+        "schema": {
+          "const": "/public-node/agents/paid-work-v1.schema.json"
+        },
+        "canonical_agent_discovery": {
+          "const": "/public-node/agents/discovery-v1.json"
+        }
+      }
+    },
+    "repository_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "manifest_path",
+        "manifest_id",
+        "manifest_sha256",
+        "manifest_source_commit",
+        "stage_count",
+        "artifact_count",
+        "embedded_manifest_is_immutable_repository_snapshot",
+        "runtime_adapter_does_not_rewrite_repository_snapshot"
+      ],
+      "properties": {
+        "manifest_path": {
+          "const": "docs/public/agent-paid-work-public-discovery-v1.json"
+        },
+        "manifest_id": {
+          "const": "voidawpd1_cfe29c4adaf977ceda8b00a5425cda09cf4eb751463521379e25fe08c2ff4b2d"
+        },
+        "manifest_sha256": {
+          "const": "1c1b12e59f2cd6f06434231bd8cbe17c427b239e93f20b26fd67481c852c4f6f"
+        },
+        "manifest_source_commit": {
+          "const": "46a90fa254f84fd1e6301983112b8286ed68c533"
+        },
+        "stage_count": {
+          "const": 12
+        },
+        "artifact_count": {
+          "const": 60
+        },
+        "embedded_manifest_is_immutable_repository_snapshot": {
+          "const": true
+        },
+        "runtime_adapter_does_not_rewrite_repository_snapshot": {
+          "const": true
+        }
+      }
+    },
+    "runtime_capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocol_discovery",
+        "artifact_integrity_verification",
+        "schema_inspection",
+        "offline_validation",
+        "offline_focused_proofs",
+        "live_work_order_submission",
+        "live_quote_exchange",
+        "live_payment_execution",
+        "live_work_dispatch",
+        "live_completion_verification_service",
+        "live_wc_award_authorization",
+        "live_wc_ledger_write",
+        "wc_to_void_settlement",
+        "buy_void_auto_fulfillment"
+      ],
+      "properties": {
+        "protocol_discovery": {
+          "const": "available"
+        },
+        "artifact_integrity_verification": {
+          "const": "available"
+        },
+        "schema_inspection": {
+          "const": "available"
+        },
+        "offline_validation": {
+          "const": "available"
+        },
+        "offline_focused_proofs": {
+          "const": "available"
+        },
+        "live_work_order_submission": {
+          "const": "unavailable"
+        },
+        "live_quote_exchange": {
+          "const": "unavailable"
+        },
+        "live_payment_execution": {
+          "const": "unavailable"
+        },
+        "live_work_dispatch": {
+          "const": "unavailable"
+        },
+        "live_completion_verification_service": {
+          "const": "unavailable"
+        },
+        "live_wc_award_authorization": {
+          "const": "unavailable"
+        },
+        "live_wc_ledger_write": {
+          "const": "unavailable"
+        },
+        "wc_to_void_settlement": {
+          "const": "unavailable"
+        },
+        "buy_void_auto_fulfillment": {
+          "const": "unavailable"
+        }
+      }
+    },
+    "repository_manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "marker",
+        "version",
+        "protocol_id",
+        "title",
+        "repository",
+        "discovery_surface",
+        "lifecycle",
+        "capabilities",
+        "operational_status",
+        "safety_boundary",
+        "next_activation_requirements",
+        "public_discovery_manifest_id"
+      ],
+      "properties": {
+        "marker": {
+          "const": "VOID_AGENT_PAID_WORK_PUBLIC_DISCOVERY_V1"
+        },
+        "version": {
+          "const": 1
+        },
+        "protocol_id": {
+          "const": "void.agent-paid-work.v1"
+        },
+        "title": {
+          "const": "VOID Agent Paid Work Protocol V1"
+        },
+        "repository": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "owner",
+            "name",
+            "canonical_branch",
+            "source_commit"
+          ],
+          "properties": {
+            "owner": {
+              "const": "6ZoSo9"
+            },
+            "name": {
+              "const": "void-node"
+            },
+            "canonical_branch": {
+              "const": "main"
+            },
+            "source_commit": {
+              "const": "46a90fa254f84fd1e6301983112b8286ed68c533"
+            }
+          }
+        },
+        "discovery_surface": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "path",
+            "content_type",
+            "read_only",
+            "runtime_route_available",
+            "public_http_route"
+          ],
+          "properties": {
+            "kind": {
+              "const": "repository_manifest"
+            },
+            "path": {
+              "const": "docs/public/agent-paid-work-public-discovery-v1.json"
+            },
+            "content_type": {
+              "const": "application/json"
+            },
+            "read_only": {
+              "const": true
+            },
+            "runtime_route_available": {
+              "const": false
+            },
+            "public_http_route": {
+              "const": null
+            }
+          }
+        },
+        "lifecycle": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "stage_count",
+            "artifact_count",
+            "ordered_stages"
+          ],
+          "properties": {
+            "stage_count": {
+              "const": 12
+            },
+            "artifact_count": {
+              "const": 60
+            },
+            "ordered_stages": {
+              "type": "array",
+              "minItems": 12,
+              "maxItems": 12,
+              "prefixItems": [
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "index",
+                    "stage_id",
+                    "protocol_marker",
+                    "artifacts"
+                  ],
+                  "properties": {
+                    "index": {
+                      "const": 1
+                    },
+                    "stage_id": {
+                      "const": "work_order"
+                    },
+                    "protocol_marker": {
+                      "const": "VOID_AGENT_PAID_WORK_ORDER_ENVELOPE_V1"
+                    },
+                    "artifacts": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "documentation",
+                        "example",
+                        "schema",
+                        "validator",
+                        "proof"
+                      ],
+                      "properties": {
+                        "documentation": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "docs/public/agent-paid-work-order-envelope-v1.md"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "example": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "examples/agent-paid-work-order-envelope-v1.example.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "schema": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "schemas/agent-paid-work-order-envelope-v1.schema.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "validator": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/agent_paid_work_order_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "proof": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/prove_agent_paid_work_order_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "index",
+                    "stage_id",
+                    "protocol_marker",
+                    "artifacts"
+                  ],
+                  "properties": {
+                    "index": {
+                      "const": 2
+                    },
+                    "stage_id": {
+                      "const": "quote"
+                    },
+                    "protocol_marker": {
+                      "const": "VOID_AGENT_PAID_WORK_QUOTE_ENVELOPE_V1"
+                    },
+                    "artifacts": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "documentation",
+                        "example",
+                        "schema",
+                        "validator",
+                        "proof"
+                      ],
+                      "properties": {
+                        "documentation": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "docs/public/agent-paid-work-quote-envelope-v1.md"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "example": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "examples/agent-paid-work-quote-envelope-v1.example.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "schema": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "schemas/agent-paid-work-quote-envelope-v1.schema.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "validator": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/agent_paid_work_quote_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "proof": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/prove_agent_paid_work_quote_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "index",
+                    "stage_id",
+                    "protocol_marker",
+                    "artifacts"
+                  ],
+                  "properties": {
+                    "index": {
+                      "const": 3
+                    },
+                    "stage_id": {
+                      "const": "acceptance"
+                    },
+                    "protocol_marker": {
+                      "const": "VOID_AGENT_PAID_WORK_ACCEPTANCE_ENVELOPE_V1"
+                    },
+                    "artifacts": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "documentation",
+                        "example",
+                        "schema",
+                        "validator",
+                        "proof"
+                      ],
+                      "properties": {
+                        "documentation": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "docs/public/agent-paid-work-acceptance-envelope-v1.md"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "example": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "examples/agent-paid-work-acceptance-envelope-v1.example.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "schema": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "schemas/agent-paid-work-acceptance-envelope-v1.schema.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "validator": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/agent_paid_work_acceptance_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "proof": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/prove_agent_paid_work_acceptance_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "index",
+                    "stage_id",
+                    "protocol_marker",
+                    "artifacts"
+                  ],
+                  "properties": {
+                    "index": {
+                      "const": 4
+                    },
+                    "stage_id": {
+                      "const": "payment_intent"
+                    },
+                    "protocol_marker": {
+                      "const": "VOID_AGENT_PAID_WORK_PAYMENT_INTENT_ENVELOPE_V1"
+                    },
+                    "artifacts": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "documentation",
+                        "example",
+                        "schema",
+                        "validator",
+                        "proof"
+                      ],
+                      "properties": {
+                        "documentation": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "docs/public/agent-paid-work-payment-intent-envelope-v1.md"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "example": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "examples/agent-paid-work-payment-intent-envelope-v1.example.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "schema": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "schemas/agent-paid-work-payment-intent-envelope-v1.schema.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "validator": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/agent_paid_work_payment_intent_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "proof": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/prove_agent_paid_work_payment_intent_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "index",
+                    "stage_id",
+                    "protocol_marker",
+                    "artifacts"
+                  ],
+                  "properties": {
+                    "index": {
+                      "const": 5
+                    },
+                    "stage_id": {
+                      "const": "payment_execution_authorization"
+                    },
+                    "protocol_marker": {
+                      "const": "VOID_AGENT_PAID_WORK_PAYMENT_EXECUTION_AUTHORIZATION_ENVELOPE_V1"
+                    },
+                    "artifacts": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "documentation",
+                        "example",
+                        "schema",
+                        "validator",
+                        "proof"
+                      ],
+                      "properties": {
+                        "documentation": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "docs/public/agent-paid-work-payment-execution-authorization-envelope-v1.md"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "example": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "examples/agent-paid-work-payment-execution-authorization-envelope-v1.example.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "schema": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "schemas/agent-paid-work-payment-execution-authorization-envelope-v1.schema.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "validator": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/agent_paid_work_payment_execution_authorization_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "proof": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/prove_agent_paid_work_payment_execution_authorization_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "index",
+                    "stage_id",
+                    "protocol_marker",
+                    "artifacts"
+                  ],
+                  "properties": {
+                    "index": {
+                      "const": 6
+                    },
+                    "stage_id": {
+                      "const": "payment_receipt"
+                    },
+                    "protocol_marker": {
+                      "const": "VOID_AGENT_PAID_WORK_PAYMENT_RECEIPT_ENVELOPE_V1"
+                    },
+                    "artifacts": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "documentation",
+                        "example",
+                        "schema",
+                        "validator",
+                        "proof"
+                      ],
+                      "properties": {
+                        "documentation": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "docs/public/agent-paid-work-payment-receipt-envelope-v1.md"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "example": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "examples/agent-paid-work-payment-receipt-envelope-v1.example.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "schema": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "schemas/agent-paid-work-payment-receipt-envelope-v1.schema.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "validator": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/agent_paid_work_payment_receipt_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "proof": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/prove_agent_paid_work_payment_receipt_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "index",
+                    "stage_id",
+                    "protocol_marker",
+                    "artifacts"
+                  ],
+                  "properties": {
+                    "index": {
+                      "const": 7
+                    },
+                    "stage_id": {
+                      "const": "independent_payment_confirmation"
+                    },
+                    "protocol_marker": {
+                      "const": "VOID_AGENT_PAID_WORK_INDEPENDENT_PAYMENT_CONFIRMATION_ENVELOPE_V1"
+                    },
+                    "artifacts": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "documentation",
+                        "example",
+                        "schema",
+                        "validator",
+                        "proof"
+                      ],
+                      "properties": {
+                        "documentation": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "docs/public/agent-paid-work-independent-payment-confirmation-envelope-v1.md"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "example": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "examples/agent-paid-work-independent-payment-confirmation-envelope-v1.example.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "schema": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "schemas/agent-paid-work-independent-payment-confirmation-envelope-v1.schema.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "validator": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/agent_paid_work_independent_payment_confirmation_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "proof": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/prove_agent_paid_work_independent_payment_confirmation_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "index",
+                    "stage_id",
+                    "protocol_marker",
+                    "artifacts"
+                  ],
+                  "properties": {
+                    "index": {
+                      "const": 8
+                    },
+                    "stage_id": {
+                      "const": "work_execution_authorization"
+                    },
+                    "protocol_marker": {
+                      "const": "VOID_AGENT_PAID_WORK_EXECUTION_AUTHORIZATION_ENVELOPE_V1"
+                    },
+                    "artifacts": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "documentation",
+                        "example",
+                        "schema",
+                        "validator",
+                        "proof"
+                      ],
+                      "properties": {
+                        "documentation": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "docs/public/agent-paid-work-execution-authorization-envelope-v1.md"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "example": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "examples/agent-paid-work-execution-authorization-envelope-v1.example.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "schema": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "schemas/agent-paid-work-execution-authorization-envelope-v1.schema.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "validator": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/agent_paid_work_execution_authorization_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "proof": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/prove_agent_paid_work_execution_authorization_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "index",
+                    "stage_id",
+                    "protocol_marker",
+                    "artifacts"
+                  ],
+                  "properties": {
+                    "index": {
+                      "const": 9
+                    },
+                    "stage_id": {
+                      "const": "work_completion_receipt"
+                    },
+                    "protocol_marker": {
+                      "const": "VOID_AGENT_PAID_WORK_COMPLETION_RECEIPT_ENVELOPE_V1"
+                    },
+                    "artifacts": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "documentation",
+                        "example",
+                        "schema",
+                        "validator",
+                        "proof"
+                      ],
+                      "properties": {
+                        "documentation": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "docs/public/agent-paid-work-completion-receipt-envelope-v1.md"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "example": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "examples/agent-paid-work-completion-receipt-envelope-v1.example.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "schema": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "schemas/agent-paid-work-completion-receipt-envelope-v1.schema.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "validator": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/agent_paid_work_completion_receipt_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "proof": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/prove_agent_paid_work_completion_receipt_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "index",
+                    "stage_id",
+                    "protocol_marker",
+                    "artifacts"
+                  ],
+                  "properties": {
+                    "index": {
+                      "const": 10
+                    },
+                    "stage_id": {
+                      "const": "independent_completion_verification"
+                    },
+                    "protocol_marker": {
+                      "const": "VOID_AGENT_PAID_WORK_INDEPENDENT_COMPLETION_VERIFICATION_ENVELOPE_V1"
+                    },
+                    "artifacts": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "documentation",
+                        "example",
+                        "schema",
+                        "validator",
+                        "proof"
+                      ],
+                      "properties": {
+                        "documentation": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "docs/public/agent-paid-work-independent-completion-verification-envelope-v1.md"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "example": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "examples/agent-paid-work-independent-completion-verification-envelope-v1.example.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "schema": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "schemas/agent-paid-work-independent-completion-verification-envelope-v1.schema.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "validator": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/agent_paid_work_independent_completion_verification_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "proof": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/prove_agent_paid_work_independent_completion_verification_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "index",
+                    "stage_id",
+                    "protocol_marker",
+                    "artifacts"
+                  ],
+                  "properties": {
+                    "index": {
+                      "const": 11
+                    },
+                    "stage_id": {
+                      "const": "wc_award_authorization"
+                    },
+                    "protocol_marker": {
+                      "const": "VOID_AGENT_PAID_WORK_WC_AWARD_AUTHORIZATION_ENVELOPE_V1"
+                    },
+                    "artifacts": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "documentation",
+                        "example",
+                        "schema",
+                        "validator",
+                        "proof"
+                      ],
+                      "properties": {
+                        "documentation": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "docs/public/agent-paid-work-wc-award-authorization-envelope-v1.md"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "example": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "examples/agent-paid-work-wc-award-authorization-envelope-v1.example.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "schema": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "schemas/agent-paid-work-wc-award-authorization-envelope-v1.schema.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "validator": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/agent_paid_work_wc_award_authorization_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "proof": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/prove_agent_paid_work_wc_award_authorization_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "index",
+                    "stage_id",
+                    "protocol_marker",
+                    "artifacts"
+                  ],
+                  "properties": {
+                    "index": {
+                      "const": 12
+                    },
+                    "stage_id": {
+                      "const": "wc_ledger_write_receipt"
+                    },
+                    "protocol_marker": {
+                      "const": "VOID_AGENT_PAID_WORK_WC_LEDGER_WRITE_RECEIPT_ENVELOPE_V1"
+                    },
+                    "artifacts": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "documentation",
+                        "example",
+                        "schema",
+                        "validator",
+                        "proof"
+                      ],
+                      "properties": {
+                        "documentation": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "docs/public/agent-paid-work-wc-ledger-write-receipt-envelope-v1.md"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "example": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "examples/agent-paid-work-wc-ledger-write-receipt-envelope-v1.example.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "schema": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "schemas/agent-paid-work-wc-ledger-write-receipt-envelope-v1.schema.json"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "validator": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/agent_paid_work_wc_ledger_write_receipt_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        },
+                        "proof": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "bytes",
+                            "sha256"
+                          ],
+                          "properties": {
+                            "path": {
+                              "const": "scripts/prove_agent_paid_work_wc_ledger_write_receipt_envelope_v1.ts"
+                            },
+                            "bytes": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 9007199254740991
+                            },
+                            "sha256": {
+                              "type": "string",
+                              "minLength": 64,
+                              "maxLength": 64,
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ],
+              "items": false
+            }
+          }
+        },
+        "capabilities": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "protocol_discovery",
+            "artifact_integrity_verification",
+            "schema_inspection",
+            "offline_validation",
+            "offline_focused_proofs",
+            "live_work_order_submission",
+            "live_quote_exchange",
+            "live_payment_execution",
+            "live_work_dispatch",
+            "live_completion_verification_service",
+            "live_wc_award_authorization",
+            "live_wc_ledger_write",
+            "wc_to_void_settlement",
+            "buy_void_auto_fulfillment"
+          ],
+          "properties": {
+            "protocol_discovery": {
+              "const": "available"
+            },
+            "artifact_integrity_verification": {
+              "const": "available"
+            },
+            "schema_inspection": {
+              "const": "available"
+            },
+            "offline_validation": {
+              "const": "available"
+            },
+            "offline_focused_proofs": {
+              "const": "available"
+            },
+            "live_work_order_submission": {
+              "const": "unavailable"
+            },
+            "live_quote_exchange": {
+              "const": "unavailable"
+            },
+            "live_payment_execution": {
+              "const": "unavailable"
+            },
+            "live_work_dispatch": {
+              "const": "unavailable"
+            },
+            "live_completion_verification_service": {
+              "const": "unavailable"
+            },
+            "live_wc_award_authorization": {
+              "const": "unavailable"
+            },
+            "live_wc_ledger_write": {
+              "const": "unavailable"
+            },
+            "wc_to_void_settlement": {
+              "const": "unavailable"
+            },
+            "buy_void_auto_fulfillment": {
+              "const": "unavailable"
+            }
+          }
+        },
+        "operational_status": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "contract_chain_complete_through_wc_ledger_receipt",
+            "repository_artifacts_available",
+            "external_agent_runtime_onboarding_available",
+            "external_agent_paid_work_execution_available",
+            "payment_execution_enabled",
+            "real_wc_ledger_write_enabled",
+            "real_wc_balance_mutation_enabled",
+            "wc_to_void_settlement_enabled",
+            "buy_void_auto_fulfillment_enabled"
+          ],
+          "properties": {
+            "contract_chain_complete_through_wc_ledger_receipt": {
+              "const": true
+            },
+            "repository_artifacts_available": {
+              "const": true
+            },
+            "external_agent_runtime_onboarding_available": {
+              "const": false
+            },
+            "external_agent_paid_work_execution_available": {
+              "const": false
+            },
+            "payment_execution_enabled": {
+              "const": false
+            },
+            "real_wc_ledger_write_enabled": {
+              "const": false
+            },
+            "real_wc_balance_mutation_enabled": {
+              "const": false
+            },
+            "wc_to_void_settlement_enabled": {
+              "const": false
+            },
+            "buy_void_auto_fulfillment_enabled": {
+              "const": false
+            }
+          }
+        },
+        "safety_boundary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "manifest_grants_execution_authority",
+            "manifest_grants_payment_authority",
+            "manifest_grants_wallet_or_signer_access",
+            "manifest_grants_runtime_administration",
+            "manifest_grants_wc_ledger_write_authority",
+            "manifest_grants_wc_to_void_settlement_authority",
+            "manifest_grants_buy_void_fulfillment_authority",
+            "contains_private_keys_or_credentials",
+            "contains_live_payment_instructions"
+          ],
+          "properties": {
+            "manifest_grants_execution_authority": {
+              "const": false
+            },
+            "manifest_grants_payment_authority": {
+              "const": false
+            },
+            "manifest_grants_wallet_or_signer_access": {
+              "const": false
+            },
+            "manifest_grants_runtime_administration": {
+              "const": false
+            },
+            "manifest_grants_wc_ledger_write_authority": {
+              "const": false
+            },
+            "manifest_grants_wc_to_void_settlement_authority": {
+              "const": false
+            },
+            "manifest_grants_buy_void_fulfillment_authority": {
+              "const": false
+            },
+            "contains_private_keys_or_credentials": {
+              "const": false
+            },
+            "contains_live_payment_instructions": {
+              "const": false
+            }
+          }
+        },
+        "next_activation_requirements": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "uniqueItems": true,
+          "prefixItems": [
+            {
+              "const": "read_only_runtime_discovery_route"
+            },
+            {
+              "const": "external_agent_authentication"
+            },
+            {
+              "const": "capability_negotiation"
+            },
+            {
+              "const": "bounded_paid_work_submission"
+            },
+            {
+              "const": "bounded_live_execution_policy"
+            },
+            {
+              "const": "independent_live_verification"
+            },
+            {
+              "const": "atomic_live_wc_ledger_adapter"
+            },
+            {
+              "const": "immutable_live_receipt_publication"
+            }
+          ],
+          "items": false
+        },
+        "public_discovery_manifest_id": {
+          "type": "string",
+          "minLength": 74,
+          "maxLength": 74,
+          "pattern": "^voidawpd1_[0-9a-f]{64}$"
+        }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "same_origin_only",
+        "follow_cross_origin_links_automatically",
+        "send_secrets",
+        "send_wallet_material",
+        "send_operator_keys",
+        "treat_unknown_capability_as"
+      ],
+      "properties": {
+        "same_origin_only": {
+          "const": true
+        },
+        "follow_cross_origin_links_automatically": {
+          "const": false
+        },
+        "send_secrets": {
+          "const": false
+        },
+        "send_wallet_material": {
+          "const": false
+        },
+        "send_operator_keys": {
+          "const": false
+        },
+        "treat_unknown_capability_as": {
+          "const": "not_granted"
+        }
+      }
+    },
+    "runtime_discovery_id": {
+      "type": "string",
+      "minLength": 75,
+      "maxLength": 75,
+      "pattern": "^voidawprd1_[0-9a-f]{64}$"
+    }
+  }
+}
