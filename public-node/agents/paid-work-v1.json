@@ -1,0 +1,519 @@
+{
+  "$schema": "./paid-work-v1.schema.json",
+  "marker": "VOID_AGENT_PAID_WORK_RUNTIME_DISCOVERY_V1",
+  "version": 1,
+  "protocol": "void-agent-paid-work-runtime-discovery/1",
+  "network": {
+    "name": "VOID Mainnet-0",
+    "chain_id": 2050
+  },
+  "status": "read_only_protocol_discovery_live",
+  "authority": {
+    "default": "read_only",
+    "granted_http_methods": [
+      "GET",
+      "HEAD"
+    ],
+    "mutation_authority_granted": false,
+    "credentials_required": false
+  },
+  "routes": {
+    "self": "/public-node/agents/paid-work-v1.json",
+    "schema": "/public-node/agents/paid-work-v1.schema.json",
+    "canonical_agent_discovery": "/public-node/agents/discovery-v1.json"
+  },
+  "repository_binding": {
+    "manifest_path": "docs/public/agent-paid-work-public-discovery-v1.json",
+    "manifest_id": "voidawpd1_cfe29c4adaf977ceda8b00a5425cda09cf4eb751463521379e25fe08c2ff4b2d",
+    "manifest_sha256": "1c1b12e59f2cd6f06434231bd8cbe17c427b239e93f20b26fd67481c852c4f6f",
+    "manifest_source_commit": "46a90fa254f84fd1e6301983112b8286ed68c533",
+    "stage_count": 12,
+    "artifact_count": 60,
+    "embedded_manifest_is_immutable_repository_snapshot": true,
+    "runtime_adapter_does_not_rewrite_repository_snapshot": true
+  },
+  "runtime_capabilities": {
+    "protocol_discovery": "available",
+    "artifact_integrity_verification": "available",
+    "schema_inspection": "available",
+    "offline_validation": "available",
+    "offline_focused_proofs": "available",
+    "live_work_order_submission": "unavailable",
+    "live_quote_exchange": "unavailable",
+    "live_payment_execution": "unavailable",
+    "live_work_dispatch": "unavailable",
+    "live_completion_verification_service": "unavailable",
+    "live_wc_award_authorization": "unavailable",
+    "live_wc_ledger_write": "unavailable",
+    "wc_to_void_settlement": "unavailable",
+    "buy_void_auto_fulfillment": "unavailable"
+  },
+  "repository_manifest": {
+    "marker": "VOID_AGENT_PAID_WORK_PUBLIC_DISCOVERY_V1",
+    "version": 1,
+    "protocol_id": "void.agent-paid-work.v1",
+    "title": "VOID Agent Paid Work Protocol V1",
+    "repository": {
+      "owner": "6ZoSo9",
+      "name": "void-node",
+      "canonical_branch": "main",
+      "source_commit": "46a90fa254f84fd1e6301983112b8286ed68c533"
+    },
+    "discovery_surface": {
+      "kind": "repository_manifest",
+      "path": "docs/public/agent-paid-work-public-discovery-v1.json",
+      "content_type": "application/json",
+      "read_only": true,
+      "runtime_route_available": false,
+      "public_http_route": null
+    },
+    "lifecycle": {
+      "stage_count": 12,
+      "artifact_count": 60,
+      "ordered_stages": [
+        {
+          "index": 1,
+          "stage_id": "work_order",
+          "protocol_marker": "VOID_AGENT_PAID_WORK_ORDER_ENVELOPE_V1",
+          "artifacts": {
+            "documentation": {
+              "path": "docs/public/agent-paid-work-order-envelope-v1.md",
+              "bytes": 3652,
+              "sha256": "4fd6bbe331df9c4682b79f047f4d5adcb673e4c31bc96996b9c400eb4d4cf8d6"
+            },
+            "example": {
+              "path": "examples/agent-paid-work-order-envelope-v1.example.json",
+              "bytes": 1188,
+              "sha256": "d670dd3f5f56be4f2f1bf7a2b67d6f747832718b0529465ce5f48d14feb4b080"
+            },
+            "schema": {
+              "path": "schemas/agent-paid-work-order-envelope-v1.schema.json",
+              "bytes": 4350,
+              "sha256": "9014fffb52fc39d05f1fe260da862a13e9deb820a55ba0fb8a87abb935249ed8"
+            },
+            "validator": {
+              "path": "scripts/agent_paid_work_order_envelope_v1.ts",
+              "bytes": 14921,
+              "sha256": "c803796b968678c9b8b0a35291dede8f96647922b494cf123c3660715f7e3575"
+            },
+            "proof": {
+              "path": "scripts/prove_agent_paid_work_order_envelope_v1.ts",
+              "bytes": 10069,
+              "sha256": "e17f47f156b9dcbe1377e56142277166e34fe11d16afccaa1534187937662d9d"
+            }
+          }
+        },
+        {
+          "index": 2,
+          "stage_id": "quote",
+          "protocol_marker": "VOID_AGENT_PAID_WORK_QUOTE_ENVELOPE_V1",
+          "artifacts": {
+            "documentation": {
+              "path": "docs/public/agent-paid-work-quote-envelope-v1.md",
+              "bytes": 3750,
+              "sha256": "b3efbf092a3fc81b476105db8e0130fe8d600bc6536be301490e76f6ccc7fe66"
+            },
+            "example": {
+              "path": "examples/agent-paid-work-quote-envelope-v1.example.json",
+              "bytes": 1194,
+              "sha256": "5ae19b1022c782e33fc3f14c053501743be2720d8d352332b86e72bb5a9c6c1d"
+            },
+            "schema": {
+              "path": "schemas/agent-paid-work-quote-envelope-v1.schema.json",
+              "bytes": 4552,
+              "sha256": "f46b69aad2fef08ec57b05c814eef7bb27ff7bdbeef8d4e3a956833a5dcc4f31"
+            },
+            "validator": {
+              "path": "scripts/agent_paid_work_quote_envelope_v1.ts",
+              "bytes": 18698,
+              "sha256": "40311db0e173f19f42193a9b2e6fa4ac0e90d14fa38ef694e53a72a71b30ed23"
+            },
+            "proof": {
+              "path": "scripts/prove_agent_paid_work_quote_envelope_v1.ts",
+              "bytes": 11978,
+              "sha256": "43c21d47a758f91032b807a27284f27edc5cf98fc8153fcc6ebac57f080c0435"
+            }
+          }
+        },
+        {
+          "index": 3,
+          "stage_id": "acceptance",
+          "protocol_marker": "VOID_AGENT_PAID_WORK_ACCEPTANCE_ENVELOPE_V1",
+          "artifacts": {
+            "documentation": {
+              "path": "docs/public/agent-paid-work-acceptance-envelope-v1.md",
+              "bytes": 4603,
+              "sha256": "9084fb3caf35025b987b98df6a39191d34e9c1df82b7748d86466ff7ed9317cb"
+            },
+            "example": {
+              "path": "examples/agent-paid-work-acceptance-envelope-v1.example.json",
+              "bytes": 1410,
+              "sha256": "90ceacbfc447940d434249396afe9eb1c00e981d62ee7968532c7cfad995232a"
+            },
+            "schema": {
+              "path": "schemas/agent-paid-work-acceptance-envelope-v1.schema.json",
+              "bytes": 4805,
+              "sha256": "54aa6b22bd59ef5302e745438a0d3107a04bff9829f5019cae4cfb104612be93"
+            },
+            "validator": {
+              "path": "scripts/agent_paid_work_acceptance_envelope_v1.ts",
+              "bytes": 20008,
+              "sha256": "4a8a6c97729aa0efaff3afe29d1f5a3394bb33c331cf2c3a020892965d6ad3d0"
+            },
+            "proof": {
+              "path": "scripts/prove_agent_paid_work_acceptance_envelope_v1.ts",
+              "bytes": 13999,
+              "sha256": "4d1aaeb5033f28b2d6dd9961d6b8899f99f8b00091e7f3f34c136a4af99fb7b1"
+            }
+          }
+        },
+        {
+          "index": 4,
+          "stage_id": "payment_intent",
+          "protocol_marker": "VOID_AGENT_PAID_WORK_PAYMENT_INTENT_ENVELOPE_V1",
+          "artifacts": {
+            "documentation": {
+              "path": "docs/public/agent-paid-work-payment-intent-envelope-v1.md",
+              "bytes": 4228,
+              "sha256": "3abf423e8d57884d0f3b821d536599b53acc7d72b04dbddb6222fe970c7ab337"
+            },
+            "example": {
+              "path": "examples/agent-paid-work-payment-intent-envelope-v1.example.json",
+              "bytes": 2025,
+              "sha256": "f4ea2584936f287da96ce9f6b9ec27062c5df46cdd4a951e8c47cb6b2c8f53b8"
+            },
+            "schema": {
+              "path": "schemas/agent-paid-work-payment-intent-envelope-v1.schema.json",
+              "bytes": 6393,
+              "sha256": "b19ca45202252fca25d3ffbd39c0e88be63d5097336f0054ae632a22fc80a5ce"
+            },
+            "validator": {
+              "path": "scripts/agent_paid_work_payment_intent_envelope_v1.ts",
+              "bytes": 22168,
+              "sha256": "bee155279ebbd4364cea9ad895b1a05d1b49d4257b649bd78cea5675ec17d4d3"
+            },
+            "proof": {
+              "path": "scripts/prove_agent_paid_work_payment_intent_envelope_v1.ts",
+              "bytes": 11230,
+              "sha256": "7ef6095dddf391b93b7c6d8e41c867f2a676347244fb2aff6cbc92de517b29bb"
+            }
+          }
+        },
+        {
+          "index": 5,
+          "stage_id": "payment_execution_authorization",
+          "protocol_marker": "VOID_AGENT_PAID_WORK_PAYMENT_EXECUTION_AUTHORIZATION_ENVELOPE_V1",
+          "artifacts": {
+            "documentation": {
+              "path": "docs/public/agent-paid-work-payment-execution-authorization-envelope-v1.md",
+              "bytes": 5287,
+              "sha256": "16751a91ad3b35aac72e972df0d54b42ad7d3693b8e7205a9066b25dbd5f942e"
+            },
+            "example": {
+              "path": "examples/agent-paid-work-payment-execution-authorization-envelope-v1.example.json",
+              "bytes": 3455,
+              "sha256": "8f2f8d487731c7a89ec44ad819a84526dcf232b106964e7bdb73348d53b018c9"
+            },
+            "schema": {
+              "path": "schemas/agent-paid-work-payment-execution-authorization-envelope-v1.schema.json",
+              "bytes": 10931,
+              "sha256": "43a100e29a7f216d10c4a0ddcde881b55f7ac2905ba514c1f7a599b74bfa9303"
+            },
+            "validator": {
+              "path": "scripts/agent_paid_work_payment_execution_authorization_envelope_v1.ts",
+              "bytes": 29725,
+              "sha256": "dd917687dd1139d93f3f53e54be5f0c36095a7d2adae0a1426967af165bbe1a5"
+            },
+            "proof": {
+              "path": "scripts/prove_agent_paid_work_payment_execution_authorization_envelope_v1.ts",
+              "bytes": 15926,
+              "sha256": "0fed3955d51d623486955e89ed4668541fb35dd47be6d556022d08d444fe13c5"
+            }
+          }
+        },
+        {
+          "index": 6,
+          "stage_id": "payment_receipt",
+          "protocol_marker": "VOID_AGENT_PAID_WORK_PAYMENT_RECEIPT_ENVELOPE_V1",
+          "artifacts": {
+            "documentation": {
+              "path": "docs/public/agent-paid-work-payment-receipt-envelope-v1.md",
+              "bytes": 5394,
+              "sha256": "e7d5a18e9e4e4d9a0a5176936711baf0d37a23a3632d8bec58019ca79e73d196"
+            },
+            "example": {
+              "path": "examples/agent-paid-work-payment-receipt-envelope-v1.example.json",
+              "bytes": 3445,
+              "sha256": "f4e71aabbb962d36d347d5c58525338e66ec61bf079a6f9ae0440584d8d273fa"
+            },
+            "schema": {
+              "path": "schemas/agent-paid-work-payment-receipt-envelope-v1.schema.json",
+              "bytes": 10834,
+              "sha256": "4feff891b45f2490eb440e8519eeb138ac919630a7a240ecfbddcd97100e28bb"
+            },
+            "validator": {
+              "path": "scripts/agent_paid_work_payment_receipt_envelope_v1.ts",
+              "bytes": 30041,
+              "sha256": "727a128cdd0b4d8122cdc2553591115d90456ff1998459f36d029ead7a79cd08"
+            },
+            "proof": {
+              "path": "scripts/prove_agent_paid_work_payment_receipt_envelope_v1.ts",
+              "bytes": 15757,
+              "sha256": "ecfd1d4e0f7901639ed4e9d1ddd6b91a93765a7829b4171f428d510ef0c8781a"
+            }
+          }
+        },
+        {
+          "index": 7,
+          "stage_id": "independent_payment_confirmation",
+          "protocol_marker": "VOID_AGENT_PAID_WORK_INDEPENDENT_PAYMENT_CONFIRMATION_ENVELOPE_V1",
+          "artifacts": {
+            "documentation": {
+              "path": "docs/public/agent-paid-work-independent-payment-confirmation-envelope-v1.md",
+              "bytes": 3828,
+              "sha256": "292cd62a61425d62d951dcb868a656795bad7be3b02ccc6b6307ca43e1ba4d57"
+            },
+            "example": {
+              "path": "examples/agent-paid-work-independent-payment-confirmation-envelope-v1.example.json",
+              "bytes": 3979,
+              "sha256": "0dcaf51c5daa6e754ecc148d27cbe261cc88c0e8c0e172cb69ba71d5915e95d3"
+            },
+            "schema": {
+              "path": "schemas/agent-paid-work-independent-payment-confirmation-envelope-v1.schema.json",
+              "bytes": 11651,
+              "sha256": "2c11828ffcdb85a572b29570bfc23fe191fb28f4fcf0542dde768f314d6aa849"
+            },
+            "validator": {
+              "path": "scripts/agent_paid_work_independent_payment_confirmation_envelope_v1.ts",
+              "bytes": 25388,
+              "sha256": "69342b29f2467a4c4c39b309295ea6d02ef0a24946d318d63e29f89986e517b0"
+            },
+            "proof": {
+              "path": "scripts/prove_agent_paid_work_independent_payment_confirmation_envelope_v1.ts",
+              "bytes": 8704,
+              "sha256": "000bbc0976e01268216bb70ea77ba5644d1f62c25ef594f40d91b8cffc25656a"
+            }
+          }
+        },
+        {
+          "index": 8,
+          "stage_id": "work_execution_authorization",
+          "protocol_marker": "VOID_AGENT_PAID_WORK_EXECUTION_AUTHORIZATION_ENVELOPE_V1",
+          "artifacts": {
+            "documentation": {
+              "path": "docs/public/agent-paid-work-execution-authorization-envelope-v1.md",
+              "bytes": 4747,
+              "sha256": "3c2096cd7fb16705d8130da8348a49c5295258051603d9b38f1c289e9c8ea85e"
+            },
+            "example": {
+              "path": "examples/agent-paid-work-execution-authorization-envelope-v1.example.json",
+              "bytes": 4309,
+              "sha256": "e923dea439bd7d07e6fcf4808c8252edb2e87dc53f52e0964ec1bab5fdea2932"
+            },
+            "schema": {
+              "path": "schemas/agent-paid-work-execution-authorization-envelope-v1.schema.json",
+              "bytes": 13219,
+              "sha256": "3000329864f5d0b51aeaba905687e5806bb4362a78b02cbd1fbb11939f2a0511"
+            },
+            "validator": {
+              "path": "scripts/agent_paid_work_execution_authorization_envelope_v1.ts",
+              "bytes": 36815,
+              "sha256": "929f9279db3a2d294282863aff56ee6fcc63cdbaa78987792c8e1cbb7fdbb022"
+            },
+            "proof": {
+              "path": "scripts/prove_agent_paid_work_execution_authorization_envelope_v1.ts",
+              "bytes": 17706,
+              "sha256": "c17c9a97b55c713f189ba960aeac50b3a02bb060830384f921a69e6bf4b2fc78"
+            }
+          }
+        },
+        {
+          "index": 9,
+          "stage_id": "work_completion_receipt",
+          "protocol_marker": "VOID_AGENT_PAID_WORK_COMPLETION_RECEIPT_ENVELOPE_V1",
+          "artifacts": {
+            "documentation": {
+              "path": "docs/public/agent-paid-work-completion-receipt-envelope-v1.md",
+              "bytes": 6156,
+              "sha256": "52142c7e6aae52618306e8e57867eb3ee90d51fd052f02c31ff4105234cc485d"
+            },
+            "example": {
+              "path": "examples/agent-paid-work-completion-receipt-envelope-v1.example.json",
+              "bytes": 4968,
+              "sha256": "66b8342a3300374c0e68285e2742eb60361caabea389d8f9cca10690aeb51727"
+            },
+            "schema": {
+              "path": "schemas/agent-paid-work-completion-receipt-envelope-v1.schema.json",
+              "bytes": 17134,
+              "sha256": "fe366dbc5bb432cfbcd3124470e6dcb3485d27afcd8147dacc39a0247450b018"
+            },
+            "validator": {
+              "path": "scripts/agent_paid_work_completion_receipt_envelope_v1.ts",
+              "bytes": 41735,
+              "sha256": "f3c945c03b54be72a64d5238e4be80f22215f1d9d72d0f53ab07a5349f1d2c1b"
+            },
+            "proof": {
+              "path": "scripts/prove_agent_paid_work_completion_receipt_envelope_v1.ts",
+              "bytes": 22523,
+              "sha256": "3ab88ade6bc74cd4f8dec41cdbd6281be920ab295428181df40b9999d5a946a0"
+            }
+          }
+        },
+        {
+          "index": 10,
+          "stage_id": "independent_completion_verification",
+          "protocol_marker": "VOID_AGENT_PAID_WORK_INDEPENDENT_COMPLETION_VERIFICATION_ENVELOPE_V1",
+          "artifacts": {
+            "documentation": {
+              "path": "docs/public/agent-paid-work-independent-completion-verification-envelope-v1.md",
+              "bytes": 6668,
+              "sha256": "cec1f75cbefd9e4c27484f46551d5acdcd17b26f84daa752342b089d96a2ee6d"
+            },
+            "example": {
+              "path": "examples/agent-paid-work-independent-completion-verification-envelope-v1.example.json",
+              "bytes": 5632,
+              "sha256": "be8369a285317fcdde4a16b0fa1e87908f71b7c693aceb762357625cdf22cb9f"
+            },
+            "schema": {
+              "path": "schemas/agent-paid-work-independent-completion-verification-envelope-v1.schema.json",
+              "bytes": 19213,
+              "sha256": "a380726537f192c72d02fd06ad3ccf4b6742284c0f75ea50e44b7ea8d8f6fa92"
+            },
+            "validator": {
+              "path": "scripts/agent_paid_work_independent_completion_verification_envelope_v1.ts",
+              "bytes": 42101,
+              "sha256": "52415fedb73d07d13c46aeffc1b3737b59bdea81221672aa3510a55e4137ee74"
+            },
+            "proof": {
+              "path": "scripts/prove_agent_paid_work_independent_completion_verification_envelope_v1.ts",
+              "bytes": 21054,
+              "sha256": "69efb289c1312701de55c794fb7012f59f98e2981a26e1c2eacccc47775472e9"
+            }
+          }
+        },
+        {
+          "index": 11,
+          "stage_id": "wc_award_authorization",
+          "protocol_marker": "VOID_AGENT_PAID_WORK_WC_AWARD_AUTHORIZATION_ENVELOPE_V1",
+          "artifacts": {
+            "documentation": {
+              "path": "docs/public/agent-paid-work-wc-award-authorization-envelope-v1.md",
+              "bytes": 7075,
+              "sha256": "6198a58b14ac5fa381915984556a48d36799a57f2fb01b1c4f334a687e817026"
+            },
+            "example": {
+              "path": "examples/agent-paid-work-wc-award-authorization-envelope-v1.example.json",
+              "bytes": 4348,
+              "sha256": "21e6558de9babaa6c2487828537409a93bc4d6df7229259d292bcac534ca1065"
+            },
+            "schema": {
+              "path": "schemas/agent-paid-work-wc-award-authorization-envelope-v1.schema.json",
+              "bytes": 12201,
+              "sha256": "a1ddc532302bfbd11f8fe13e9a1d69b8f05f61c14121c4096beee1da877cb9c9"
+            },
+            "validator": {
+              "path": "scripts/agent_paid_work_wc_award_authorization_envelope_v1.ts",
+              "bytes": 33309,
+              "sha256": "fc911e0cde32eb57520faf48ec4f0a9e72d3407beefdfa269360da9737570fa8"
+            },
+            "proof": {
+              "path": "scripts/prove_agent_paid_work_wc_award_authorization_envelope_v1.ts",
+              "bytes": 20994,
+              "sha256": "cb179b88cc913c2a16f8608b7eea5d5d9a99f6814d11dcaae1dc854468c11a7d"
+            }
+          }
+        },
+        {
+          "index": 12,
+          "stage_id": "wc_ledger_write_receipt",
+          "protocol_marker": "VOID_AGENT_PAID_WORK_WC_LEDGER_WRITE_RECEIPT_ENVELOPE_V1",
+          "artifacts": {
+            "documentation": {
+              "path": "docs/public/agent-paid-work-wc-ledger-write-receipt-envelope-v1.md",
+              "bytes": 8284,
+              "sha256": "827b1c8462c08caa1e2e2daa116f29ec1a59f3850cdc835670700720a677b9d8"
+            },
+            "example": {
+              "path": "examples/agent-paid-work-wc-ledger-write-receipt-envelope-v1.example.json",
+              "bytes": 5126,
+              "sha256": "51f5444f36a17e276c7e844ffb9b5abee3829d184acabff15ec58611176febae"
+            },
+            "schema": {
+              "path": "schemas/agent-paid-work-wc-ledger-write-receipt-envelope-v1.schema.json",
+              "bytes": 14929,
+              "sha256": "3a975318a029b093b89716afef634024c9cbbd8419b2c61c57fcaa1f7976c09f"
+            },
+            "validator": {
+              "path": "scripts/agent_paid_work_wc_ledger_write_receipt_envelope_v1.ts",
+              "bytes": 38469,
+              "sha256": "8325395c72cf04ce6384f21e81ae078640f6e1c92ecc07c1c92f6efe83fd370f"
+            },
+            "proof": {
+              "path": "scripts/prove_agent_paid_work_wc_ledger_write_receipt_envelope_v1.ts",
+              "bytes": 21151,
+              "sha256": "8a4eeb581608b2b26ded61fcf5e73db0ee484fcbf34a47a70f053dace46db1d6"
+            }
+          }
+        }
+      ]
+    },
+    "capabilities": {
+      "protocol_discovery": "available",
+      "artifact_integrity_verification": "available",
+      "schema_inspection": "available",
+      "offline_validation": "available",
+      "offline_focused_proofs": "available",
+      "live_work_order_submission": "unavailable",
+      "live_quote_exchange": "unavailable",
+      "live_payment_execution": "unavailable",
+      "live_work_dispatch": "unavailable",
+      "live_completion_verification_service": "unavailable",
+      "live_wc_award_authorization": "unavailable",
+      "live_wc_ledger_write": "unavailable",
+      "wc_to_void_settlement": "unavailable",
+      "buy_void_auto_fulfillment": "unavailable"
+    },
+    "operational_status": {
+      "contract_chain_complete_through_wc_ledger_receipt": true,
+      "repository_artifacts_available": true,
+      "external_agent_runtime_onboarding_available": false,
+      "external_agent_paid_work_execution_available": false,
+      "payment_execution_enabled": false,
+      "real_wc_ledger_write_enabled": false,
+      "real_wc_balance_mutation_enabled": false,
+      "wc_to_void_settlement_enabled": false,
+      "buy_void_auto_fulfillment_enabled": false
+    },
+    "safety_boundary": {
+      "manifest_grants_execution_authority": false,
+      "manifest_grants_payment_authority": false,
+      "manifest_grants_wallet_or_signer_access": false,
+      "manifest_grants_runtime_administration": false,
+      "manifest_grants_wc_ledger_write_authority": false,
+      "manifest_grants_wc_to_void_settlement_authority": false,
+      "manifest_grants_buy_void_fulfillment_authority": false,
+      "contains_private_keys_or_credentials": false,
+      "contains_live_payment_instructions": false
+    },
+    "next_activation_requirements": [
+      "read_only_runtime_discovery_route",
+      "external_agent_authentication",
+      "capability_negotiation",
+      "bounded_paid_work_submission",
+      "bounded_live_execution_policy",
+      "independent_live_verification",
+      "atomic_live_wc_ledger_adapter",
+      "immutable_live_receipt_publication"
+    ],
+    "public_discovery_manifest_id": "voidawpd1_cfe29c4adaf977ceda8b00a5425cda09cf4eb751463521379e25fe08c2ff4b2d"
+  },
+  "safety": {
+    "same_origin_only": true,
+    "follow_cross_origin_links_automatically": false,
+    "send_secrets": false,
+    "send_wallet_material": false,
+    "send_operator_keys": false,
+    "treat_unknown_capability_as": "not_granted"
+  },
+  "runtime_discovery_id": "voidawprd1_556277132f4a43da05dd025b624e500b0dc460593a6120675da8947987c50e7e"
+}
