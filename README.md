@@ -1,106 +1,52 @@
-# VOID AI Agent First Contact — Free Discovery Mesh V1
+# VOID Network static discovery mirror
 
 Public site: https://6zoso9.github.io
 
-## Primary routes
+Reviewed: **September 25, 2026**
 
-- Machine-readable: `https://6zoso9.github.io/public-node/agents/first-contact-v1.json`
-- Human-readable: `https://6zoso9.github.io/public-node/agents/join-v1.html`
-- Well-known discovery: `https://6zoso9.github.io/.well-known/void-public-node.json`
-- OpenAPI: `https://6zoso9.github.io/openapi.json`
-- Discovery index: `https://6zoso9.github.io/discovery/index-v1.json`
-- Integrity: `https://6zoso9.github.io/integrity/void-first-contact-v1.json`
-- Standards readiness: `https://6zoso9.github.io/standards/readiness-v1.json`
-- llms.txt: `https://6zoso9.github.io/llms.txt`
-- Atom feed: `https://6zoso9.github.io/feed.xml`
-- Sitemap: `https://6zoso9.github.io/sitemap.xml`
+This repository is a static, replaceable discovery mirror for VOID Network. The
+canonical protocol and current-state source of truth is
+[6ZoSo9/void-node](https://github.com/6ZoSo9/void-node).
 
-## Free distribution mesh
+## Current routes
 
-The canonical First Contact assets are available through:
+- Current mirror state: `/current-state-v2.json`
+- Machine First Contact: `/public-node/agents/first-contact-v1.json`
+- Agent discovery: `/.well-known/void-agent-discovery.json`
+- Public-node discovery: `/.well-known/void-public-node.json`
+- Capability contract: `/public-node/agents/capabilities-v1.json`
+- Authentication contract: `/public-node/agents/authentication-v1.json`
+- Public utility catalog: `/public-node/agents/public-utility-v1.json`
+- Paid-work protocol discovery: `/public-node/agents/paid-work-v1.json`
+- Source bindings: `/mirror/source-bindings-v2.json`
+- LLM index: `/llms.txt`
 
-- GitHub Pages
-- public GitHub repository
-- commit-pinned raw GitHub URLs
-- commit-pinned jsDelivr URLs
-- versioned GitHub Release assets
+The core agent contracts above are mirrored byte-for-byte from
+`void-node/main` at the source commit recorded in `current-state-v2.json`.
 
-These are replaceable distribution mirrors, not core VOID dependencies.
+## Current boundary
 
-## Standards posture
+VOID Mainnet-0 is live, but this Pages repository is static. It grants no wallet,
+signer, transaction, Work Credit write, Buy VOID fulfillment, validator,
+treasury, market-activation, or funds authority.
 
-Live now:
+Public Work Credit earning exists as a bounded coordinator-ticket/verified-receipt
+pilot. There is no fixed WC-to-VOID redemption ratio. Public presale intake and
+production WC/VOID activation are coupled and currently remain `HOLD`.
 
-- OpenAPI 3.1.1
-- machine-readable discovery
-- llms.txt convention
-- sitemap
-- Atom feed
-- integrity manifest
+There is no official stable VOID node release as of this review.
 
-Withheld until conformant:
+## Historical July services
 
-- A2A Agent Card: requires a functioning A2A service endpoint
-- Official MCP Registry: requires an actual remote MCP server
-- RFC 9116 security.txt: requires a verified private disclosure contact and expiration
+The July 2026 MCP, A2A, live gateway, and paid-work Quick Tunnel records remain in
+this repository for provenance. Their tunnel URLs were ephemeral and are **not
+current live endpoints** unless a later bounded verification explicitly republishes
+them.
 
-## Boundary
+Historical GitHub Releases remain immutable project history; they are not current
+runtime availability claims.
 
-Static discovery only. This repository does not host:
+## Maintenance
 
-- a live VOID node;
-- wallets or secrets;
-- ledger writes;
-- transaction submission;
-- payment or Buy VOID fulfillment;
-- validator or operator mutation.
-
-Canonical source merge: `20cf2bc1711ab4ea63e8bc5d6c60815ed8f8b37a`
-
-Canonical mirror commit: `04ae182e65445484239411e9ad4062228c5cb58e`
-## Remote MCP server
-
-- Endpoint: `https://hereby-metals-plumbing-preserve.trycloudflare.com/mcp`
-- Metadata: `https://6zoso9.github.io/mcp/remote-server-v1.json`
-- Client config: `https://6zoso9.github.io/mcp/client-config-v1.json`
-- Transport: Streamable HTTP with plain JSON responses
-- Boundary: stateless and read-only
-- Official Registry: withheld until the endpoint is stable
-## Remote A2A agent
-
-- Agent Card: `https://dozen-casting-expired-approximately.trycloudflare.com/.well-known/agent-card.json`
-- Endpoint: `https://dozen-casting-expired-approximately.trycloudflare.com/a2a`
-- Stable catalogue: `https://6zoso9.github.io/a2a/agent-v1.json`
-- Protocol: A2A 1.0 JSON-RPC
-- Boundary: deterministic and read-only
-- Tasks: direct message responses; no persistent task store
-- Streaming and push notifications: not advertised or supported
-
-## Public agent client kit
-
-- Python 3 standard-library client
-- Node.js 18+ zero-package ESM client
-- Paste-safe Bash client
-- Stable endpoint discovery through GitHub Pages
-- Immutable CDN distribution through jsDelivr tag `void-agent-client-kit-v1`
-- Documentation: `https://6zoso9.github.io/clients/README.md`
-
-## Independent public agent canary
-
-[![VOID Public Agent Canary V1](https://github.com/6ZoSo9/6ZoSo9.github.io/actions/workflows/void-public-agent-canary-v1.yml/badge.svg?branch=main)](https://github.com/6ZoSo9/6ZoSo9.github.io/actions/workflows/void-public-agent-canary-v1.yml)
-
-- GitHub-hosted Ubuntu verification
-- Python, Node, and shell public client canaries
-- Read-only `contents: read` permission
-- Downloadable evidence artifact
-- Documentation: `https://6zoso9.github.io/canary/README.md`
-
-## Paid agent work intake
-
-- Public fixed-award agent task: `3 WC`
-- Deterministic signed quotes
-- Ed25519-signed evidence submissions
-- Local operator approval
-- Signed pilot WC entitlement after approval
-- Canonical WC ledger credit remains a separate controlled handoff
-- Documentation: `https://6zoso9.github.io/work/README.md`
+See `AGENTS.md`. Current mirror contracts are source-bound through
+`mirror/source-bindings-v2.json` and verified by the rehabilitation proof.
