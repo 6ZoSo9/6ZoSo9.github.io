@@ -1,0 +1,63 @@
+{
+  "$id": "https://voidchain.org/.well-known/void-agent-authentication.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "authenticated_routes_active": {
+      "const": false
+    },
+    "canonical_authentication_contract": {
+      "const": "/public-node/agents/authentication-v1.json"
+    },
+    "contract_published": {
+      "const": true
+    },
+    "marker": {
+      "const": "VOID_AI_AGENT_AUTHENTICATION_WELL_KNOWN_V1"
+    },
+    "mutation_authority_granted": {
+      "const": false
+    },
+    "network": {
+      "additionalProperties": false,
+      "properties": {
+        "chain_id": {
+          "const": 2050
+        },
+        "name": {
+          "const": "VOID Mainnet-0"
+        }
+      },
+      "required": [
+        "name",
+        "chain_id"
+      ],
+      "type": "object"
+    },
+    "protocol": {
+      "const": "void-agent-authentication-well-known/1"
+    },
+    "safety": {
+      "type": "object"
+    },
+    "verifier_runtime_active": {
+      "const": false
+    }
+  },
+  "required": [
+    "marker",
+    "protocol",
+    "network",
+    "canonical_authentication_contract",
+    "contract_published",
+    "verifier_runtime_active",
+    "authenticated_routes_active",
+    "mutation_authority_granted",
+    "safety"
+  ],
+  "title": "VOID AI-Agent Authentication Well-Known V1",
+  "type": "object"
+}
