@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://void.local/.well-known/void-public-node.schema.json",
+  "title": "VOID Public Node Agent Discovery V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "marker",
+    "version",
+    "purpose",
+    "protocol",
+    "status",
+    "effective_base_url",
+    "network",
+    "transport",
+    "identity",
+    "links",
+    "route_markers",
+    "parity",
+    "authority",
+    "safety"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "./void-public-node.schema.json"
+    },
+    "marker": {
+      "const": "VOID_PUBLIC_NODE_AGENT_DISCOVERY_V1"
+    },
+    "version": {
+      "const": 1
+    },
+    "purpose": {
+      "const": "well_known_public_node_agent_discovery"
+    },
+    "protocol": {
+      "const": "void-public-node-discovery-v1"
+    },
+    "status": {
+      "const": "public_node_agent_discovery_ready"
+    },
+    "effective_base_url": {
+      "type": "string",
+      "pattern": "^http://[a-z2-7]{56}\\.onion$"
+    },
+    "network": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "identity",
+        "chain_id"
+      ],
+      "properties": {
+        "name": {
+          "const": "VOID Mainnet-0"
+        },
+        "identity": {
+          "const": "mainnet0"
+        },
+        "chain_id": {
+          "const": 2050
+        }
+      }
+    },
+    "transport": {
+      "type": "object"
+    },
+    "identity": {
+      "type": "object"
+    },
+    "links": {
+      "type": "object",
+      "minProperties": 14,
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^http://[a-z2-7]{56}\\.onion/"
+      }
+    },
+    "route_markers": {
+      "type": "object"
+    },
+    "parity": {
+      "type": "object"
+    },
+    "authority": {
+      "type": "object"
+    },
+    "safety": {
+      "type": "object"
+    }
+  }
+}
