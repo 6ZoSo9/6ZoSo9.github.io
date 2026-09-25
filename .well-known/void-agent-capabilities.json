@@ -1,0 +1,23 @@
+{
+  "$schema": "./void-agent-capabilities.schema.json",
+  "authority": {
+    "credentials_required": false,
+    "default": "not_granted",
+    "discovery_authority": "read_only",
+    "mutation_authority_granted": false
+  },
+  "canonical_capabilities": "/public-node/agents/capabilities-v1.json",
+  "marker": "VOID_AI_AGENT_CAPABILITY_WELL_KNOWN_V1",
+  "negotiation_mode": "client_side_intersection",
+  "network": {
+    "chain_id": 2050,
+    "name": "VOID Mainnet-0"
+  },
+  "protocol": "void-agent-capability-well-known/1",
+  "safety": {
+    "follow_redirects": false,
+    "same_origin_only": true,
+    "send_credentials": false,
+    "treat_unknown_as": "not_granted"
+  }
+}
