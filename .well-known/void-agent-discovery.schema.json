@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://voidchain.org/.well-known/void-agent-discovery.schema.json",
+  "title": "VOID AI Agent Well-Known Entrypoint V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "marker",
+    "protocol",
+    "network",
+    "canonical_discovery",
+    "authority",
+    "safety",
+    "network_authenticity"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "marker": {
+      "const": "VOID_AI_AGENT_WELL_KNOWN_ENTRYPOINT_V1"
+    },
+    "protocol": {
+      "const": "void-agent-discovery-well-known/1"
+    },
+    "network": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "chain_id"
+      ],
+      "properties": {
+        "name": {
+          "const": "VOID Mainnet-0"
+        },
+        "chain_id": {
+          "const": 2050
+        }
+      }
+    },
+    "canonical_discovery": {
+      "const": "/public-node/agents/discovery-v1.json"
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "default",
+        "mutation_authority_granted",
+        "credentials_required"
+      ],
+      "properties": {
+        "default": {
+          "const": "read_only"
+        },
+        "mutation_authority_granted": {
+          "const": false
+        },
+        "credentials_required": {
+          "const": false
+        }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "same_origin_only",
+        "follow_redirects",
+        "send_secrets",
+        "send_wallet_material",
+        "send_operator_keys",
+        "treat_unknown_as"
+      ],
+      "properties": {
+        "same_origin_only": {
+          "const": true
+        },
+        "follow_redirects": {
+          "const": false
+        },
+        "send_secrets": {
+          "const": false
+        },
+        "send_wallet_material": {
+          "const": false
+        },
+        "send_operator_keys": {
+          "const": false
+        },
+        "treat_unknown_as": {
+          "const": "not_granted"
+        }
+      }
+    },
+    "network_authenticity": {
+      "const": "/.well-known/void-network-authenticity.json"
+    }
+  }
+}
