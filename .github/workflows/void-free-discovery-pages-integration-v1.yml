@@ -1,70 +1,70 @@
-name: VOID Free Discovery Pages Integration V1
+name: VOID Static Discovery Mirror V2
 
 on:
   pull_request:
     paths:
-      - ".github/workflows/void-free-discovery-pages-integration-v1.yml"
-      - ".well-known/void-agent-authentication.json"
-      - ".well-known/void-agent-discovery.json"
-      - ".well-known/void-agent-intake-capability-v1.json"
-      - ".well-known/void-network-authenticity.json"
-      - "12ec1f1fd6f9a1fc5ce96324bcca44d5.txt"
-      - "discovery/index.html"
-      - "discovery/void-datanet-dataset-v1.jsonld"
+      - "AGENTS.md"
+      - "current-state-v2.json"
+      - "mirror/**"
+      - ".well-known/**"
+      - "public-node/agents/**"
+      - "discovery/**"
+      - "mcp/**"
+      - "a2a/**"
+      - "live/**"
+      - "work/**"
+      - "clients/**"
+      - "standards/**"
+      - "README.md"
+      - "index.html"
+      - "llms.txt"
+      - "llms-full.txt"
       - "pages-manifest-v1.json"
-      - "public-node/index.html"
-      - "public-node/agents/authentication-v1.json"
-      - "public-node/agents/capabilities-v1.json"
-      - "public-node/agents/discovery-v1.json"
-      - "robots.txt"
-      - "scripts/prove_void_free_discovery_pages_integration_v1.mjs"
-      - "sitemap.xml"
+      - "integrity/**"
+      - "scripts/prove_void_pages_rehabilitation_v2.mjs"
+      - ".github/workflows/void-free-discovery-pages-integration-v1.yml"
+      - ".github/workflows/void-public-agent-canary-v1.yml"
   push:
-    branches:
-      - main
+    branches: [main]
     paths:
-      - ".github/workflows/void-free-discovery-pages-integration-v1.yml"
-      - ".well-known/void-agent-authentication.json"
-      - ".well-known/void-agent-discovery.json"
-      - ".well-known/void-agent-intake-capability-v1.json"
-      - ".well-known/void-network-authenticity.json"
-      - "12ec1f1fd6f9a1fc5ce96324bcca44d5.txt"
-      - "discovery/index.html"
-      - "discovery/void-datanet-dataset-v1.jsonld"
-      - "pages-manifest-v1.json"
-      - "public-node/index.html"
-      - "public-node/agents/authentication-v1.json"
-      - "public-node/agents/capabilities-v1.json"
-      - "public-node/agents/discovery-v1.json"
-      - "robots.txt"
-      - "scripts/prove_void_free_discovery_pages_integration_v1.mjs"
-      - "sitemap.xml"
+      - "AGENTS.md"
+      - "current-state-v2.json"
+      - "mirror/**"
+      - ".well-known/**"
+      - "public-node/agents/**"
+      - "discovery/**"
+      - "mcp/**"
+      - "a2a/**"
+      - "live/**"
+      - "work/**"
+      - "clients/**"
+      - "standards/**"
+      - "README.md"
+      - "index.html"
+      - "llms.txt"
+      - "llms-full.txt"
+      - "scripts/prove_void_pages_rehabilitation_v2.mjs"
 
 permissions:
   contents: read
 
 concurrency:
-  group: void-free-discovery-pages-integration-v1-${{ github.ref }}
+  group: void-static-discovery-mirror-v2-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   prove:
-    if: github.event.repository.private == false
     runs-on: ubuntu-24.04
-    timeout-minutes: 5
+    timeout-minutes: 8
     steps:
-      - name: Check out exact repository revision
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
         with:
           persist-credentials: false
           fetch-depth: 1
-
-      - name: Prove additive static discovery boundary
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: 24
+      - name: Prove current source-bound static mirror
         run: |
-          set -euo pipefail
-          node --check scripts/prove_void_free_discovery_pages_integration_v1.mjs
-          node scripts/prove_void_free_discovery_pages_integration_v1.mjs | tee /tmp/void-free-discovery-pages-proof.log
-          grep -Fx 'VOID_FREE_DISCOVERY_PAGES_INTEGRATION_V1_PROOF_GREEN' /tmp/void-free-discovery-pages-proof.log
-          grep -Fx 'network_calls=false' /tmp/void-free-discovery-pages-proof.log
-          grep -Fx 'live_submission=false' /tmp/void-free-discovery-pages-proof.log
-          grep -Fx 'payment_execution=false' /tmp/void-free-discovery-pages-proof.log
+          node --check scripts/prove_void_pages_rehabilitation_v2.mjs
+          node scripts/prove_void_pages_rehabilitation_v2.mjs
