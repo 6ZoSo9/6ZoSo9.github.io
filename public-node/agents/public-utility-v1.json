@@ -1,0 +1,89 @@
+{
+  "contract": "void-ai-agent-first-contact-public-utility/1",
+  "marker": "VOID_AI_AGENT_PUBLIC_UTILITY_V1",
+  "status": "source_only_advertised_not_observed",
+  "purpose": "Give an unknown agent useful, bounded, read-only VOID evidence before registration, credentials, wallets, CAPTCHA, or human chat.",
+  "network": {
+    "chain_id": 2050,
+    "identity": "mainnet0",
+    "name": "VOID Mainnet-0"
+  },
+  "integration": {
+    "first_contact_manifest": "/public-node/agents/first-contact-v1.json",
+    "advertised_from_first_contact": true,
+    "runtime_observed": false,
+    "activation_requires": [
+      "independent_http_observation"
+    ]
+  },
+  "limits": {
+    "max_catalog_bytes": 65536,
+    "max_entries": 8,
+    "max_requests_per_cold_start": 8,
+    "minimum_poll_interval_ms": 60000
+  },
+  "controls": {
+    "anonymous_read_allowed": true,
+    "captcha_required": false,
+    "credential_required": false,
+    "earning_advertised": false,
+    "human_chat_required": false,
+    "mutation_authority_granted": false,
+    "paid_work_advertised": false,
+    "polling_rewarded": false,
+    "registration_required": false,
+    "traffic_rewarded": false,
+    "wallet_required": false,
+    "work_credit_award_active": false
+  },
+  "entries": [
+    {
+      "id": "first_contact",
+      "kind": "discovery",
+      "purpose": "Identify VOID Mainnet-0 and its honest read-only cold-start contract.",
+      "path": "/public-node/agents/first-contact-v1.json",
+      "repository_path": "public/public-node/agents/first-contact-v1.json",
+      "canonical_sha256": "a5cfc0a39644ea8b4665dca46c82d9360a25b035cd0f91409c3761000a1be52b",
+      "media_type": "application/json",
+      "http_method": "GET",
+      "access": "anonymous",
+      "authority": "read_only",
+      "same_origin": true,
+      "source_present": true,
+      "runtime_observed": false,
+      "required_marker": "VOID_AI_AGENT_FIRST_CONTACT_V1"
+    },
+    {
+      "id": "capability_honesty",
+      "kind": "capability_contract",
+      "purpose": "Determine locally which capabilities are actually live and fail closed on unknown or guarded capabilities.",
+      "path": "/public-node/agents/capabilities-v1.json",
+      "repository_path": "public/public-node/agents/capabilities-v1.json",
+      "canonical_sha256": "157c56255f6ebd3cef06c4121ff584afb291186237e7d319b9b8e2dd0e4de974",
+      "media_type": "application/json",
+      "http_method": "GET",
+      "access": "anonymous",
+      "authority": "read_only",
+      "same_origin": true,
+      "source_present": true,
+      "runtime_observed": false,
+      "required_marker": "VOID_AI_AGENT_CAPABILITY_NEGOTIATION_V1"
+    },
+    {
+      "id": "datanet_replication_receipt",
+      "kind": "public_evidence",
+      "purpose": "Inspect a public-safe, digest-bound receipt for a completed DataNet field replication round trip.",
+      "path": "/public-node/datanet/field-replication-status-card-v1.json",
+      "repository_path": "public/public-node/datanet/field-replication-status-card-v1.json",
+      "canonical_sha256": "7ea27f1af9a3a8009bb5430ed540bc1aa6a43beb0392c598c9e924b4d2278391",
+      "media_type": "application/json",
+      "http_method": "GET",
+      "access": "anonymous",
+      "authority": "read_only",
+      "same_origin": true,
+      "source_present": true,
+      "runtime_observed": false,
+      "required_marker": "VOID_DATANET_FIELD_REPLICATION_STATUS_CARD_V1_GREEN"
+    }
+  ]
+}
